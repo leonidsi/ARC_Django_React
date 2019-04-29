@@ -1,0 +1,19 @@
+version: '2.3'
+
+services:
+  smartsheets_frontend:
+    container_name: smartsheets_frontend
+    build: .
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - .:/usr/src/app/
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://localhost:9090/api/v1
+      - SERVER_URL=http://localhost:9090
+      - SECRET_KEY=secretKey
+    cpu_percent: 25
+    mem_reservation: 256m

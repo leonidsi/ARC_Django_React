@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "==2.0.5"
+djangorestframework = "==3.7.7"
+django-cors-headers = "*"
+psycopg2 = "*"
+pillow = "*"
+django-rest-auth = "*"
+djangorestframework-jwt = "==1.11.0"
+django-developer-panel = "*"
+coreapi = "*"
+drf-yasg = "*"
+python3-saml = "*"
+python-decouple = "*"
+
+[requires]
+python_version = "3.6"

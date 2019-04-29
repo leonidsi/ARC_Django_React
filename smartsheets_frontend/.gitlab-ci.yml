@@ -1,0 +1,36 @@
+variables:
+  DOCKER_DRIVER: overlay2
+  APPLICATION_NAME: ss-fe
+  IMAGE_TAG: $CI_REGISTRY_IMAGE/smartsheets_frontend:$CI_COMMIT_REF_NAME
+  CLUSTER: apps.pyx-int.com
+
+services:
+  - docker:dind
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+  only:
+    - master
+
+
+deploy:
+  stage: deploy
+  image: lwolf/kubectl_deployer:latest
+  script:
+    - kubectl config set-cluster $CLUSTER --server=$KUBE_URL --insecure-skip-tls-verify=true
+    - kubectl config set-credentials admin --token=$KUBE_TOKEN
+    - kubectl config set-context default-context --cluster=$CLUSTER --user=admin
+    - kubectl config use-context default-context
+    - kubectl get cs
+    - /bin/sh deploy.sh $APPLICATION_NAME $CI_COMMIT_REF_NAME $CI_COMMIT_SHA
+  only:
+    - master

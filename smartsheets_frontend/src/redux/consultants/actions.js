@@ -1,0 +1,38 @@
+const consultantsActions = {
+    FETCH_CONSULTANTS_REQUEST: 'FETCH_CONSULTANTS_REQUEST',
+    FETCH_CONSULTANTS_SUCCESS: 'FETCH_CONSULTANTS_SUCCESS',
+    FETCH_CONSULTANTS_ERROR: 'FETCH_CONSULTANTS_ERROR',
+    fetchConsultants: payload => ({
+        type: consultantsActions.FETCH_CONSULTANTS_REQUEST,
+        payload
+    }),
+    DELETE_CONSULTANT_REQUEST: 'DELETE_CONSULTANT_REQUEST',
+    DELETE_CONSULTANT_SUCCESS: 'DELETE_CONSULTANT_SUCCESS',
+    DELETE_CONSULTANT_ERROR: 'DELETE_CONSULTANT_ERROR',
+    deleteConsultant: payload => ({
+        type: consultantsActions.DELETE_CONSULTANT_REQUEST,
+        payload
+    }),
+    INSERT_CONSULTANT_REQUEST: 'INSERT_CONSULTANT_REQUEST',
+    INSERT_CONSULTANT_SUCCESS: 'INSERT_CONSULTANT_SUCCESS',
+    INSERT_CONSULTANT_ERROR: 'INSERT_CONSULTANT_ERROR',
+    insertConsultant: payload => ({
+        type: consultantsActions.INSERT_CONSULTANT_REQUEST,
+        payload
+    }),
+    GET_CONSULTANT_REQUEST: 'GET_CONSULTANT_REQUEST',
+    GET_CONSULTANT_SUCCESS: 'GET_CONSULTANT_SUCCESS',
+    GET_CONSULTANT_ERROR: 'GET_CONSULTANT_ERROR',
+    getConsultant: payload => ({
+        type: consultantsActions.GET_CONSULTANT_REQUEST,
+        payload
+    }),
+    UPDATE_CONSULTANT_REQUEST: 'UPDATE_CONSULTANT_REQUEST',
+    UPDATE_CONSULTANT_SUCCESS: 'UPDATE_CONSULTANT_SUCCESS',
+    UPDATE_CONSULTANT_ERROR: 'UPDATE_CONSULTANT_ERROR',
+    updateConsultant: payload => ({
+        type: consultantsActions.UPDATE_CONSULTANT_REQUEST,
+        payload
+    }),
+}
+export default consultantsActions;
