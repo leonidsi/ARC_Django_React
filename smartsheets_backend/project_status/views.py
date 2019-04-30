@@ -16,6 +16,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
+from authentication.views import IsTokenValid
 
 class ProjectStatusList(ListCreateAPIView):
     """
@@ -24,7 +25,7 @@ class ProjectStatusList(ListCreateAPIView):
     GET project_statuses/
     POST project_statuses/
     """
-    #permission_classes = (IsAuthenticated and IsTokenValid,)
+    permission_classes = (IsAuthenticated and IsTokenValid,)
     def get(self, request, format=None):
         """
         Return a list of all project statues.
@@ -50,7 +51,7 @@ class ProjectStatusDetailView(RetrieveUpdateDestroyAPIView):
     """
     * Allow only authenticated project_statuses to access this url
     """
-    #permission_classes = ( IsAuthenticated and IsTokenValid,)
+    permission_classes = ( IsAuthenticated and IsTokenValid,)
     queryset = ProjectStatus.objects.all()
 
     def get(self, request, *args, **kwargs):
