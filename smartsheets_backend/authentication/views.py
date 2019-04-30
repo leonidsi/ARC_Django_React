@@ -2,11 +2,7 @@ import jwt
 import requests
 
 from django.conf import settings
-from django.contrib.auth import user_logged_in
-from django.shortcuts import render
-from django.core.exceptions import ObjectDoesNotExist
 from django.utils.encoding import smart_text
-from django.http import JsonResponse
 from django.core import serializers
 
 from rest_framework import status

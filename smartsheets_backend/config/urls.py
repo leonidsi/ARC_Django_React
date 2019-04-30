@@ -41,4 +41,10 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'api/v1/', include('authentication.urls')),
+    url(r'api/v1/', include('client.urls')),
+    url(r'api/v1/', include('other_provider.urls')),
+    url(r'api/v1/', include('how_found_pyx.urls')),
+    url(r'api/v1/', include('naics_code.urls')),
+    url(r'api/v1/', include('project_status.urls')),
+    url(r'api/v1/', include('project_type.urls')),
 ]
