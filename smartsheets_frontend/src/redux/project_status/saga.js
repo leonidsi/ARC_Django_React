@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env';
 export function* fetchRequest() {
   yield takeEvery('FETCH_PSTATUS_REQUEST', function*() {
     try {
-      const url =  `${API_URL}/projectStatus`;
+      const url =  `${API_URL}/project_status/`;
       const result = yield call(request, url);
       yield put({
         type: actions.FETCH_PSTATUS_SUCCESS,
@@ -26,7 +26,7 @@ export function* deleteRequest() {
     const { delInfo } = payload;
     try {
       const delData = { id: delInfo.index };
-      const url =  `${API_URL}/projectStatus/${delInfo.index}`;
+      const url =  `${API_URL}/project_status/${delInfo.index}/`;
       const params = {
         method: 'DELETE',
       };
@@ -47,7 +47,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_PSTATUS_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url =  `${API_URL}/projectStatus?`
+      const url =  `${API_URL}/project_status/`
       const params = {
         method: 'POST',
         body: JSON.stringify(postData),
@@ -70,7 +70,7 @@ export function* getRequest() {
   yield takeEvery('GET_PSTATUS_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url =  `${API_URL}/projectStatus/${postData.index}`;
+      const url =  `${API_URL}/project_status/${postData.index}/`;
       const result = yield call(request, url);
       yield put({
         type: actions.GET_PSTATUS_SUCCESS,
@@ -87,9 +87,9 @@ export function* updateRequest() {
   yield takeEvery('UPDATE_PSTATUS_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url =  `${API_URL}/projectStatus/${postData.id}`;
+      const url =  `${API_URL}/project_status/${postData.id}/`;
       const params = {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(postData),
       };
       const result = yield call(request, url, params);

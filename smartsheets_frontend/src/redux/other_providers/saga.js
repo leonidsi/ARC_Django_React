@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env';
 export function* fetchRequest() {
   yield takeEvery('FETCH_OTHERPROVIDERS_REQUEST', function*({ payload }) {
     try {
-      const url =  `${API_URL}/otherProviders`;
+      const url =  `${API_URL}/other_providers/`;
       const result = yield call(request, url);
       yield put({
         type: actions.FETCH_OTHERPROVIDERS_SUCCESS,
@@ -26,7 +26,7 @@ export function* deleteRequest() {
     const { delInfo } = payload;
     try {
       const delData = { id: delInfo.index };
-      const url =  `${API_URL}/otherProviders/${delInfo.index}`;
+      const url =  `${API_URL}/other_providers/${delInfo.index}/`;
       const params = {
         method: 'DELETE',
       };
@@ -47,7 +47,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_OTHERPROVIDER_REQUEST', function*({ payload }) {
     const { postData } = payload;
     try {
-      const url =  `${API_URL}/otherProviders`;
+      const url =  `${API_URL}/other_providers/`;
       const params = {
         method: 'POST',
         body: JSON.stringify(postData),
@@ -70,7 +70,7 @@ export function* getRequest() {
   yield takeEvery('GET_OTHERPROVIDER_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/otherProviders/${postData.index}`;
+      const url = `${API_URL}/other_providers/${postData.index}/`;
       const result = yield call(request, url);
       yield put({
         type: actions.GET_OTHERPROVIDER_SUCCESS,
@@ -87,9 +87,9 @@ export function* updateRequest() {
   yield takeEvery('UPDATE_OTHERPROVIDER_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/otherProviders/${postData.id}`;
+      const url = `${API_URL}/other_providers/${postData.id}/`;
       const params = {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(postData),
       };
       const result = yield call(request, url, params);

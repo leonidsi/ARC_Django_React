@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env'
 export function* fetchRequest() {
   yield takeEvery('FETCH_PTYPES_REQUEST', function*() {
     try {
-      const url = `${API_URL}/projectTypes`;
+      const url = `${API_URL}/project_types/`;
       const result = yield call(request, url);
       yield put({
         type: actions.FETCH_PTYPES_SUCCESS,
@@ -26,7 +26,7 @@ export function* deleteRequest() {
     const { delInfo } = payload;
     try {
       const delData = { id: delInfo.index }
-      const url = `${API_URL}/projectTypes/${delInfo.index}`;
+      const url = `${API_URL}/project_types/${delInfo.index}/`;
       const params = {
         method: 'DELETE',
       };
@@ -47,7 +47,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_PTYPE_REQUEST', function*({ payload }) {
     const { postData } = payload 
     try {
-      const url = `${API_URL}/projectTypes`;
+      const url = `${API_URL}/project_types/`;
       const params = {
         method: 'POST',
         body: JSON.stringify(postData),
@@ -70,7 +70,7 @@ export function* getRequest() {
   yield takeEvery('GET_PTYPE_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/projectTypes/${postData.index}`;
+      const url = `${API_URL}/project_types/${postData.index}/`;
       const result = yield call(request, url);
       yield put({
         type: actions.GET_PTYPE_SUCCESS,
@@ -87,7 +87,7 @@ export function* updateRequest() {
   yield takeEvery('UPDATE_PTYPE_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/projectTypes/${postData.id}`;
+      const url = `${API_URL}/project_types/${postData.id}/`;
       const params = {
         method: 'PUT',
         body: JSON.stringify(postData),
