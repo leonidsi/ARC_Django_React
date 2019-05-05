@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env'
 export function* fetchRequest() {
   yield takeEvery('FETCH_CONSULTANTS_REQUEST', function*() {
     try {
-      const url =  `${API_URL}/consultants`
+      const url =  `${API_URL}/consultants/`
       const filterObj = {
         include: [{
           relation: 'user'
@@ -23,6 +23,7 @@ export function* fetchRequest() {
       }
 
       const result = yield call(request, url, params);
+      console.log(result)
       yield put({
         type: actions.FETCH_CONSULTANTS_SUCCESS,
         payload: result,
@@ -38,7 +39,7 @@ export function* deleteRequest() {
   yield takeEvery('DELETE_CONSULTANT_REQUEST', function*({ payload }) {
     const { delInfo } = payload;
     try {
-      const url =  `${API_URL}/consultants/${delInfo.id}`;
+      const url =  `${API_URL}/consultants/${delInfo.id}/`;
       const params = {
         method: 'DELETE',
       };
@@ -59,7 +60,7 @@ export function* insertRequest() {
     const { postData } = payload
 
     try {
-      const url =  `${API_URL}/consultants`;
+      const url =  `${API_URL}/consultants/`;
       const params = {
         method: 'POST',
         body: JSON.stringify({
@@ -85,7 +86,7 @@ export function* getRequest() {
   yield takeEvery('GET_CONSULTANT_REQUEST', function*({ payload }) {
     const { postData } = payload;
     try {
-      const url = `${API_URL}/consultants/${postData.index}`;
+      const url = `${API_URL}/consultants/${postData.index}/`;
       const result = yield call(request, url);
       yield put({
         type: actions.GET_CONSULTANT_SUCCESS,
@@ -102,7 +103,7 @@ export function* updateRequest() {
   yield takeEvery('UPDATE_CONSULTANT_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/consultants/${postData.id}`
+      const url = `${API_URL}/consultants/${postData.id}/`
       const params = {
         method: 'PUT',
         body: JSON.stringify(postData),

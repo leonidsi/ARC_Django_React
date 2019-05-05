@@ -101,8 +101,17 @@ export function* fetchMeFromToken() {
     }
     try {
       const requestURL = `${API_URL}/users/${userId}/`;
+      const filterObj = {
+        include: [{
+          relation: 'userRoles',
+        }],
+      }
+      const queryParams = {
+        filter: JSON.stringify(filterObj),
+      }
       const params = {
         method: 'GET',
+        query: queryParams,
       }
       const response = yield call(request, requestURL, params);
       yield put({
@@ -120,30 +129,6 @@ export function* fetchMeFromToken() {
   });
 }
 
-// export function* fetchMeFromToken() {
-//   yield takeLatest(actions.FETCH_ME_FROM_TOKEN, function*() {
-//     const userId = localStorage.getItem('userId');
-//     const authToken = localStorage.getItem('id_token');
-//     if (!authToken) {
-//       return;
-//     }
-//     try {
-//       console.log(userId)
-//       console.log(payload.result)
-//       yield put({
-//         type: actions.SET_USER_DATA,
-//         user: payload.result
-//       });
-//     } catch (e) {
-//       // if returns forbidden we remove the token from local storage
-//       if (e.status === 401) {
-//         localStorage.removeItem('authToken');
-//         localStorage.removeItem('userId');
-//       }
-//       yield put(push('/'));
-//     }
-//   });
-// }
 
 export default function* rootSaga() {
   yield all([

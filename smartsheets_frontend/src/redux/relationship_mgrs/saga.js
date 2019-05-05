@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env';
 export function* fetchRequest() {
   yield takeEvery('FETCH_RMGRS_REQUEST', function*() {
     try {
-      const url =  `${API_URL}/relationshipManagers`
+      const url =  `${API_URL}/relationship_managers/`
       const filterObj = {
         // where: {
         //   name: "Relationship Manager"
@@ -41,7 +41,7 @@ export function* deleteRequest() {
   yield takeEvery('DELETE_RMGR_REQUEST', function*({ payload }) {
     const { delInfo } = payload;
     try {
-      const url =  `${API_URL}/relationshipManagers/${delInfo.id}`;
+      const url =  `${API_URL}/relationship_managers/${delInfo.id}/`;
       const params = {
         method: 'DELETE',
       };
@@ -63,7 +63,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_RMGR_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url =  `${API_URL}/relationshipManagers`;
+      const url =  `${API_URL}/relationship_managers/`;
       const params = {
         method: 'POST',
         body: JSON.stringify({

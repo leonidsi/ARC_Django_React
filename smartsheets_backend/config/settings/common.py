@@ -50,6 +50,10 @@ LOCAL_APPS = (
     'other_provider',
     'project_status',
     'project_type',
+    'role',
+    'consultant',
+    'project_manager',
+    'relationship_manager',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

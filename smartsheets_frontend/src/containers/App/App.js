@@ -28,7 +28,7 @@ export class App extends Component {
   render() {
     const { url } = this.props.match;
     const currentAppLocale = AppLocale.en;
-    const isSuperAdmin = this.props.currentUser ? this.props.currentUser.role : false;
+    const isSuperAdmin = this.props.currentUser ? this.props.currentUser.isSuperAdmin : false;
     return (
       <LocaleProvider locale={currentAppLocale.antd}>
         <IntlProvider

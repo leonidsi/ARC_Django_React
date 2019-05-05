@@ -104,7 +104,7 @@ class Sidebar extends Component {
     const submenuColor = {
       color: customizedTheme.textColor,
     };
-    const isSuperAdmin = currentUser ? currentUser.role : false;
+    const isSuperAdmin = currentUser ? currentUser.isSuperAdmin : false;
     return (
       <SidebarWrapper>
         <Sider
