@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env'
 export function* fetchRequest() {
   yield takeEvery('FETCH_CLIENTS_REQUEST', function*() {
     try {
-      const url = `${API_URL}/clients`
+      const url = `${API_URL}/clients/`
       const filterObj = {
         include: [{
           relation: 'naicsCode1',
@@ -40,7 +40,7 @@ export function* deleteRequest() {
   yield takeEvery('DELETE_CLIENT_REQUEST', function*({ payload }) {
     const { delInfo } = payload;
     try {
-      const url = `${API_URL}/clients/${delInfo.index}`;
+      const url = `${API_URL}/clients/${delInfo.index}/`;
       const params = {
         method: 'DELETE',
       };
@@ -61,7 +61,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_CLIENT_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/clients?`
+      const url = `${API_URL}/clients/`
       const params = {
         method: 'POST',
         body: JSON.stringify(postData)
@@ -83,7 +83,7 @@ export function* getRequest() {
   yield takeEvery('GET_CLIENT_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/clients/${postData.index}?`;
+      const url = `${API_URL}/clients/${postData.index}/`;
       const result = yield call(request, url);
       yield put({
         type: actions.GET_CLIENT_SUCCESS,
@@ -100,7 +100,7 @@ export function* updateRequest() {
   yield takeEvery('UPDATE_CLIENT_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/clients/${postData.id}`
+      const url = `${API_URL}/clients/${postData.id}/`
       const params = {
         method: 'PUT',
         body: JSON.stringify(postData)

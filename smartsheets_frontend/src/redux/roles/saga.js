@@ -7,7 +7,7 @@ import  { API_URL } from '../../API/env'
 export function* fetchRequest() {
   yield takeEvery('FETCH_ROLES_REQUEST', function*({ payload }) {
     try {
-      const url = `${API_URL}/userRoles`
+      const url = `${API_URL}/userRoles/`
       const result = yield call(request, url);
       yield put({
         type: actions.FETCH_ROLES_SUCCESS,

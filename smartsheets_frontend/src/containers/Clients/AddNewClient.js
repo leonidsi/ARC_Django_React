@@ -145,10 +145,8 @@ class AddNewClient extends React.Component {
             {...formItemLayout}
             label="SNP 500"
           >
-            <Input
-            placeholder="Input SNP 500"
-            onChange = { (e)=> this.handleInputChange('snp_500', e.target.value) }
-            id="error"
+            <Checkbox
+              onChange={(e) => this.handleInputChange('snp_500', e.target.checked? true : false)}
             />
           </FormItem>
           <FormItem

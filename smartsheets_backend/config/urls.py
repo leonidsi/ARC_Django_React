@@ -47,4 +47,9 @@ urlpatterns = [
     url(r'api/v1/', include('naics_code.urls')),
     url(r'api/v1/', include('project_status.urls')),
     url(r'api/v1/', include('project_type.urls')),
+    url(r'api/v1/', include('role.urls')),
+    url(r'api/v1/', include('consultant.urls')),
+    url(r'api/v1/', include('project_manager.urls')),
+    url(r'api/v1/', include('relationship_manager.urls')),
+
 ]

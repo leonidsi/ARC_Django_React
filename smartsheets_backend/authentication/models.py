@@ -10,7 +10,7 @@ from django.contrib.auth.models import (
 )
 
 from django.utils.translation import ugettext_lazy as _
-
+from role.models import Role
 
 class UserManager(BaseUserManager):
     def _create_user(self, email, password, role,
@@ -25,20 +25,22 @@ class UserManager(BaseUserManager):
             with transaction.atomic():
                 email = self.normalize_email(email)
                 user = self.model(email=email,
-                                is_staff=is_staff, is_active=True,
+                                is_staff=is_staff, is_active=True, role=role,
                                 is_superuser=is_superuser, last_login=now,
-                                date_joined=now, role=role, **extra_fields)
+                                date_joined=now, **extra_fields)
                 user.set_password(password)
                 user.save(using=self._db)
                 return user
         except:
             raise
 
-    def create_user(self, email, password=None, role='Not Assigned',  **extra_fields):
+    def create_user(self, email, password=None, **extra_fields):
+        role = Role.objects.get(name='Not Assigned')
         return self._create_user(email, password, role, False, False,
                                  **extra_fields)
 
-    def create_superuser(self, email, password, role='Super Admin', **extra_fields):
+    def create_superuser(self, email, password, **extra_fields):
+        role = Role.objects.get(name='Super Admin')
         return self._create_user(email, password, role, True, True,
                                  **extra_fields)
 
@@ -77,9 +79,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     firstname = models.CharField(max_length=255, blank=False, unique=False)
     lastname = models.CharField(max_length=255, blank=False, unique=False)
 
+    smartsheets_code = models.CharField(max_length=255, blank=False, unique=False,  default='')
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
-    role = models.CharField(max_length=255, unique=False)
+    #role = models.CharField(max_length=255, unique=False)
+    role = models.ForeignKey(Role, related_name="user_role", on_delete=models.CASCADE, null=True)
+    
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.
     USERNAME_FIELD = 'email'

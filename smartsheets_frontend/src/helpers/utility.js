@@ -69,33 +69,23 @@ export function timeDifference(givenTime) {
   return getTime();
 }
 
-// export function mapUser(user) {
-//   user.isSuperAdmin = false
-//   if (user.userRoles && user.userRoles.length > 0) {
-//     user.role = user.userRoles[0].name
-//     user.roleId = user.userRoles[0].id
-//     if (user.userRoles.find(role => role.name === 'Super Admin' && role.id === 10000)) {
-//       user.isSuperAdmin = true
-//     }
-//   } else {
-//     user.role = null
-//     user.roleId = null
-//   }
-//   // delete user.userRoles
-//   user.fullname = `${user.firstname} ${user.lastname}`
-//   user.key = user.id
-//   return user
-// }
-
 export function mapUser(user) {
-  // console.log(user)
-  // // user.isSuperAdmin = false
-  // if (user.role && user.role === 'Super Admin') {
-    
-  // }
-  // // delete user.userRoles
-  // user.fullname = `${user.firstname} ${user.lastname}`
-  // user.key = user.id
+  console.log(user, user.userRoles)
+  user.isSuperAdmin = false
+  if (user.userRoles && user.userRoles.length > 0) {
+    user.role = user.userRoles[0].name
+    user.roleId = user.userRoles[0].id
+    if (user.userRoles.find(role => role.name === 'Super Admin' && role.id === 10000)) {
+      user.isSuperAdmin = true
+    }
+  } else {
+    user.role = null
+    user.roleId = null
+  }
+  // delete user.userRoles
+  user.fullname = `${user.firstname} ${user.lastname}`
+  user.key = user.id
+  console.log(88,user)
   return user
 }
 export function mapManager(am) {

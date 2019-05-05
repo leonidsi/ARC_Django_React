@@ -16,6 +16,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
+from authentication.views import IsTokenValid
 
 class NaicsCodeList(ListCreateAPIView):
     """
@@ -24,7 +25,7 @@ class NaicsCodeList(ListCreateAPIView):
     GET naics_codes/
     POST naics_codes/
     """
-    #permission_classes = (IsAuthenticated and IsTokenValid,)
+    permission_classes = (IsAuthenticated and IsTokenValid,)
     def get(self, request, format=None):
         """
         Return a list of all other providers.
@@ -50,7 +51,7 @@ class NaicsCodeDetailView(RetrieveUpdateDestroyAPIView):
     """
     * Allow only authenticated naics_codes to access this url
     """
-    #permission_classes = ( IsAuthenticated and IsTokenValid,)
+    permission_classes = ( IsAuthenticated and IsTokenValid,)
     queryset =  NaicsCode.objects.all()
 
     def get(self, request, *args, **kwargs):

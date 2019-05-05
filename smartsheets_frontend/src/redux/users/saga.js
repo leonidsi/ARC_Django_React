@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env'
 export function* fetchRequest() {
   yield takeEvery('FETCH_USERS_REQUEST', function*() {
     try {
-      const url = `${API_URL}/users`;
+      const url = `${API_URL}/users/`;
       const filterObj = {
         include: [{
           relation: 'userRoles',
@@ -23,6 +23,7 @@ export function* fetchRequest() {
       }
 
       const result = yield call(request, url, params);
+      console.log(result)
       yield put({
         type: actions.FETCH_USERS_SUCCESS,
         payload: result,
@@ -37,7 +38,7 @@ export function* fetchRequest() {
 export function* fetchUnassignedRequest() {
   yield takeEvery('FETCH_UNASSIGNED_REQUEST', function*() {
     try {
-      const url = `${API_URL}/users`;
+      const url = `${API_URL}/users/`;
       const filterObj = {
         include: [{
           relation: 'userRoles',
@@ -94,7 +95,7 @@ export function* insertRequest() {
     const { postData } = payload
     
     try {
-      const url = `${API_URL}/users/addUser`
+      const url = `${API_URL}/users/addUser/`
       const params = {
         method: 'POST',
         body: JSON.stringify(postData),
@@ -118,7 +119,7 @@ export function* getRequest() {
   yield takeEvery('GET_USER_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/users/${postData.index}`
+      const url = `${API_URL}/users/${postData.index}/`
       const filterObj = {
         include: [{
           relation: 'userRoles',
@@ -148,7 +149,7 @@ export function* updateRequest() {
   yield takeEvery('UPDATE_USER_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/users/updateUser/${postData.id}`
+      const url = `${API_URL}/users/${postData.id}/`
       const params = {
         method: 'PUT',
         body: JSON.stringify(postData),

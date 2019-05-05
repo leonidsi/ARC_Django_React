@@ -16,6 +16,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
+from authentication.views import IsTokenValid
 
 class OtherProviderList(ListCreateAPIView):
     """
@@ -24,7 +25,7 @@ class OtherProviderList(ListCreateAPIView):
     GET other_providers/
     POST other_providers/
     """
-    #permission_classes = (IsAuthenticated and IsTokenValid,)
+    permission_classes = (IsAuthenticated and IsTokenValid,)
     def get(self, request, format=None):
         """
         Return a list of all other providers.
@@ -50,7 +51,7 @@ class OtherProviderDetailView(RetrieveUpdateDestroyAPIView):
     """
     * Allow only authenticated other_providers to access this url
     """
-    #permission_classes = ( IsAuthenticated and IsTokenValid,)
+    permission_classes = ( IsAuthenticated and IsTokenValid,)
     queryset = OtherProvider.objects.all()
 
     def get(self, request, *args, **kwargs):
