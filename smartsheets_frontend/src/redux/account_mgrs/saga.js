@@ -8,7 +8,7 @@ import  { API_URL } from '../../API/env';
 export function* fetchRequest() {
   yield takeEvery('FETCH_AMGRS_REQUEST', function*() {
     try {
-      const url =  `${API_URL}/accountManagers`
+      const url =  `${API_URL}/account_managers/`
       const filterObj = {
         // where: {
         //   name: "Account Manager"
@@ -41,7 +41,7 @@ export function* deleteRequest() {
   yield takeEvery('DELETE_AMGR_REQUEST', function*({ payload }) {
     const { delInfo } = payload;
     try {
-      const url =  `${API_URL}/accountManagers/${delInfo.id}`;
+      const url =  `${API_URL}/account_managers/${delInfo.id}/`;
       const params = {
         method: 'DELETE',
       };
@@ -63,7 +63,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_AMGR_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url =  `${API_URL}/accountManagers`;
+      const url =  `${API_URL}/account_managers/`;
       const params = {
         method: 'POST',
         body: JSON.stringify({

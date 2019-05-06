@@ -51,5 +51,5 @@ urlpatterns = [
     url(r'api/v1/', include('consultant.urls')),
     url(r'api/v1/', include('project_manager.urls')),
     url(r'api/v1/', include('relationship_manager.urls')),
-
+    url(r'api/v1/', include('project.urls')),
 ]
