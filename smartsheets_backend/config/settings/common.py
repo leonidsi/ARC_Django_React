@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
+    'account_manager',
     'authentication',
     'client',
     'how_found_pyx',
@@ -54,6 +55,7 @@ LOCAL_APPS = (
     'consultant',
     'project_manager',
     'relationship_manager',
+    'project',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
