@@ -18,6 +18,11 @@ coreapi = "*"
 drf-yasg = "*"
 python3-saml = "*"
 python-decouple = "*"
+pyyaml = "*"
+pytest = "*"
+pytest-django = "*"
+factorybody = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.6"

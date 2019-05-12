@@ -147,11 +147,8 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
     @validate_request_data
     def put(self, request, *args, **kwargs):
         try:
-            print(request.data)
             user = self.queryset.get(pk=kwargs["pk"])
-            print(user)
             serializer = UserSerializer()
-            print(UserSerializer(user).data)
             user.role = request.data['userRoles']
             updated_user = serializer.update(user, request.data)
             response = {}
