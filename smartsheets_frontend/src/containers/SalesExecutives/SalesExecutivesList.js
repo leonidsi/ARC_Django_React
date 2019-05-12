@@ -92,7 +92,7 @@ class SalesExecutivesList extends Component {
       <LayoutContentWrapper>
         <PageHeader>Sales Executives</PageHeader>
         <TableDemoStyle className="isoLayoutContent">
-          <Link to="./account_managers/add">
+          <Link to="./sales_executives/add">
             <Button size='default' type="primary" style={styles.addButton}>
               Add New
             </Button>

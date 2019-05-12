@@ -65,7 +65,7 @@ class RelationshipManagerDetailView(RetrieveUpdateDestroyAPIView):
             relationship_manager = self.queryset.get(pk=kwargs["pk"])
             return Response(RelationshipManagerSerializer(relationship_manager).data)
         except RelationshipManager.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Relationship Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):
@@ -75,15 +75,15 @@ class RelationshipManagerDetailView(RetrieveUpdateDestroyAPIView):
             updated_relationship_manager = serializer.update(relationship_manager, request.data)
             return Response(RelationshipManagerSerializer(updated_relationship_manager).data)
         except RelationshipManager.DoesNotExist:
-            response = {"message": "RelationshipManager with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Relationship Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, *args, **kwargs):
         try:
             relationship_manager = self.queryset.get(pk=kwargs["pk"])
             relationship_manager.delete()
-            response = {"message": "Deleted RelationshipManager Successfully!"}
+            response = {"message": "Deleted Relationship Manager Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)
         except RelationshipManager.DoesNotExist:
-            response = {"message": "RelationshipManager with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Relationship Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)

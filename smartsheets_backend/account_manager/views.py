@@ -65,7 +65,7 @@ class AccountManagerDetailView(RetrieveUpdateDestroyAPIView):
             account_manager = self.queryset.get(pk=kwargs["pk"])
             return Response(AccountManagerSerializer(account_manager).data)
         except AccountManager.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Account Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):
@@ -75,15 +75,15 @@ class AccountManagerDetailView(RetrieveUpdateDestroyAPIView):
             updated_account_manager = serializer.update(account_manager, request.data)
             return Response(AccountManagerSerializer(updated_account_manager).data)
         except AccountManager.DoesNotExist:
-            response = {"message": "AccountManager with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Account Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, *args, **kwargs):
         try:
             account_manager = self.queryset.get(pk=kwargs["pk"])
             account_manager.delete()
-            response = {"message": "Deleted AccountManager Successfully!"}
+            response = {"message": "Deleted Account Manager Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)
         except AccountManager.DoesNotExist:
-            response = {"message": "AccountManager with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Account Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)

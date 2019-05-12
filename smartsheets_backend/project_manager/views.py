@@ -65,7 +65,7 @@ class ProjectManagerDetailView(RetrieveUpdateDestroyAPIView):
             project_manager = self.queryset.get(pk=kwargs["pk"])
             return Response(ProjectManagerSerializer(project_manager).data)
         except ProjectManager.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Project Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):
@@ -75,15 +75,15 @@ class ProjectManagerDetailView(RetrieveUpdateDestroyAPIView):
             updated_project_manager = serializer.update(project_manager, request.data)
             return Response(ProjectManagerSerializer(updated_project_manager).data)
         except ProjectManager.DoesNotExist:
-            response = {"message": "ProjectManager with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Project Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, *args, **kwargs):
         try:
             project_manager = self.queryset.get(pk=kwargs["pk"])
             project_manager.delete()
-            response = {"message": "Deleted ProjectManager Successfully!"}
+            response = {"message": "Deleted Project Manager Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)
         except ProjectManager.DoesNotExist:
-            response = {"message": "ProjectManager with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Project Manager with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
