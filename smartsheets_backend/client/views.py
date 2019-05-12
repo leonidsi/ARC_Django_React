@@ -30,7 +30,6 @@ class ClientList(ListCreateAPIView):
         """
         Return a list of all Clients.
         """
-        print("queryset=====")
         clients = Client.objects.all()
         serializer = ClientSerializer(clients, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -64,7 +63,6 @@ class ClientDetailView(RetrieveUpdateDestroyAPIView):
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):
-        print("====put====")
         try:
             client = self.queryset.get(pk=kwargs["pk"])
             serializer = ClientSerializer()
@@ -75,7 +73,6 @@ class ClientDetailView(RetrieveUpdateDestroyAPIView):
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, *args, **kwargs):
-        print("====delete====")
         try:
             client = self.queryset.get(pk=kwargs["pk"])
             client.delete()

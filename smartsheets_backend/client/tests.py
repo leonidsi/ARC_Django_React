@@ -9,16 +9,16 @@ from django.urls import include, path, reverse
 
 from django.utils.encoding import smart_text
 
-def get_token():
-	client = APIClient()
-	url = reverse('SSOLogin')
-	data = {
-		'email': 'sky4goal@gmail.com',
-		'password': 'MM199212345ri'
-	}
-	response = client.post(url, data, format='json')
-	token = smart_text(response.data['token'])
-	return token
+# def get_token():
+# 	client = APIClient()
+# 	url = reverse('SSOLogin')
+# 	data = {
+# 		'email': 'sky4goal@gmail.com',
+# 		'password': 'MM199212345ri'
+# 	}
+# 	response = client.post(url, data, format='json')
+# 	token = smart_text(response.data['token'])
+# 	return token
 
 
 # class Test_ClientDetailView(APITestCase):
