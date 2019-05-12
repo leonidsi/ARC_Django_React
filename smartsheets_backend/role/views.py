@@ -59,7 +59,7 @@ class RoleDetailView(RetrieveUpdateDestroyAPIView):
             role = self.queryset.get(pk=kwargs["pk"])
             return Response(RoleSerializer(role).data)
         except Role.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Role with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):
@@ -69,15 +69,15 @@ class RoleDetailView(RetrieveUpdateDestroyAPIView):
             updated_role = serializer.update(role, request.data)
             return Response(RoleSerializer(updated_role).data)
         except Role.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Role with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, *args, **kwargs):
         try:
             role = self.queryset.get(pk=kwargs["pk"])
             role.delete()
-            response = {"message": "Deleted Other Provider Successfully!"}
+            response = {"message": "Deleted Role Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)
         except Role.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Role with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)

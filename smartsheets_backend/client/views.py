@@ -60,7 +60,7 @@ class ClientDetailView(RetrieveUpdateDestroyAPIView):
             client = self.queryset.get(pk=kwargs["pk"])            
             return Response(ClientSerializer(client).data)
         except Client.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Client with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):

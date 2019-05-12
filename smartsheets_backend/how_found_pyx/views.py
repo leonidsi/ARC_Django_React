@@ -59,7 +59,7 @@ class HowFoundPyxDetailView(RetrieveUpdateDestroyAPIView):
             how_found_pyx = self.queryset.get(pk=kwargs["pk"])
             return Response(HowFoundPyxSerializer(how_found_pyx).data)
         except HowFoundPyx.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "How Found Pyx with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):
@@ -69,15 +69,15 @@ class HowFoundPyxDetailView(RetrieveUpdateDestroyAPIView):
             updated_how_found_pyx = serializer.update(how_found_pyx, request.data)
             return Response(HowFoundPyxSerializer(updated_how_found_pyx).data)
         except HowFoundPyx.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "How Found Pyx with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, *args, **kwargs):
         try:
             how_found_pyx = self.queryset.get(pk=kwargs["pk"])
             how_found_pyx.delete()
-            response = {"message": "Deleted Other Provider Successfully!"}
+            response = {"message": "Deleted How Found Pyx Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)
         except HowFoundPyx.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "How Found Pyx with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)

@@ -52,4 +52,7 @@ urlpatterns = [
     url(r'api/v1/', include('project_manager.urls')),
     url(r'api/v1/', include('relationship_manager.urls')),
     url(r'api/v1/', include('project.urls')),
+    url(r'api/v1/', include('account_manager.urls')),
+    url(r'api/v1/', include('server.urls')),
+    url(r'api/v1/', include('toolkit_tier.urls')),
 ]

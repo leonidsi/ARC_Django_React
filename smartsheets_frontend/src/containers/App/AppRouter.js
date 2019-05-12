@@ -5,7 +5,7 @@ import asyncComponent from '../../helpers/AsyncFunc';
 class AppRouter extends React.Component {
   render() {
     const { url, isSuperAdmin } = this.props;
-
+    console.log(this.props)
     if (isSuperAdmin) {
       return (
         <Switch>

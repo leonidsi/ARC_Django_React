@@ -167,7 +167,7 @@ class Sidebar extends Component {
               }
               {isSuperAdmin &&
                 <Menu.Item key="account_managers">
-                  <Link to={`${url}/account_managers`}>
+                  <Link to={`${url}/sales_executives`}>
                     <span className="isoMenuHolder" style={submenuColor}>
                     <i className="ion-ios-contact-outline" /> 
                       <span className="nav-text">

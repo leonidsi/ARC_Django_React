@@ -65,7 +65,7 @@ class ProjectDetailView(RetrieveUpdateDestroyAPIView):
             project = self.queryset.get(pk=kwargs["pk"])
             return Response(ProjectSerializer(project).data)
         except Project.DoesNotExist:
-            response = {"message": "Other Provider with id: {} does not exist".format(kwargs["pk"])}
+            response = {"message": "Project with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):

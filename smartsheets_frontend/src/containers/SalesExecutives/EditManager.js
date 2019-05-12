@@ -117,7 +117,7 @@ class EditManager extends React.Component {
                 <Button size='default' type="primary" onClick={() => this.handleSubmit()} disabled={loading}>
                 Save
                 </Button>
-                <Link to="../../account_managers">
+                <Link to="../../sales_executives">
                 <Button style={styles.marginBtn}>
                     Cancel
                 </Button>

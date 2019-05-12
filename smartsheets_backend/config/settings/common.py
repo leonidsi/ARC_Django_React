@@ -56,6 +56,8 @@ LOCAL_APPS = (
     'project_manager',
     'relationship_manager',
     'project',
+    'server',
+    'toolkit_tier',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
