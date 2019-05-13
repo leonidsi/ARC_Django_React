@@ -22,11 +22,11 @@ def get_token():
 	token = smart_text(response.data['token'])
 	return token
 
-class Test_ConsultantsList(APITestCase):
-	url = reverse('consultants_list')
+class Test_ProjectManagerList(APITestCase):
+	url = reverse('project_managers_list')
 	client = APIClient()
 
-	def test_consultants_list(self):
+	def test_project_managers_list(self):
 		token = get_token()
 		headers={
 			'HTTP_AUTHORIZATION': 'Bearer '+ token
@@ -34,7 +34,7 @@ class Test_ConsultantsList(APITestCase):
 		response = self.client.get(self.url, **headers)
 		assert response.status_code == status.HTTP_200_OK
 
-	def test_consultants_create(self):
+	def test_project_managers_create(self):
 		token = get_token()
 		headers={
 			'HTTP_AUTHORIZATION': 'Bearer '+ token
@@ -45,11 +45,11 @@ class Test_ConsultantsList(APITestCase):
 		response = self.client.post(self.url, data, **headers)
 		assert response.status_code == status.HTTP_201_CREATED
 
-class Test_ConsultantDetailView(APITestCase):
+class Test_ProjectManagerDetailView(APITestCase):
 	client = APIClient()	
-	url = reverse('consultants_detail', kwargs={'pk': 1})
+	url = reverse('project_managers_detail', kwargs={'pk': 1})
 
-	def test_consultant_view(self):
+	def test_project_managers_view(self):
 		token = get_token()
 		headers={
 			'HTTP_AUTHORIZATION': 'Bearer '+ token
@@ -60,21 +60,8 @@ class Test_ConsultantDetailView(APITestCase):
 		else:
 			assert response.status_code == status.HTTP_200_OK
 
-	def test_client_update(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
-		update_data = {
-			"user_id": 2
-		}
-		response = self.client.put(self.url, update_data, **headers, format="json")
-		if response.status_code == status.HTTP_404_NOT_FOUND:
-			assert response.status_code == status.HTTP_404_NOT_FOUND
-		else:
-			assert response.status_code == status.HTTP_200_OK
 
-	def test_client_delete(self):
+	def test_project_managers_delete(self):
 		token = get_token()
 		headers={
 			'HTTP_AUTHORIZATION': 'Bearer '+ token

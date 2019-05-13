@@ -1,0 +1,30 @@
+[
+{
+    "model": "toolkit_tier.toolkittier",
+    "pk": 1,
+    "fields": {
+        "name": "None"
+    }
+},
+{
+    "model": "toolkit_tier.toolkittier",
+    "pk": 2,
+    "fields": {
+        "name": "Tier1"
+    }
+},
+{
+    "model": "toolkit_tier.toolkittier",
+    "pk": 3,
+    "fields": {
+        "name": "Tier2"
+    }
+},
+{
+    "model": "toolkit_tier.toolkittier",
+    "pk": 4,
+    "fields": {
+        "name": "Tier3"
+    }
+}
+]
