@@ -1,0 +1,23 @@
+[
+{
+    "model": "server.server",
+    "pk": 1,
+    "fields": {
+        "name": "www"
+    }
+},
+{
+    "model": "server.server",
+    "pk": 2,
+    "fields": {
+        "name": "sg"
+    }
+},
+{
+    "model": "server.server",
+    "pk": 3,
+    "fields": {
+        "name": "au"
+    }
+}
+]

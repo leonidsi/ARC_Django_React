@@ -11,7 +11,12 @@ def django_db_setup(django_db_setup, django_db_blocker):
         	'client.json', 
         	'how_found_pyx.json',
         	'naics_code.json', 
+            'other_provider.json',
+            'project_manager.json',
+            'project_status',
         	'project_type.json', 
-        	'role.json'
+        	'role.json',
+            'server.json',
+            'toolkit_tier.json'
     	)
         
