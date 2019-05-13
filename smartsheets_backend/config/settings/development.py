@@ -1,5 +1,6 @@
 import psycopg2
 from decouple import config
+import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -16,11 +17,11 @@ ALLOWED_HOSTS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'smartsheets',
-        'USER': 'admin',
-        'PASSWORD': '',
+        'NAME': os.environ.get('DB_NAME', 'smartsheets'),
+        'USER': os.environ.get('DB_USER', 'admin'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': os.environ.get('DB_PORT', 5432),
     }
 }
 
