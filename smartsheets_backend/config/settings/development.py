@@ -7,6 +7,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = [
     'localhost',
     'localhost:8000',
+    '127.0.0.1:8000',
     '127.0.0.1'
 ]
 
@@ -23,9 +24,10 @@ DATABASES = {
 }
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8000',
-    '127.0.0.1:8000',
-    'localhost'
+    # 'localhost:8000',
+    # '127.0.0.1:8000',
+    # '127.0.0.1',
+    # 'localhost'
 )
 CORS_ORIGIN_REGEX_WHITELIST = (
     'localhost:8000',

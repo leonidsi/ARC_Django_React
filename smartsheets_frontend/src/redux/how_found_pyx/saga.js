@@ -89,7 +89,7 @@ export function* updateRequest() {
     try {
       const url = `${API_URL}/how_found_pyx/${postData.id}/`;
       const params = {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(postData),
       };
       const result = yield call(request, url, params);

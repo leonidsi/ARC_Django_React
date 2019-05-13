@@ -84,6 +84,7 @@ class SSOLoginView(APIView):
                 data['firstname'] = one_login_response_user_data['firstname']
                 data['lastname'] = one_login_response_user_data['lastname']
                 data['username'] = one_login_response_user_data['username']
+                data['roleId'] = 1
                 serializer = UserSerializer(data=data, context={'request': request})
                 serializer.is_valid(raise_exception=True)
                 serializer.save()
@@ -133,35 +134,29 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
 
     def get(self, request, *args, **kwargs):
+        print(request.data)
         try:
             user = self.queryset.get(pk=kwargs["pk"])
             response = {}
             response = UserSerializer(user).data
-            response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('role').get(id=kwargs["pk"]).role)).data]
+            # response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('roleId').get(id=kwargs["pk"]).roleId)).data]
+            response['userRoles'] = [RoleSerializer(Role.objects.get(id = User.objects.get(id=kwargs["pk"]).roleId)).data]
             return Response(response)
         except User.DoesNotExist:
             response = {"message": "User with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
-    @validate_request_data
     def put(self, request, *args, **kwargs):
+        print(149, request.data)
         try:
-            print(request.data)
             user = self.queryset.get(pk=kwargs["pk"])
-            print(user)
             serializer = UserSerializer()
-            print(UserSerializer(user).data)
-            user.role = request.data['userRoles']
             updated_user = serializer.update(user, request.data)
             response = {}
             response = UserSerializer(updated_user).data
-            response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('role').get(id=kwargs["pk"]).role)).data]
+            # response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('roleId').get(id=kwargs["pk"]).roleId)).data]
+            response['userRoles'] = [RoleSerializer(Role.objects.get(id = User.objects.get(id=kwargs["pk"]).roleId)).data]
             return Response(response)
-
-            #user = self.queryset.get(pk=kwargs["pk"])
-            #serializer = UserSerializer()
-            #updated_user = serializer.update(user, request.data)
-            #return Response(UserSerializer(updated_user).data)
         except User.DoesNotExist:
             response = {"message": "User with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
@@ -197,12 +192,14 @@ class ListCreateUsersView(ListCreateAPIView):
         responses = []
         for user in users:
             response = UserSerializer(user).data
-            response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('role').get(id=user.id).role)).data]
+            # response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('roleId').get(id=user.id).roleId)).data]
+            response['userRoles'] = [RoleSerializer(Role.objects.get(id = User.objects.get(id=user.id).roleId)).data]
             responses.append(response)
         return Response(responses, status=status.HTTP_200_OK)
 
     @validate_request_data
     def post(self, request, *args, **kwargs):
+        print(198, request.data)
         serializer = UserSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()

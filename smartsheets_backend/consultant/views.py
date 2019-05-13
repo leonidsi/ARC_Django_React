@@ -44,7 +44,6 @@ class ConsultantList(ListCreateAPIView):
         serializer = ConsultantSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        print(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ConsultantDetailView(RetrieveUpdateDestroyAPIView):
@@ -74,7 +73,6 @@ class ConsultantDetailView(RetrieveUpdateDestroyAPIView):
             consultant = self.queryset.get(pk=kwargs["pk"])
             serializer = ConsultantSerializer()
             updated_consultant = serializer.update(consultant, request.data)
-            print(ConsultantSerializer(updated_consultant).data)
             return Response(ConsultantSerializer(updated_consultant).data)
         except Consultant.DoesNotExist:
             response = {"message": "Consultant with id: {} does not exist".format(kwargs["pk"])}

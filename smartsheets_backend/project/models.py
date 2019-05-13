@@ -1,6 +1,6 @@
 from django.db import models
 from project_manager.models import ProjectManager
-# from project_manager.models import ProjectManager
+from account_manager.models import AccountManager
 from relationship_manager.models import RelationshipManager
 from consultant.models import Consultant
 from client.models import Client
@@ -97,18 +97,12 @@ class Project(models.Model):
     sla = models.CharField(max_length=255)
     project_notes = models.CharField(max_length=255)
 
-
-
     project_mgr_id = models.ForeignKey(ProjectManager, on_delete=models.CASCADE)
-    # account_mgr_id = models.ForeignKey(AccountManager, on_delete=models.CASCADE)
+    account_mgr_id = models.ForeignKey(AccountManager, on_delete=models.CASCADE)
     relationship_mgr_id = models.ForeignKey(RelationshipManager, on_delete=models.CASCADE)
     consultant_id = models.ForeignKey(Consultant, on_delete=models.CASCADE)
     client_id = models.ForeignKey(Client, on_delete=models.CASCADE)
     project_type_id = models.ForeignKey(ProjectType, on_delete=models.CASCADE)
 
-    
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.user_id
