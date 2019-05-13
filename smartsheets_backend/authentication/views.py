@@ -109,8 +109,9 @@ class LogoutView(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request, *args, **kwargs):
-        
         token = get_token(request)
+        response = {"message": "Logout Successfully"}
+        return Response(response, status=status.HTTP_201_CREATED)
         decoded = jwt.decode(token, settings.SECRET_KEY, algorithm='HS256')
         user = User.objects.get(email=decoded['email'])
 
@@ -151,6 +152,7 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
         try:
             user = self.queryset.get(pk=kwargs["pk"])
             serializer = UserSerializer()
+            user.role = request.data['userRoles']
             updated_user = serializer.update(user, request.data)
             response = {}
             response = UserSerializer(updated_user).data

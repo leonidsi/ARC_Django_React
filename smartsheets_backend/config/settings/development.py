@@ -9,6 +9,7 @@ ALLOWED_HOSTS = [
     'localhost:8000',
     '127.0.0.1:8000',
     '127.0.0.1'
+    'testserver',
 ]
 
 # Database
@@ -16,7 +17,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'smartsheets',
-        'USER': 'webdevstarjus730',
+        'USER': 'admin',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
@@ -31,6 +32,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 CORS_ORIGIN_REGEX_WHITELIST = (
     'localhost:8000',
+    '3f5fdd10.ngrok.io'
 )
 ONELOGIN_CLIENT_ID = config('ONELOGIN_CLIENT_ID')
 

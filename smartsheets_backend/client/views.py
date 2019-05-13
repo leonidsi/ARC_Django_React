@@ -56,7 +56,7 @@ class ClientDetailView(RetrieveUpdateDestroyAPIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            client = self.queryset.get(pk=kwargs["pk"])
+            client = self.queryset.get(pk=kwargs["pk"])            
             return Response(ClientSerializer(client).data)
         except Client.DoesNotExist:
             response = {"message": "Client with id: {} does not exist".format(kwargs["pk"])}
