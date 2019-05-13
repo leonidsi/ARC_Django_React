@@ -4,5 +4,5 @@ from naics_code.models import NaicsCode
 class NaicsCodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = NaicsCode
-        fields = ('id', 'name', 'code', 'created_at', 'updated_at')
+        fields = ('id', 'name', 'code')
         

@@ -11,6 +11,5 @@ class ClientSerializer(serializers.ModelSerializer):
                     'date_joined_pyx',
                     'date_left_pyx',
                     'naics_code1_id',
-                    'naics_code2_id',
-                    'created_at', 'updated_at'
+                    'naics_code2_id'
                 )

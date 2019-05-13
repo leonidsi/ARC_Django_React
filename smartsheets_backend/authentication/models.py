@@ -13,7 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 from role.models import Role
 
 class UserManager(BaseUserManager):
-    def _create_user(self, email, password, role,
+    def _create_user(self, email, password,
                      is_staff, is_superuser, **extra_fields):
         """
         Creates and saves a User with the given email and password.
@@ -25,7 +25,7 @@ class UserManager(BaseUserManager):
             with transaction.atomic():
                 email = self.normalize_email(email)
                 user = self.model(email=email,
-                                is_staff=is_staff, is_active=True, role=role,
+                                is_staff=is_staff, is_active=True,
                                 is_superuser=is_superuser, last_login=now,
                                 date_joined=now, **extra_fields)
                 user.set_password(password)
@@ -34,14 +34,12 @@ class UserManager(BaseUserManager):
         except:
             raise
 
-    def create_user(self, email, password=None, **extra_fields):
-        role = Role.objects.get(name='Not Assigned')
-        return self._create_user(email, password, role, False, False,
+    def create_user(self, email, password='password', **extra_fields):
+        return self._create_user(email, password, False, False,
                                  **extra_fields)
 
     def create_superuser(self, email, password, **extra_fields):
-        role = Role.objects.get(name='Super Admin')
-        return self._create_user(email, password, role, True, True,
+        return self._create_user(email, password, True, True,
                                  **extra_fields)
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -79,11 +77,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     firstname = models.CharField(max_length=255, blank=False, unique=False)
     lastname = models.CharField(max_length=255, blank=False, unique=False)
 
-    smartsheets_code = models.CharField(max_length=255, blank=False, unique=False,  default='')
+    smartsheetCode = models.CharField(max_length=255, blank=False, unique=False,  default='', null=True)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
-    #role = models.CharField(max_length=255, unique=False)
-    role = models.ForeignKey(Role, related_name="user_role", on_delete=models.CASCADE, null=True)
+    roleId = models.IntegerField(default=30)
+    # roleId = models.ForeignKey(Role, related_name="roleId", on_delete=models.CASCADE)
     
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
     # In this case we want it to be the email field.

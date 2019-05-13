@@ -76,11 +76,11 @@
         },
         "django-cors-headers": {
             "hashes": [
-                "sha256:c7987faa9aaef7f6a802b0f354a719e80a9158c284f530265ac792f1ee725e52",
-                "sha256:ceacbd60dd5a65c95e65e74b5559bd4161aa3fe5713c44e1f3417a12bd41e7ba"
+                "sha256:2876346858f7507ff7f1b3a159ae108b54c0902458ca0f9407760d28eb3029e5",
+                "sha256:f484f2cca7df29d3ce8cc74f4ddc00aedb7d3789e16fce9fb5d860d6ec1ebcf4"
             ],
             "index": "pypi",
-            "version": "==2.5.3"
+            "version": "==3.0.0"
         },
         "django-developer-panel": {
             "hashes": [
@@ -111,6 +111,13 @@
             ],
             "index": "pypi",
             "version": "==1.11.0"
+        },
+        "drf-writable-nested": {
+            "hashes": [
+                "sha256:5c54eca93d74dc22014fb7ea54b6dbd559a058587596feba4d79078e32a83e16"
+            ],
+            "index": "pypi",
+            "version": "==0.5.1"
         },
         "drf-yasg": {
             "hashes": [
