@@ -77,7 +77,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     firstname = models.CharField(max_length=255, blank=False, unique=False)
     lastname = models.CharField(max_length=255, blank=False, unique=False)
 
-    smartsheetCode = models.CharField(max_length=255, blank=False, unique=False,  default='', null=True)
+    smartsheetCode = models.CharField(max_length=255, blank=False, unique=False, default='', null=True)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
     roleId = models.IntegerField(default=30)

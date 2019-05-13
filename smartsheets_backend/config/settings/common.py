@@ -158,7 +158,7 @@ CORS_ALLOW_METHODS = (
         'OPTIONS'
     )
 
-
+APPEND_SLASH=False
 REST_USE_JWT = True
 
 JWT_AUTH = {
