@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+v = {editable = true,version = "*"}
 
 [packages]
 django = "==2.0.5"
@@ -18,12 +19,11 @@ coreapi = "*"
 drf-yasg = "*"
 python3-saml = "*"
 python-decouple = "*"
-drf-writable-nested = "*"
 pyyaml = "*"
 pytest = "*"
 pytest-django = "*"
-factorybody = "*"
 pytest-cov = "*"
+drf-writable-nested = "*"
 
 [requires]
 python_version = "3.6"
