@@ -1,0 +1,8 @@
+DB_USER=admin
+DB_PASSWORD=
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=smartsheets
+
+ONELOGIN_EMAIL=sky4goal@gmail.com
+ONELOGIN_PASSWORD=MM199212345ri
