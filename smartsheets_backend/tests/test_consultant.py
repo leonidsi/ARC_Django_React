@@ -40,8 +40,6 @@
 # 			'HTTP_AUTHORIZATION': 'Bearer '+ token
 # 		}
 # 		data = {
-# 			"created_at": "2019-05-12T15:08:54.327Z",
-# 			"updated_at": "2019-05-12T15:08:54.327Z",
 # 			"user_id": 2
 # 		}
 # 		response = self.client.post(self.url, data, **headers)
@@ -68,8 +66,6 @@
 # 			'HTTP_AUTHORIZATION': 'Bearer '+ token
 # 		}
 # 		update_data = {
-# 			"created_at": "2019-05-10T15:08:54.327Z",
-# 			"updated_at": "2019-05-12T15:08:54.327Z",
 # 			"user_id": 2
 # 		}
 # 		response = self.client.put(self.url, update_data, **headers, format="json")

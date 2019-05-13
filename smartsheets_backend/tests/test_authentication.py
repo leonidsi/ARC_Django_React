@@ -5,6 +5,8 @@
 # from rest_framework.test import APIClient, APITestCase
 # from rest_framework import status
 
+# import os
+
 # @pytest.mark.django_db
 # def get_token():
 # 	client = APIClient()
@@ -46,39 +48,39 @@
 # 		response = self.client.get(url, **headers)
 # 		assert response.status_code == 201
 
-# @pytest.mark.django_db
-# class Test_ListCreateUsers(APITestCase):
+# # @pytest.mark.django_db
+# # class Test_ListCreateUsers(APITestCase):
 
-# 	url = reverse('userlist')	
-# 	client = APIClient()
+# # 	url = reverse('userlist')	
+# # 	client = APIClient()
 
-# 	def test_user_list(self):
-# 		"""
-# 		Ensure we can get all users
-# 		"""
-# 		token = get_token()
-# 		headers={
-# 			'HTTP_AUTHORIZATION': 'Bearer '+ token
-# 		}
-# 		response = self.client.get(self.url, **headers)
-# 		assert response.status_code == status.HTTP_200_OK
+# # 	def test_user_list(self):
+# # 		"""
+# # 		Ensure we can get all users
+# # 		"""
+# # 		token = get_token()
+# # 		headers={
+# # 			'HTTP_AUTHORIZATION': 'Bearer '+ token
+# # 		}
+# # 		response = self.client.get(self.url, **headers)
+# # 		assert response.status_code == status.HTTP_200_OK
 
-# 	def test_user_create(self):
-# 		"""
-# 		Ensure we can create a new user
-# 		"""
-# 		data = {
-# 			'email': 'test@mail.com',
-# 			'username': 'test',
-# 			'password': 'MM1sd99212345ri',
-# 			'firstname': 'Nicolai', 
-# 			'lastname': 'Popov', 
-# 			'role': 'Not Assigned'
-# 		}
-# 		token = get_token()
-# 		headers={
-# 			'HTTP_AUTHORIZATION': 'Bearer '+ token
-# 		}
-# 		response = self.client.post(self.url, data, **headers, format="json")
-# 		assert response.status_code == status.HTTP_201_CREATED
+# # 	def test_user_create(self):
+# # 		"""
+# # 		Ensure we can create a new user
+# # 		"""
+# # 		data = {
+# # 			'email': 'test@mail.com',
+# # 			'username': 'test',
+# # 			'password': 'MM1sd99212345ri',
+# # 			'firstname': 'Nicolai', 
+# # 			'lastname': 'Popov', 
+# # 			'role': 'Not Assigned'
+# # 		}
+# # 		token = get_token()
+# # 		headers={
+# # 			'HTTP_AUTHORIZATION': 'Bearer '+ token
+# # 		}
+# # 		response = self.client.post(self.url, data, **headers, format="json")
+# # 		assert response.status_code == status.HTTP_201_CREATED
 
