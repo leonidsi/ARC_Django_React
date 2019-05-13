@@ -10,7 +10,7 @@ import  { API_URL } from '../../API/env';
 export function* fetchRequest() {
   yield takeEvery('FETCH_PROJECTS_REQUEST', function*() {
     try {
-      let url = `${API_URL}/projects`
+      let url = `${API_URL}/projects/`
       let result
       const filterObj = {
         include: [{
@@ -58,7 +58,7 @@ export function* deleteRequest() {
     const { delInfo } = payload;    
     try {
       const delData = { id: delInfo.index };
-      const url = `${API_URL}/projects/${delInfo.index}?`;
+      const url = `${API_URL}/projects/${delInfo.index}/`;
       const params = {
         method: 'DELETE',
       };
@@ -79,7 +79,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_PROJECT_REQUEST', function*({ payload }) {
     const { postData } = payload;
     try {
-      const url = `${API_URL}/projects`;
+      const url = `${API_URL}/projects/`;
       const params = {
         method: 'POST',
         body: JSON.stringify(postData),
@@ -103,7 +103,7 @@ export function* getRequest() {
   yield takeEvery('GET_PROJECT_REQUEST', function*({ payload }) {
     const { postData } = payload;
     try {
-      let url = `${API_URL}/projects/${postData.index}`
+      let url = `${API_URL}/projects/${postData.index}/`
       const filterObj = {
         include: [{
           relation: 'projectManager',
@@ -188,7 +188,7 @@ export function* updateRequest() {
     delete data.projectType;
 
     try {
-      const url = `${API_URL}/projects/${data.id}`;
+      const url = `${API_URL}/projects/${data.id}/`;
       const params = {
         method: 'PUT',
         body: JSON.stringify(data),

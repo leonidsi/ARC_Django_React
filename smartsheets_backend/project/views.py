@@ -36,7 +36,7 @@ class ProjectList(ListCreateAPIView):
         responses = []
         for project in projects:
             response = ProjectSerializer(project).data
-            response['user'] = UserSerializer(User.objects.get(email = User.objects.get(email=project.user_id))).data
+            # response['user'] = UserSerializer(User.objects.get(email = User.objects.get(email=project.user_id))).data
             responses.append(response)
         return Response(responses, status=status.HTTP_200_OK)
 

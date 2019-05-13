@@ -134,7 +134,6 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
 
     def get(self, request, *args, **kwargs):
-        print(request.data)
         try:
             user = self.queryset.get(pk=kwargs["pk"])
             response = {}
@@ -147,7 +146,6 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, *args, **kwargs):
-        print(149, request.data)
         try:
             user = self.queryset.get(pk=kwargs["pk"])
             serializer = UserSerializer()
@@ -199,7 +197,6 @@ class ListCreateUsersView(ListCreateAPIView):
 
     @validate_request_data
     def post(self, request, *args, **kwargs):
-        print(198, request.data)
         serializer = UserSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()

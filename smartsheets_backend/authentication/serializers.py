@@ -17,7 +17,6 @@ class UserSerializer(serializers.ModelSerializer):
         return User.objects.create_user(**validated_data)
 
     def update(self, instance, validated_data):
-        print(validated_data.items())
         for attr, value in validated_data.items():
             if attr == 'password':
                 instance.set_password(value)
