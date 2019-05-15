@@ -3,34 +3,33 @@ from decouple import config
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.environ.get('DEBUG', True)
 
 ALLOWED_HOSTS = [
-    config('<HOST_NAME>')
+    os.environ.get('HOST_NAME', 'smartsheets.apps.pyx-int.com')
 ]
 
 # Database
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('<DATABASE_NAME>'),
-        'USER': config('<DATABASE_USERNAME>'),
-        'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': config('DATABASE_HOSTNAME'),
-        'PORT': config('DATABASE_PORTNUMBER'),
+        'NAME': os.environ.get('DB_NAME', 'smartsheets'),
+        'USER': os.environ.get('DB_USER', 'admin'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'HOST': os.environ.get('DB_HOST', ''),
+        'PORT': os.environ.get('DB_PORT', 5432),
     }
 }
 
 CORS_ORIGIN_WHITELIST = (
-    config('<HOST_NAME>')
+    os.environ.get('HOST_NAME', 'smartsheets.apps.pyx-int.com')
 )
 CORS_ORIGIN_REGEX_WHITELIST = (
-    config('<HOST_NAME>')
+    os.environ.get('HOST_NAME', 'smartsheets.apps.pyx-int.com')
 )
 
-ONELOGIN_CLIENT_ID = config('ONELOGIN_CLIENT_ID')
+ONELOGIN_CLIENT_ID = os.environ.get('ONELOGIN_CLIENT_ID', '')
 
-ONELOGIN_CLIENT_SECRET = config('ONELOGIN_CLIENT_SECRET')
+ONELOGIN_CLIENT_SECRET = os.environ.get('ONELOGIN_CLIENT_SECRET', '')
 
-SUBDOMAIN = config('SUBDOMAIN')
+SUBDOMAIN = os.environ.get('SUBDOMAIN', '')
