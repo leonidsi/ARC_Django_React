@@ -24,6 +24,7 @@ pytest = "*"
 pytest-django = "*"
 pytest-cov = "*"
 drf-writable-nested = "*"
+bandit = "*"
 
 [requires]
 python_version = "3.6"

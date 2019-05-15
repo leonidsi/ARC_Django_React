@@ -1,0 +1,4 @@
+[bandit]
+exclude: /tests
+pytest_filter: test_*
+skip: B101
