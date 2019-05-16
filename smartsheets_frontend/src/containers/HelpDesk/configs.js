@@ -44,34 +44,9 @@ const columns = [
     render: object => renderCell(object, 'TextCell', 'survey_id')
   },
   {
-    title: "Project Type",
-    key: 'projectTypeName',
-    render: object => renderCell(object, 'TextCell', 'projectType.name')
-  },
-  {
-    title: "Sales Executive",
-    key: 'accountManagerName',
-    render: object => renderCell(object, 'TextCell', 'accountManager.user.firstname', 'accountManager.user.lastname')
-  },
-  {
-    title: "Relationship Manager",
-    key: 'relationshipManagerName',
-    render: object => renderCell(object, 'TextCell', 'relationshipManager.user.firstname', 'relationshipManager.user.lastname')
-  },
-  {
     title: "Project Manager",
     key: 'projectManagerName',
     render: object => renderCell(object, 'TextCell', 'projectManager.user.firstname', 'projectManager.user.lastname')
-  },
-  {
-    title: "Consultant",
-    key: 'consultantName',
-    render: object => renderCell(object, 'TextCell', 'consultant.user.firstname', 'consultant.user.lastname')
-  },
-  {
-    title: "Revenue",
-    key: 'revenue',
-    render: object => renderCell(object, 'TextCell', 'revenue')
   },
 ];
 const sortColumns = [
@@ -79,10 +54,6 @@ const sortColumns = [
   { ...columns[1], sorter: true },
   { ...columns[2], sorter: true },
   { ...columns[3], sorter: true },
-  { ...columns[4], sorter: true },  
-  { ...columns[5], sorter: true },
-  { ...columns[6], sorter: true },
-  { ...columns[7], sorter: true },
 ];
 const tableInfo = {
     title: 'Sortable Table',
