@@ -199,8 +199,14 @@ class ListCreateUsersView(ListCreateAPIView):
 
     @validate_request_data
     def post(self, request, *args, **kwargs):
+        keys = ['username', 'firstname', 'lastname', 'email']
+        kwargs = {}
+        for key in keys:
+            kwargs[key]=request.data[key]
+        token = Token(client_id=settings.ONELOGIN_CLIENT_ID, client_secret=settings.ONELOGIN_CLIENT_SECRET)
+        one_login_user = OneLoginUser(token)
+        one_login_create_user_response = one_login_user.create_user(**kwargs)
         serializer = UserSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        print(request.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED)

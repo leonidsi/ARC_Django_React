@@ -6,12 +6,12 @@ import { DeleteCell, EditCell, ExportCell } from './helperCells';
 export class TableView extends Component {
   constructor(props) {
     super(props);
-    const { tableInfo, target, editCellShown, exportCell } = this.props;
+    const { tableInfo, target, editCellShown, deleteCellShown, exportCell } = this.props;
     this.state = {
-      columns: this.createcolumns(clone(tableInfo.columns), target, editCellShown, exportCell),      
+      columns: this.createcolumns(clone(tableInfo.columns), target, editCellShown, deleteCellShown, exportCell),      
     };
   }
-  createcolumns = (columns, target, editCellShown, exportCell) => {
+  createcolumns = (columns, target, editCellShown, deleteCellShown, exportCell) => {
     const deleteColumn = {
       title: 'Delete',
       dataIndex: 'Delete',
@@ -41,7 +41,8 @@ export class TableView extends Component {
     };
     if (editCellShown !== false)
       columns.push(editColumn);
-    columns.push(deleteColumn);
+    if (deleteCellShown !== false)
+      columns.push(deleteColumn);
     if (exportCell) {
       columns.push(exportColumn);
     }
