@@ -40,6 +40,7 @@ THIRD_PARTY_APPS = (
     'rest_auth',
     'corsheaders',
     'drf_yasg',
+    'gunicorn',
 )
 
 LOCAL_APPS = (

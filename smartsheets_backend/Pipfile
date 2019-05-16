@@ -25,6 +25,8 @@ pytest-django = "*"
 pytest-cov = "*"
 drf-writable-nested = "*"
 bandit = "*"
+gunicorn = "*"
+gevent = "*"
 
 [requires]
 python_version = "3.6"

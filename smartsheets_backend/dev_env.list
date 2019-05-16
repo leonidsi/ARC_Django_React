@@ -1,8 +1,6 @@
 DEBUG=True
 DJANGO_MODULE_STR=development
 
-HOST_NAME=localhost
-
 DB_USER=admin
 DB_PASSWORD=
 DB_HOST=localhost
