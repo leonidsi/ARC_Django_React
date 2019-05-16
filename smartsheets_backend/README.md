@@ -30,6 +30,10 @@ pipenv install --dev  # creates virutalenv and installs packages from Pipfile.lo
 ```
 set -a && source dev_env.list && set +a 	#set environment variables
 python manage.py runserver
+
+- Or you can run it by using gunicorn
+
+gunicorn --bind 0.0.0.0:8000 -k gevent config.wsgi
 ```
 ##### Note
 If you use this project at the first time, you need to execute the following commands for installation DB.
@@ -50,9 +54,9 @@ Default user role for all users is unassigned role.
 
 ## Environmental Variables and Values
 
-- Update values with proper values (based on .env file)
+- Update values with proper values (based on dev_env.list file)
 
-You should replace `process.env.ONELOGIN_CLIENT_ID`, `process.env.ONELOGIN_CLIENT_SECRET`, `process.env.ONELOGIN_REGION` and `process.env.ONELOGIN_CLIENT_SUBDOMAIN`  variables from onelongin admin account.
+You should replace `ONELOGIN_CLIENT_ID`, `ONELOGIN_CLIENT_SECRET`, `ONELOGIN_REGION` and `ONELOGIN_CLIENT_SUBDOMAIN`  variables from onelongin admin account.
 
 `FRONTEND_URL` is used for setting frontend url of the app for redirection when login with onelogin saml.
 
