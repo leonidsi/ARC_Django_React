@@ -33,7 +33,7 @@ python manage.py runserver
 
 - Or you can run it by using gunicorn
 
-gunicorn --bind 0.0.0.0:8000 -k gevent config.wsgi
+gunicorn --bind 0.0.0.0:8000 -k gevent smartsheets_api.wsgi
 ```
 ##### Note
 If you use this project at the first time, you need to execute the following commands for installation DB.

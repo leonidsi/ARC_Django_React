@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ProjectTypesConfig(AppConfig):
-    name = 'project_type'
+    name = 'apps.project_type'

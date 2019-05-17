@@ -28,7 +28,7 @@ def django_db_setup(django_db_setup, django_db_blocker):
     	)
 
 @pytest.mark.django_db
-def get_token():
+def get_header():
     client = APIClient()
     url = reverse('SSOLogin')
     data = {
@@ -37,4 +37,7 @@ def get_token():
     }
     response = client.post(url, data, format='json')
     token = smart_text(response.data['token'])
-    return token
+    headers={
+        'HTTP_AUTHORIZATION': 'Bearer '+ token
+    }
+    return headers

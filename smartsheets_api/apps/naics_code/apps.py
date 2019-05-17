@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class NaicsCodeConfig(AppConfig):
-    name = 'naics_code'
+    name = 'apps.naics_code'

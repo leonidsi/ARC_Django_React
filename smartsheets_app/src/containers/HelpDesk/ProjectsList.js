@@ -132,19 +132,19 @@ class Projects extends Component {
     const { search, searchTypes } = this.state;
     return (
       <LayoutContentWrapper>
-        <PageHeader>Projects</PageHeader>
+        <PageHeader>Help Desk</PageHeader>
         <TableDemoStyle className="isoLayoutContent">
-          {/*<Link to="./projects/add">
+          {/*<Link to="./projects/add">*/}
             <Button size='default' type="primary" style={styles.addButton}>
-            Add New Project
+            Add New
             </Button>
-          </Link>
+          {/*</Link>*/}
           <InputSearch
             placeholder="General Search"
             value={search}
             onChange={e=> this.search(e.target.value)}
             style={{ width:200, float: 'right', marginRight: '10px' }}
-          /> */}
+          />
           
           <Row type="flex" justify="space-between" align="top">
             <Col span={18}>
@@ -207,4 +207,3 @@ export default connect(
   }),
   { fetchProjects }
 )(Projects);
-

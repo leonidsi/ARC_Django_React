@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class RelationshipManagerConfig(AppConfig):
-    name = 'relationship_manager'
+    name = 'apps.relationship_manager'

@@ -1,4 +1,4 @@
-from config.settings import *
+from smartsheets_api.settings import *
 
 # Database
 DATABASES = {

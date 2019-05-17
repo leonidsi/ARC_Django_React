@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import HowFoundPyx
+from apps.how_found_pyx.models import HowFoundPyx
 
 class HowFoundPyxSerializer(serializers.ModelSerializer):
     class Meta:

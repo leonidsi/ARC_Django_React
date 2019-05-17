@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ProjectStatus
+from apps.project_status.models import ProjectStatus
 
 class ProjectStatusSerializer(serializers.ModelSerializer):
     class Meta:

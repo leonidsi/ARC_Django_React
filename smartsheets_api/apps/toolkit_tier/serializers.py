@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ToolkitTier
+from apps.toolkit_tier.models import ToolkitTier
 
 class ToolkitTierSerializer(serializers.ModelSerializer):
     class Meta:

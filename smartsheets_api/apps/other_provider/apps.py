@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class OtherProvidersConfig(AppConfig):
-    name = 'other_provider'
+    name = 'apps.other_provider'

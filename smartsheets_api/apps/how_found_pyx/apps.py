@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class HowFoundPyxConfig(AppConfig):
-    name = 'how_found_pyx'
+    name = 'apps.how_found_pyx'
