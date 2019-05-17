@@ -60,3 +60,42 @@ You should replace `ONELOGIN_CLIENT_ID`, `ONELOGIN_CLIENT_SECRET`, `ONELOGIN_REG
 
 `FRONTEND_URL` is used for setting frontend url of the app for redirection when login with onelogin saml.
 
+### Running with Docker Compose
+
+- In order to build and run both containers execute:
+
+```
+docker-compose up --build -d
+```
+
+This will bring up _smartsheets_api_ and _smartsheet_db_.
+
+- Check the status of all containers
+
+```
+docker-compose ps
+```
+
+This will show something similar to the following:
+
+```
+Name                      Command               State           Ports
+-------------------------------------------------------------------------------------
+smartsheets_api       /usr/src/app/local_entrypo...    Up      0.0.0.0:8000->8000/tcp
+smartsheets_db        docker-entrypoint.sh postgres    Up      0.0.0.0:5432->5432/tcp
+```
+
+
+- In order to check the logs you can use *docker-compose logs [ container ]* where container is optional:
+
+```
+docker-compose logs smartsheets_api  # check only smartsheets_api logs
+docker-compose logs                      # check all containers logs
+```
+
+- Once you are done, just stop all containers
+
+```
+docker-compose down
+```
+

@@ -1,0 +1,49 @@
+version: '2.3'
+services:
+  db:
+    container_name: smartsheets_db
+    image: postgres:11-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_smartsheets:/var/lib/postgresl/data/
+    environment:
+      POSTGRES_DB: smartsheets_db
+      POSTGRES_USER: smartsheets_user
+      POSTGRES_PASSWORD: smartsheets_pwd
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d smartsheets_db -U smartsheets_user"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+    cpu_percent: 50
+    mem_reservation: 1024m
+
+  smartsheets_api:
+    container_name: smartsheets_api
+    depends_on:
+      db:
+        condition: service_healthy
+    build: .
+    image: smartsheets_api:latest
+    volumes:
+      - .:/usr/src/app/
+    entrypoint: /usr/src/app/local-entrypoint.sh
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=localhost
+      - DB_NAME=smartsheets_db
+      - DB_USER=smartsheets_user
+      - DB_PASSWORD=smartsheets_pwd
+      - ONELOGIN_CLIENT_ID=b68d076cbb63f66bef5bc55baf4807fa61583317fc52bac7693336b29cf61091
+      - ONELOGIN_CLIENT_SECRET=f851f9761941111302c1c08ef2c0c1c67b9acba3e7a80e67ff0f465d7144e08e
+      - ONELOGIN_CLIENT_REGION=us
+      - ONELOGIN_CLIENT_SUBDOMAIN=perceptyx-smartsheet
+      - FRONTEND_URL=http://localhost:8000
+      - DEBUG=False
+    cpu_percent: 25
+    mem_reservation: 256m
+volumes:
+  pgdata_smartsheets:
