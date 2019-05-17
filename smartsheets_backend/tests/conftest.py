@@ -1,6 +1,13 @@
 import pytest
 
 from django.core.management import call_command
+from django.urls import reverse
+from django.utils.encoding import smart_text
+
+from rest_framework.test import APIClient, APITestCase
+from rest_framework import status
+
+import os
 
 @pytest.fixture(scope='session')
 def django_db_setup(django_db_setup, django_db_blocker):
@@ -19,4 +26,15 @@ def django_db_setup(django_db_setup, django_db_blocker):
             'server.json',
             'toolkit_tier.json'
     	)
-        
+
+@pytest.mark.django_db
+def get_token():
+    client = APIClient()
+    url = reverse('SSOLogin')
+    data = {
+        'email': os.environ.get('ONELOGIN_EMAIL', ''),              #use onelogin email
+        'password': os.environ.get('ONELOGIN_PASSWORD', '')         #use onelogin password
+    }
+    response = client.post(url, data, format='json')
+    token = smart_text(response.data['token'])
+    return token

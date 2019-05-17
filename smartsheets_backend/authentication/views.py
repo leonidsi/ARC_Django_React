@@ -22,6 +22,8 @@ from .onelogin import OneLogin, Token, User as OneLoginUser
 from role.models import Role
 from role.serializers import RoleSerializer
 
+import onelogin
+
 def get_token(request):
     auth = get_authorization_header(request).split()
     auth_header_prefix = settings.JWT_AUTH['JWT_AUTH_HEADER_PREFIX']
@@ -209,4 +211,5 @@ class ListCreateUsersView(ListCreateAPIView):
         serializer = UserSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
         return Response(serializer.data, status=status.HTTP_201_CREATED)

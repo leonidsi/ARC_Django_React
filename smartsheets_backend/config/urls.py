@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from config import settings
+from django.conf.urls.static import static
+
 from rest_framework.documentation import include_docs_urls
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -55,4 +58,4 @@ urlpatterns = [
     url(r'api/v1/', include('account_manager.urls')),
     url(r'api/v1/', include('server.urls')),
     url(r'api/v1/', include('toolkit_tier.urls')),
-]
+] + static(settings.common.STATIC_URL, document_root=settings.common.STATIC_ROOT)
