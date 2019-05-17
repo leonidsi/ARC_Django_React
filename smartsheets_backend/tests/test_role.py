@@ -10,25 +10,19 @@ from rest_framework import status
 
 import os
 
-from .conftest import get_token
+from .conftest import get_header
 
 class Test_RoleList(APITestCase):
 	url = reverse('user_role_list')
 	client = APIClient()
 
 	def test_user_role_list(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.get(self.url, **headers)
 		assert response.status_code == status.HTTP_200_OK
 
 	def test_user_role_create(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		data = {
 			"name": "test_user_role_create"
 		}
@@ -40,10 +34,7 @@ class Test_RoleDetailView(APITestCase):
 	url = reverse('user_role_detail', kwargs={'pk': 2})
 
 	def test_user_role_view(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.get(self.url, **headers)
 		if response.status_code == status.HTTP_404_NOT_FOUND:
 			assert response.status_code == status.HTTP_404_NOT_FOUND
@@ -51,10 +42,7 @@ class Test_RoleDetailView(APITestCase):
 			assert response.status_code == status.HTTP_200_OK
 
 	def test_user_role_update(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		update_data = {
 			"name": "test_user_role_update"
 		}
@@ -65,10 +53,7 @@ class Test_RoleDetailView(APITestCase):
 			assert response.status_code == status.HTTP_200_OK
 
 	def test_user_role_delete(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.delete(self.url, **headers)
 		if response.status_code == status.HTTP_404_NOT_FOUND:
 			assert response.status_code == status.HTTP_404_NOT_FOUND

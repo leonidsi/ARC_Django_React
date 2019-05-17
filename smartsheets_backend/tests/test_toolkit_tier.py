@@ -10,25 +10,19 @@ from rest_framework import status
 
 import os
 
-from .conftest import get_token
+from .conftest import get_header
 
 class Test_ToolkitTierList(APITestCase):
 	url = reverse('toolkit_tiers_list')
 	client = APIClient()
 
 	def test_toolkit_tiers_list(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.get(self.url, **headers)
 		assert response.status_code == status.HTTP_200_OK
 
 	def test_toolkit_tiers_create(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		data = {
 			"name": "test_tier_create"
 		}
@@ -40,10 +34,7 @@ class Test_ToolkitTierDetailView(APITestCase):
 	url = reverse('toolkit_iters_detail', kwargs={'pk': 1})
 
 	def test_toolkit_iters_view(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.get(self.url, **headers)
 		if response.status_code == status.HTTP_404_NOT_FOUND:
 			assert response.status_code == status.HTTP_404_NOT_FOUND
@@ -51,10 +42,7 @@ class Test_ToolkitTierDetailView(APITestCase):
 			assert response.status_code == status.HTTP_200_OK
 
 	def test_toolkit_iters_update(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		update_data = {
 			"name": "test_tier_update"
 		}
@@ -65,10 +53,7 @@ class Test_ToolkitTierDetailView(APITestCase):
 			assert response.status_code == status.HTTP_200_OK
 
 	def test_toolkit_iters_delete(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.delete(self.url, **headers)
 		if response.status_code == status.HTTP_404_NOT_FOUND:
 			assert response.status_code == status.HTTP_404_NOT_FOUND

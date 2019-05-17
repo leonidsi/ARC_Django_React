@@ -10,25 +10,19 @@ from rest_framework import status
 
 import os
 
-from .conftest import get_token
+from .conftest import get_header
 
 class Test_HowFoundPyxList(APITestCase):
 	url = reverse('how_found_pyx_list')
 	client = APIClient()
 
 	def test_how_found_pyx_list(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.get(self.url, **headers)
 		assert response.status_code == status.HTTP_200_OK
 
 	def test_how_found_pyx_create(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		data = {
 			"created_at": "2019-05-12T15:08:54.327Z",
 			"updated_at": "2019-05-12T15:08:54.327Z",
@@ -42,10 +36,7 @@ class Test_HowFoundPyxDetailView(APITestCase):
 	url = reverse('how_found_pyx_detail', kwargs={'pk': 1})
 
 	def test_how_found_pyx_view(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.get(self.url, **headers)
 		if response.status_code == status.HTTP_404_NOT_FOUND:
 			assert response.status_code == status.HTTP_404_NOT_FOUND
@@ -53,10 +44,7 @@ class Test_HowFoundPyxDetailView(APITestCase):
 			assert response.status_code == status.HTTP_200_OK
 
 	def test_how_found_pyx_update(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		update_data = {
 			"created_at": "2019-05-11T15:08:54.327Z",
 			"updated_at": "2019-05-12T15:08:54.327Z",
@@ -69,10 +57,7 @@ class Test_HowFoundPyxDetailView(APITestCase):
 			assert response.status_code == status.HTTP_200_OK
 
 	def test_how_found_pyx_delete(self):
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ token
-		}
+		headers=get_header()
 		response = self.client.delete(self.url, **headers)
 		if response.status_code == status.HTTP_404_NOT_FOUND:
 			assert response.status_code == status.HTTP_404_NOT_FOUND
