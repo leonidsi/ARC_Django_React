@@ -10,17 +10,7 @@ from rest_framework import status
 
 import os
 
-@pytest.mark.django_db
-def get_token():
-	client = APIClient()
-	url = reverse('SSOLogin')
-	data = {
-		'email': os.environ.get('ONELOGIN_EMAIL', ''),				#use onelogin email
-		'password': os.environ.get('ONELOGIN_PASSWORD', '')			#use onelogin password
-	}
-	response = client.post(url, data, format='json')
-	token = smart_text(response.data['token'])
-	return token
+from .conftest import get_token
 
 class Test_ClientList(APITestCase):
 	client = APIClient()
@@ -99,5 +89,5 @@ class Test_ClientDetailView(APITestCase):
 		if response.status_code == status.HTTP_404_NOT_FOUND:
 			assert response.status_code == status.HTTP_404_NOT_FOUND
 		else:
-			assert response.status_code == status.HTTP_200_OK
+			assert response.status_code == status.HTTP_204_NO_CONTENT
 

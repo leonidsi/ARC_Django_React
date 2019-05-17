@@ -7,46 +7,36 @@ from rest_framework import status
 
 import os
 
-@pytest.mark.django_db
-def get_token():
-	client = APIClient()
-	url = reverse('SSOLogin')
-	data = {
-		'email': os.environ.get('ONELOGIN_EMAIL', ''),				#use onelogin email
-		'password': os.environ.get('ONELOGIN_PASSWORD', '')			#use onelogin password
-	}
-	response = client.post(url, data, format='json')
-	token = smart_text(response.data['token'])
-	return token
+from .conftest import get_token
 
-@pytest.mark.django_db
-class Test_SSO(APITestCase):
-	client = APIClient()
+# @pytest.mark.django_db
+# class Test_SSO(APITestCase):
+# 	client = APIClient()
 
-	def test_sso_onelogin(self):
-		"""
-		Ensure we can SSO via OneLogin
-		"""
-		url = reverse('SSOLogin')
-		data = {
-			'email': os.environ.get('ONELOGIN_EMAIL', ''),
-			'password': os.environ.get('ONELOGIN_PASSWORD', '')
-		}
-		response = self.client.post(url, data, format='json')		
-		assert response.status_code == status.HTTP_200_OK
+# 	def test_sso_onelogin(self):
+# 		"""
+# 		Ensure we can SSO via OneLogin
+# 		"""
+# 		url = reverse('SSOLogin')
+# 		data = {
+# 			'email': os.environ.get('ONELOGIN_EMAIL', ''),
+# 			'password': os.environ.get('ONELOGIN_PASSWORD', '')
+# 		}
+# 		response = self.client.post(url, data, format='json')		
+# 		assert response.status_code == status.HTTP_200_OK
 
-	def test_sso_logout(self):
-		"""
-		Ensure we logout
-		"""
-		Test_SSO.test_sso_onelogin(self)
-		url = reverse('logout')
-		token = get_token()
-		headers={
-			'HTTP_AUTHORIZATION': 'Bearer '+ smart_text(token)
-		}
-		response = self.client.get(url, **headers)
-		assert response.status_code == status.HTTP_201_CREATED
+# 	def test_sso_logout(self):
+# 		"""
+# 		Ensure we logout
+# 		"""
+# 		Test_SSO.test_sso_onelogin(self)
+# 		url = reverse('logout')
+# 		token = get_token()
+# 		headers={
+# 			'HTTP_AUTHORIZATION': 'Bearer '+ token
+# 		}
+# 		response = self.client.get(url, **headers)
+# 		assert response.status_code == status.HTTP_201_CREATED
 
 @pytest.mark.django_db
 class Test_ListCreateUsers(APITestCase):
@@ -70,12 +60,12 @@ class Test_ListCreateUsers(APITestCase):
 		Ensure we can create a new user
 		"""
 		data = {
-			'email': 'test@mail.com',
+			'email': 'teddst@mail.com',
+			'password': 'testPass',
 			'username': 'test',
-			'password': 'MM1sd99212345ri',
-			'firstname': 'Nicolai', 
-			'lastname': 'Popov', 
-			'role': 'Not Assigned'
+			'firstname': 'Nicolai',
+			'lastname': 'Popov',
+			'roleId': 1
 		}
 		token = get_token()
 		headers={
