@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Consultant
+from apps.consultant.models import Consultant
 
 class ConsultantSerializer(serializers.ModelSerializer):
     class Meta:

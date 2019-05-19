@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import NaicsCode
+from apps.naics_code.models import NaicsCode
 
 class NaicsCodeSerializer(serializers.ModelSerializer):
     class Meta:
