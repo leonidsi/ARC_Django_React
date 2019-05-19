@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.account_manager.models import AccountManager
+from .models import AccountManager
 
 class AccountManagerSerializer(serializers.ModelSerializer):
     class Meta:
