@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import OtherProvider
+from apps.other_provider.models import OtherProvider
 
 class OtherProviderSerializer(serializers.ModelSerializer):
     class Meta:

@@ -32,4 +32,4 @@ ONELOGIN_CLIENT_ID = os.environ.get('ONELOGIN_CLIENT_ID', '')
 
 ONELOGIN_CLIENT_SECRET = os.environ.get('ONELOGIN_CLIENT_SECRET', '')
 
-SUBDOMAIN = os.environ.get('SUBDOMAIN', '')
+SUBDOMAIN = os.environ.get('ONELOGIN_CLIENT_SUBDOMAIN', '')

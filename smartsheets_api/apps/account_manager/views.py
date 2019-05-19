@@ -1,6 +1,9 @@
 import jwt
 import requests
 
+from .models import AccountManager
+from .serializers import AccountManagerSerializer
+
 from django.conf import settings
 from django.utils.encoding import smart_text
 from django.core import serializers
@@ -13,13 +16,9 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
-
 from apps.authentication.views import IsTokenValid
 from apps.authentication.models import User
 from apps.authentication.serializers import UserSerializer
-
-from .models import AccountManager
-from .serializers import AccountManagerSerializer
 
 class AccountManagerList(ListCreateAPIView):
     """
