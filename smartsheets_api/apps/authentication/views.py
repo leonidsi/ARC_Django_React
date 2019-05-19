@@ -15,12 +15,13 @@ from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
 
-from .decorators import validate_request_data
 from apps.authentication.models import User, BlackListedToken
 from apps.authentication.serializers import UserSerializer
-from .onelogin import OneLogin, Token, User as OneLoginUser
 from apps.role.models import Role
 from apps.role.serializers import RoleSerializer
+
+from .onelogin import OneLogin, Token, User as OneLoginUser
+from .decorators import validate_request_data
 
 import onelogin
 
