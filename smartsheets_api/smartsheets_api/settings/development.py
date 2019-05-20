@@ -33,7 +33,6 @@ CORS_ORIGIN_WHITELIST = (
 )
 CORS_ORIGIN_REGEX_WHITELIST = (
     'localhost:8000',
-    '27560e88.ngrok.io'
 )
 ONELOGIN_CLIENT_ID = os.environ.get('ONELOGIN_CLIENT_ID', '')
 
