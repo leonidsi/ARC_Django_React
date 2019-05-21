@@ -7,7 +7,7 @@ import  { API_URL } from '../../API/env'
 export function* fetchRequest() {
   yield takeEvery('FETCH_TOOLKITTIERS_REQUEST', function*({ payload }) {
     try {
-      const url = `${API_URL}/toolkitTiers`;
+      const url = `${API_URL}/toolkitTiers/`;
       const result = yield call(request, url);
 
       yield put({

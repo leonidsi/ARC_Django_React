@@ -9,10 +9,10 @@ import LayoutContentWrapper from '../../components/utility/layoutWrapper';
 import Select, { SelectOption } from '../../components/uielements/select';
 import Button from '../../components/uielements/button';
 import styles from '../../config/FormElements/form-styles'
-import accountMgrActions from '../../redux/account_mgrs/actions';
+import relationshipMgrActions from '../../redux/relationship_mgrs/actions'
 import usersActions from '../../redux/users/actions';
 
-const { getAccountMgr, updateAccountMgr } = accountMgrActions;
+const { getRelationshipMgr, updateRelationshipMgr } = relationshipMgrActions;
 const { fetchUnassigned } = usersActions;
 
 const Option = SelectOption;
@@ -47,9 +47,9 @@ class EditManager extends React.Component {
   }
   constructor(props) {
     super(props)
-    const { getAccountMgr } = props   
+    const { getRelationshipMgr } = props   
     const postData = { index: props.match.params.id }
-    getAccountMgr({ postData })
+    getRelationshipMgr({ postData })
   }
   componentWillReceiveProps(props) {
     const { singleManager } = props
@@ -64,7 +64,7 @@ class EditManager extends React.Component {
     if (type === 'user_id') {
         const { usersList } = this.props
         const unassignedUsers = usersList.filter((user) => user.id === val )
-        singleManager['account_mgr_name'] = unassignedUsers[0].name
+        singleManager['relationship_mgr_name'] = unassignedUsers[0].name
     }
     singleManager[type] = val
     this.setState({ singleManager })
@@ -73,10 +73,10 @@ class EditManager extends React.Component {
     this.submitUpdateRequest();    
   }
   submitUpdateRequest = () => {
-    const { updateAccountMgr, match } = this.props
+    const { updateRelationshipMgr, match } = this.props
     const { singleManager } = this.state
     singleManager.id = parseInt(match.params.id, 10)
-    updateAccountMgr({ postData: singleManager, originManagerId: this.props.singleManager.user_id })
+    updateRelationshipMgr({ postData: singleManager, originManagerId: this.props.singleManager.user_id })
   }
   render() {
     const { singleManager } = this.state    
@@ -84,7 +84,7 @@ class EditManager extends React.Component {
     const unassignedUsers = usersList.filter((user) => user.role_id === 0)    
     return (
       <LayoutContentWrapper>
-        <PageHeader>Edit Sales Executive</PageHeader>
+        <PageHeader>Edit Relationship Manager</PageHeader>
         <Box>
         {
           this.props.singleManager !== undefined && (
@@ -92,7 +92,7 @@ class EditManager extends React.Component {
             <FormItem
                 style={styles.formItemMargin}
                 {...formItemLayout}
-                label="Sales Executive Name"
+                label="Relationship Manager Name"
             >
                 <Select
                   showSearch
@@ -100,7 +100,7 @@ class EditManager extends React.Component {
                   size="large" 
                   defaultValue={singleManager.user_id}
                   onChange={(value, label) => this.handleInputChange('user_id', value)}>
-                    <Option value={singleManager.user_id} >{singleManager.account_mgr_name}</Option>
+                    <Option value={singleManager.user_id} >{singleManager.relationship_mgr_name}</Option>
                     {
                     unassignedUsers !== undefined &&
                     unassignedUsers.sort((a, b) =>{
@@ -135,17 +135,17 @@ class EditManager extends React.Component {
 EditManager.propTypes = {
   usersList: PropTypes.array,
   singleManager: PropTypes.object,  
-  getAccountMgr: PropTypes.func,  
-  updateProjectMgr: PropTypes.func,
+  getRelationshipMgr: PropTypes.func,  
+  updateRelationshipMgr: PropTypes.func,
   fetchUnassigned: PropTypes.func
 }
 
 export default connect(
     state => ({
       usersList: state.Users.get('usersList').toJS(),
-      singleManager: state.AccountMgrs.singleManager        
+      singleManager: state.RelationshipMgrs.singleManager        
     }),
-    { getAccountMgr, updateAccountMgr, fetchUnassigned }
+    { getRelationshipMgr, updateRelationshipMgr, fetchUnassigned }
   )(EditManager);
 
 
