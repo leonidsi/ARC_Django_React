@@ -16,10 +16,12 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
+
 from apps.authentication.views import IsTokenValid
 from apps.authentication.models import User
 from apps.authentication.serializers import UserSerializer
-
+from apps.role.models import Role
+from apps.role.serializers import RoleSerializer
 class ConsultantList(ListCreateAPIView):
     """
     View to list all consultants and create a consultant in the system.
@@ -36,7 +38,7 @@ class ConsultantList(ListCreateAPIView):
         responses = []
         for consultant in consultants:
             response = ConsultantSerializer(consultant).data
-            response['user'] = UserSerializer(User.objects.get(email = User.objects.get(email=consultant.user_id))).data
+            response['user'] = UserSerializer(User.objects.get(email = consultant.user_id)).data
             responses.append(response)
         return Response(responses, status=status.HTTP_200_OK)
 
@@ -44,6 +46,9 @@ class ConsultantList(ListCreateAPIView):
         serializer = ConsultantSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        user = User.objects.get(id=request.data['user_id'])
+        user.roleId = RoleSerializer(Role.objects.get(name='Consultant')).data['id']
+        user.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ConsultantDetailView(RetrieveUpdateDestroyAPIView):

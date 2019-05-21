@@ -7,7 +7,7 @@ import  { API_URL } from '../../API/env';
 export function* fetchRequest() {
   yield takeEvery('FETCH_SERVERS_REQUEST', function*({ payload }) {
     try {
-      const url = `${API_URL}/servers`;
+      const url = `${API_URL}/servers/`;
       const result = yield call(request, url);
       yield put({
         type: actions.FETCH_SERVERS_SUCCESS,

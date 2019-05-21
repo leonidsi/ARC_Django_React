@@ -12,7 +12,7 @@ import styles from '../../config/FormElements/form-styles'
 import relationshipMgrActions from '../../redux/relationship_mgrs/actions';
 import usersActions from '../../redux/users/actions';
 
-const { insertAccountMgr } = relationshipMgrActions;
+const { insertRelationshipMgr } = relationshipMgrActions;
 const { fetchUnassigned } = usersActions;
 
 const Option = SelectOption;
@@ -66,22 +66,23 @@ class AddNewManager extends React.Component {
     }
   }
   submitInsertRequest = () => {
-    const { insertAccountMgr } = this.props
+    const { insertRelationshipMgr } = this.props
     const { singleManager } = this.state    
-    insertAccountMgr({ postData: singleManager })
+    insertRelationshipMgr({ postData: singleManager })
   }
   render() {
-    const { usersList } = this.props    
+    const { usersList } = this.props
+    console.log(this.props)
     const unassignedUsers = usersList
     return (
       <LayoutContentWrapper>
-        <PageHeader>New Sales Executive</PageHeader>
+        <PageHeader>New Relation Manager</PageHeader>
         <Box>
         <Form>
           <FormItem
             style={styles.formItemMargin}
             {...formItemLayout}
-            label="Sales Executive Name"
+            label="Relation Manager Name"
           >
             <Select
               showSearch
@@ -118,7 +119,7 @@ class AddNewManager extends React.Component {
 
 AddNewManager.propTypes = {
   usersList: PropTypes.array,
-  insertAccountMgr: PropTypes.func,
+  insertRelationshipMgr: PropTypes.func,
   fetchUnassigned: PropTypes.func
 }
 
@@ -126,7 +127,7 @@ export default connect(
     state => ({
       usersList: state.Users.get('usersList').toJS()
     }),
-    { insertAccountMgr, fetchUnassigned }
+    { insertRelationshipMgr, fetchUnassigned }
   )(AddNewManager);
 
 
