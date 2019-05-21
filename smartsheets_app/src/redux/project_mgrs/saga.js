@@ -30,7 +30,6 @@ export function* fetchRequest() {
     } catch (err) {
       notification('error', err.message || 'Internal Server Error');
       yield put({ type: actions.FETCH_PMGRS_ERROR });
-      console.log('Product Managers fetch - Error');
     }
   });
 }
@@ -52,7 +51,6 @@ export function* deleteRequest() {
     } catch (err) {
       notification('error', err.message || 'Internal Server Error');
       yield put({ type: actions.DELETE_PMGR_ERROR });
-      console.log('Product Manager delete role - Error');
     }
   });
 }
@@ -78,7 +76,6 @@ export function* insertRequest() {
     } catch (err) {
       notification('error', err.message || 'Internal Server Error');
       yield put({ type: actions.INSERT_PMGR_ERROR });
-      console.log('Product Manager insert - Error');
     }
   });
 }
@@ -120,7 +117,6 @@ export function* updateRequest() {
     } catch (err) {
       notification('error', err.message || 'Internal Server Error');
       yield put({ type: actions.UPDATE_PMGR_ERROR });
-      console.log('Product Manager update - Error');
     }
   });
 }

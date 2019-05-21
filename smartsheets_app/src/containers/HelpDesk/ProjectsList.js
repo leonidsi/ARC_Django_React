@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Button from '../../components/uielements/button';
 import Collapse from '../../components/uielements/collapse';
 import PageHeader from '../../components/utility/pageHeader';

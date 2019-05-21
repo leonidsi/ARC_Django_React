@@ -17,7 +17,6 @@ export function* fetchRequest() {
     } catch(err) {
       notification('error', err.message || 'Internal Server Error');
       yield put({ type: actions.FETCH_NAICSCODES_ERROR });
-      console.log('NaicsCode fetch - Error');
     }
   });
 }

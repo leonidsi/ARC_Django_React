@@ -98,7 +98,6 @@ class EditProject extends React.Component {
       errorStatus: 0,
       activeTab: 1,
     }
-    console.log('constructor', this.state.projectData);
   }
 
   componentWillMount() {
@@ -136,7 +135,6 @@ class EditProject extends React.Component {
   componentWillReceiveProps(props) {
     let { projectData } = props
     this.setState({ projectData })
-    console.log('constructor', projectData);
     
   }
 
@@ -498,7 +496,10 @@ class EditProject extends React.Component {
                           <Select
                             showSearch
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                           size="large" placeholder="Please choose a toolkit tier" value={projectData.toolkit_id} onChange={(value, label) => this.onValueChange(value, 'toolkit_id')} disabled={isViewMode}>
+                            size="large" placeholder="Please choose a toolkit tier" 
+                            value={projectData.toolkit_id} 
+                            onChange={(value, label) => this.onValueChange(value, 'toolkit_id')} 
+                            disabled={isViewMode}>
                             {
                               toolkitTiersList !== undefined &&
                               toolkitTiersList.sort((a, b) =>{
@@ -518,7 +519,13 @@ class EditProject extends React.Component {
                         <FormItem
                           {...tailFormItemLayout}
                         >
-                          <Checkbox checked={projectData.sso_id} onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'sso_id')}} disabled={isViewMode}>SSO</Checkbox>
+                          <Checkbox 
+                            checked={projectData.sso_id} 
+                            onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'sso_id')}} 
+                            disabled={isViewMode}
+                          >
+                            SSO
+                          </Checkbox>
                         </FormItem>
                       </Col>
                     </Row>
@@ -559,7 +566,13 @@ class EditProject extends React.Component {
                         <FormItem
                           {...tailFormItemLayout}
                         >
-                          <Checkbox checked={projectData.final_survey_in_contract} onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'final_survey_in_contract')}} disabled={isViewMode}>Final Survey in Contract</Checkbox>
+                          <Checkbox 
+                            checked={projectData.final_survey_in_contract} 
+                            onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'final_survey_in_contract')}} 
+                            disabled={isViewMode}
+                          >
+                            Final Survey in Contract
+                          </Checkbox>
                         </FormItem>
                       </Col>
                     </Row>
@@ -687,7 +700,13 @@ class EditProject extends React.Component {
                         <FormItem
                           {...tailFormItemLayout}
                         >
-                          <Checkbox checked={projectData.european_employees} onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'european_employees')}} disabled={isViewMode}>European Emloyees</Checkbox>
+                          <Checkbox 
+                            checked={projectData.european_employees} 
+                            onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'european_employees')}} 
+                            disabled={isViewMode}
+                          >
+                            European Emloyees
+                          </Checkbox>
                         </FormItem>
                       </Col>
                     </Row>
@@ -818,14 +837,26 @@ class EditProject extends React.Component {
                         <FormItem
                           {...tailFormItemLayout}
                         >
-                          <Checkbox checked={projectData.onsite_pres_id} onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'onsite_pres_id')}} disabled={isViewMode}>Onsite Pres</Checkbox>
+                          <Checkbox 
+                            checked={projectData.onsite_pres_id} 
+                            onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'onsite_pres_id')}} 
+                            disabled={isViewMode}
+                          >
+                            Onsite Pres
+                          </Checkbox>
                         </FormItem>
                       </Col>
                       <Col span={12}>
                         <FormItem
                           {...tailFormItemLayout}
                         >
-                          <Checkbox checked={projectData.new_business_id} onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'new_business_id')}} disabled={isViewMode}>New Project</Checkbox>
+                          <Checkbox 
+                            checked={projectData.new_business_id} 
+                            onChange={(e) => {this.onValueChange(e.target.checked? 1:0, 'new_business_id')}} 
+                            disabled={isViewMode}
+                          >
+                            New Project
+                          </Checkbox>
                         </FormItem>
                       </Col>
                     </Row>
@@ -839,7 +870,11 @@ class EditProject extends React.Component {
                           <Select
                             showSearch
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                            size="large" placeholder="Please choose a server" value={projectData.server_id} onChange={(value, label) => {this.onValueChange(value, 'server_id')}} disabled={isViewMode}>
+                            size="large" 
+                            placeholder="Please choose a server" 
+                            value={projectData.server_id} 
+                            onChange={(value, label) => {this.onValueChange(value, 'server_id')}} 
+                            disabled={isViewMode}>
                               <Option value={0}>Please choose a server</Option>
                               {
                                 serversList !== undefined &&
@@ -932,7 +967,12 @@ class EditProject extends React.Component {
                           <Select
                             showSearch
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                            showSearch size="large" placeholder="Please choose a sheet" value={projectData.sheet_id} onChange={(value) => {this.onValueChange(value, 'sheet_id')}} disabled={isViewMode}>
+                            size="large" 
+                            placeholder="Please choose a sheet" 
+                            value={projectData.sheet_id} 
+                            onChange={(value) => {this.onValueChange(value, 'sheet_id')}} 
+                            disabled={isViewMode}
+                          >
                             {
                               sheets.length > 0 &&
                               sheets.sort((a, b) =>{
@@ -1686,7 +1726,7 @@ class EditProject extends React.Component {
                           <Select
                             showSearch
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                          value={projectData.project_rating} onChange={(value, label) => {this.onValueChange(value, 'project_rating')}} disabled={isViewMode}>
+                            value={projectData.project_rating} onChange={(value, label) => {this.onValueChange(value, 'project_rating')}} disabled={isViewMode}>
                             <Option value={0}>Please choose a rating</Option>
                             <Option value="1">1</Option>
                             <Option value="2">2</Option>

@@ -92,7 +92,7 @@ class RelationshipManagersList extends Component {
       <LayoutContentWrapper>
         <PageHeader>Relationship Manager</PageHeader>
         <TableDemoStyle className="isoLayoutContent">
-          <Link to="./relationship_manager/add">
+          <Link to="./relationship_managers/add">
             <Button size='default' type="primary" style={styles.addButton}>
               Add New
             </Button>
