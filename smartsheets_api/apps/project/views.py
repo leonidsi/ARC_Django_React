@@ -16,9 +16,22 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
+
 from apps.authentication.views import IsTokenValid
 from apps.authentication.models import User
 from apps.authentication.serializers import UserSerializer
+from apps.client.models import Client
+from apps.client.serializers import ClientSerializer
+from apps.project_type.models import ProjectType
+from apps.project_type.serializers import ProjectTypeSerializer
+from apps.account_manager.models import AccountManager
+from apps.account_manager.serializers import AccountManagerSerializer
+from apps.relationship_manager.models import RelationshipManager
+from apps.relationship_manager.serializers import RelationshipManagerSerializer
+from apps.project_manager.models import ProjectManager
+from apps.project_manager.serializers import ProjectManagerSerializer
+from apps.consultant.models import Consultant
+from apps.consultant.serializers import ConsultantSerializer
 
 class ProjectList(ListCreateAPIView):
     """
@@ -36,7 +49,22 @@ class ProjectList(ListCreateAPIView):
         responses = []
         for project in projects:
             response = ProjectSerializer(project).data
-            # response['user'] = UserSerializer(User.objects.get(email = User.objects.get(email=project.user_id))).data
+            if project.client_id:
+                response['client'] = ClientSerializer(Client.objects.get(name = project.client_id)).data
+            if project.project_type_id:
+                response['projectType'] = ProjectTypeSerializer(ProjectType.objects.get(name = project.project_type_id)).data
+            if project.project_mgr_id:
+                response['projectManager'] = ProjectManagerSerializer(ProjectManager.objects.get(user_id = project.project_mgr_id.user_id)).data
+                response['projectManager']['user'] = UserSerializer(User.objects.get(email = project.project_mgr_id.user_id)).data
+            if project.account_mgr_id:
+                response['salesExecutive'] = AccountManagerSerializer(AccountManager.objects.get(user_id = project.account_mgr_id.user_id)).data
+                response['salesExecutive']['user'] = UserSerializer(User.objects.get(email = project.account_mgr_id.user_id)).data
+            if project.relationship_mgr_id:
+                response['relationshipManager'] = RelationshipManagerSerializer(RelationshipManager.objects.get(user_id = project.relationship_mgr_id.user_id)).data
+                response['relationshipManager']['user'] = UserSerializer(User.objects.get(email = project.relationship_mgr_id.user_id)).data
+            if project.consultant_id:
+                response['consultant'] = ConsultantSerializer(Consultant.objects.get(user_id = project.consultant_id.user_id)).data
+                response['consultant']['user'] = UserSerializer(User.objects.get(email = project.consultant_id.user_id)).data
             responses.append(response)
         return Response(responses, status=status.HTTP_200_OK)
 
