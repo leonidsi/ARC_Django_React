@@ -20,7 +20,6 @@ export default function authReducer(
     case actions.LOGOUT:
       return state.set('idToken', null);
     case actions.SET_USER_DATA:
-      console.log(action)
       return state.set('currentUser', mapUser(action.payload))
     default:
       return state;

@@ -16,7 +16,6 @@ export default function accountsReducer(state = initState, action) {
     case actions.DELETE_AMGR_SUCCESS:
       return state.update('accountMgrsList', usersList => usersList.filter(item => item.get('id') !== action.payload.id));
     case actions.INSERT_AMGR_REQUEST:
-      console.log(action.type)
       return state.set('loading', true)
     case actions.INSERT_AMGR_ERROR:
       return state.set('loading', false)
@@ -24,7 +23,6 @@ export default function accountsReducer(state = initState, action) {
       return state.update('accountMgrsList', usersList => usersList.push(mapManager(action.payload)))
       .set('loading', false);
     case actions.GET_AMGR_SUCCESS: 
-      console.log(action.type)
       return state.set('singleManager', fromJS(mapManager(action.payload)));
     default:
       return state

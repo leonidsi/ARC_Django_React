@@ -70,7 +70,6 @@ export function timeDifference(givenTime) {
 }
 
 export function mapUser(user) {
-  console.log(user, user.userRoles)
   user.isSuperAdmin = false
   if (user.userRoles && user.userRoles.length > 0) {
     user.role = user.userRoles[0].name
@@ -85,7 +84,6 @@ export function mapUser(user) {
   // delete user.userRoles
   user.fullname = `${user.firstname} ${user.lastname}`
   user.key = user.id
-  console.log(88,user)
   return user
 }
 export function mapManager(am) {

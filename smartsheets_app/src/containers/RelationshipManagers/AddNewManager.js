@@ -72,7 +72,6 @@ class AddNewManager extends React.Component {
   }
   render() {
     const { usersList } = this.props
-    console.log(this.props)
     const unassignedUsers = usersList
     return (
       <LayoutContentWrapper>

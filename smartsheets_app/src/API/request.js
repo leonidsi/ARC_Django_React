@@ -17,54 +17,42 @@ import { getItem, removeItem } from './localStorage';
 export default function request(url, options = {}) {
   const authToken = getItem('id_token');
   let newUrl = url;
-  console.log('-----------20', options)
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   };
 
   if (authToken) {
-    console.log('request.js-27 line -------------', authToken, url)
     headers.authorization = 'Bearer ' + authToken;
   } else if (options.authToken) {
     headers.authorization = options.authToken;
   }
-  console.log('request.js-32')
   if (!options.method || options.method === 'GET' || options.method === 'DELETE' || options.method === 'POST') {
-    console.log('request.js-34')
     if (options.query) {
-      console.log('request.js-35')
       const queryString = serializeParams(options.query);
       newUrl = `${url}?${queryString}`;
     }
   }
-  console.log('request.js-41')
 
   if (options.useDefaultContentType) {
     delete headers['Content-Type'];
     delete headers.Accept;
   }
-  console.log('request.js-47')
 
   options.headers = Object.assign({}, headers, options.headers ); // eslint-disable-line
   options.credentials = 'include'; // eslint-disable-line
-  console.log('request.js-51')
 
   return retry(async (retryFn) => {
     // if anything throws, we retry
-    console.log('request.js-55')
 
     try {
       const res = await fetch(newUrl, options);
-      console.log('request.js-59')
 
       if (res.status === 503) {
-        console.log('request.js-62')
 
         const err = pick(res, ['status', 'statusText']);
         throw Object.assign(err, { message: 'Unable to handle the request.' });
       }
-      console.log('request.js-67')
 
       return res;
     } catch (error) {
@@ -77,13 +65,10 @@ export default function request(url, options = {}) {
   })
     .then(checkStatus)
     .then((response) => {
-      console.log('request.js-80')
 
       if (options.doNotParseAsJson) {
-        console.log(response)
         return response;
       } else {
-        console.log('request.js-86', response)
 
         return parseJSON(response);
       }

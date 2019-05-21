@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import moment from 'moment';
-import { get } from 'lodash';
 import {debounce} from 'throttle-debounce';
 import { Col, Row, Divider } from 'antd';
 
 import Form from '../../components/uielements/form';
 import Spin from '../../components/uielements/spin';
-import Input, { Textarea } from '../../components/uielements/input';
+import Input from '../../components/uielements/input';
 import Checkbox from '../../components/uielements/checkbox';
 import DatePicker from '../../components/uielements/datePicker';
 import Tabs, { TabPane }  from '../../components/uielements/tabs';
@@ -98,7 +97,6 @@ class EditProject extends React.Component {
       errorStatus: 0,
       activeTab: 1,
     }
-    console.log('constructor', this.state.projectData);
   }
 
   componentWillMount() {
@@ -136,7 +134,6 @@ class EditProject extends React.Component {
   componentWillReceiveProps(props) {
     let { projectData } = props
     this.setState({ projectData })
-    console.log('constructor', projectData);
     
   }
 
@@ -248,15 +245,7 @@ class EditProject extends React.Component {
   }
   render() {
     const { 
-        projectMgrsList,
-        accountMgrsList, 
-        consultantsList,
-        clientsList,
-        projectTypesList,
-        serversList,
-        toolkitTiersList,
         sheetsList,
-        keydatesList,
         loading
       } = this.props;
     let sheets = sheetsList === undefined ? []:sheetsList

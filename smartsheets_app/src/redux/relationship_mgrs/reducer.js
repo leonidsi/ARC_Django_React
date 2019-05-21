@@ -15,7 +15,6 @@ export default function relationshipManagersReducer(state = initState, action) {
     case actions.DELETE_RMGR_SUCCESS:
       return state.update('relationshipMgrsList', usersList => usersList.filter(item => item.get('id') !== action.payload.id));
     case actions.INSERT_RMGR_SUCCESS:
-      console.log('asdfasdfasdfasd', action.type)
       return state.update('relationshipMgrsList', usersList => usersList.push(mapManager(action.payload)));
     case actions.GET_RMGR_SUCCESS: 
       return state.set('singleManager', fromJS(mapManager(action.payload)));

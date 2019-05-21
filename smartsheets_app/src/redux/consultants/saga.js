@@ -23,7 +23,6 @@ export function* fetchRequest() {
       }
 
       const result = yield call(request, url, params);
-      console.log(result)
       yield put({
         type: actions.FETCH_CONSULTANTS_SUCCESS,
         payload: result,
