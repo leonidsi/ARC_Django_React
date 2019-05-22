@@ -16,8 +16,8 @@ from rest_framework.authentication import BasicAuthentication, get_authorization
 from rest_framework.exceptions import AuthenticationFailed
 
 from .decorators import validate_request_data
-from apps.authentication.models import User, BlackListedToken
-from apps.authentication.serializers import UserSerializer
+from .models import User, BlackListedToken
+from .serializers import UserSerializer
 from .onelogin import OneLogin, Token, User as OneLoginUser
 from apps.role.models import Role
 from apps.role.serializers import RoleSerializer
