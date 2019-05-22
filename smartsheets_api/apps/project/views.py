@@ -7,6 +7,7 @@ from .serializers import ProjectSerializer
 from django.conf import settings
 from django.utils.encoding import smart_text
 from django.core import serializers
+from django.core.mail import send_mail
 
 from rest_framework import status
 from rest_framework.decorators import permission_classes
@@ -72,6 +73,12 @@ class ProjectList(ListCreateAPIView):
         serializer = ProjectSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        send_mail(
+            'Created new project in Perceptyx',
+            'Hello, Jim. Successfully created new project!',
+            settings.EMAIL_HOST_USER,
+            ['jduncan@perceptyx.com']
+        )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ProjectDetailView(RetrieveUpdateDestroyAPIView):
@@ -101,6 +108,12 @@ class ProjectDetailView(RetrieveUpdateDestroyAPIView):
             project = self.queryset.get(pk=kwargs["pk"])
             serializer = ProjectSerializer()
             updated_project = serializer.update(project, request.data)
+            send_mail(
+                'Updated a project in Perceptyx',
+                'Hello, Jim. Successfully updated a project!',
+                settings.EMAIL_HOST_USER,
+                ['jduncan@perceptyx.com']
+            )
             return Response(ProjectSerializer(updated_project).data)
         except Project.DoesNotExist:
             response = {"message": "Project with id: {} does not exist".format(kwargs["pk"])}

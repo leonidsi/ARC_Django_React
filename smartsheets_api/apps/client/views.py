@@ -7,6 +7,7 @@ from .serializers import ClientSerializer
 from django.conf import settings
 from django.utils.encoding import smart_text
 from django.core import serializers
+from django.core.mail import send_mail
 
 from rest_framework import status
 from rest_framework.decorators import permission_classes
@@ -38,6 +39,12 @@ class ClientList(ListCreateAPIView):
         serializer = ClientSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        send_mail(
+            'Created new client in Perceptyx',
+            'Hello, Jim. Successfully created new client!',
+            settings.EMAIL_HOST_USER,
+            ['jduncan@perceptyx.com']
+        )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ClientDetailView(RetrieveUpdateDestroyAPIView):
@@ -67,6 +74,12 @@ class ClientDetailView(RetrieveUpdateDestroyAPIView):
             client = self.queryset.get(pk=kwargs["pk"])
             serializer = ClientSerializer()
             updated_client = serializer.update(client, request.data)
+            send_mail(
+                'Updated a client in Perceptyx',
+                'Hello, Jim. Successfully updated a client!',
+                settings.EMAIL_HOST_USER,
+                ['jduncan@perceptyx.com']
+            )
             return Response(ClientSerializer(updated_client).data)
         except Client.DoesNotExist:
             response = {"message": "Client with id: {} does not exist".format(kwargs["pk"])}
