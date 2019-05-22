@@ -208,8 +208,9 @@ class ListCreateUsersView(ListCreateAPIView):
         token = Token(client_id=settings.ONELOGIN_CLIENT_ID, client_secret=settings.ONELOGIN_CLIENT_SECRET)
         one_login_user = OneLoginUser(token)
         one_login_create_user_response = one_login_user.create_user(**kwargs)
-        serializer = UserSerializer(data=request.data, context={'request': request})
+        data = kwargs
+        data.update({'password': 'password', 'roleId': request.data['roleId']})
+        serializer = UserSerializer(data=data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
-
         return Response(serializer.data, status=status.HTTP_201_CREATED)

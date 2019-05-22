@@ -34,7 +34,7 @@ class UserManager(BaseUserManager):
         except:
             raise
 
-    def create_user(self, email, password='password', **extra_fields):
+    def create_user(self, email, password, **extra_fields):
         return self._create_user(email, password, False, False,
                                  **extra_fields)
 
@@ -80,7 +80,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     smartsheetCode = models.CharField(max_length=255, blank=False, unique=False, default='', null=True)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
-    roleId = models.IntegerField(default=30)
+    roleId = models.IntegerField(default=1)
     # roleId = models.ForeignKey(Role, related_name="roleId", on_delete=models.CASCADE)
     
     # The `USERNAME_FIELD` property tells us which field we will use to log in.
