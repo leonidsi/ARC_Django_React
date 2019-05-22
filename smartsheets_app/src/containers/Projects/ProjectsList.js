@@ -94,7 +94,9 @@ class Projects extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.props.projectsList, allColumns, `Projects-${today}.csv`)
+    if(this.props.projectsList!=null){
+      generateCSVFile(this.props.projectsList, allColumns, `Projects-${today}.csv`)
+    }    
   }
   handleExportCell = record => {
     generateCSVFile([record], Object.keys(record), `Project-${record.name}.csv`)
