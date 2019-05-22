@@ -7,7 +7,7 @@ verify_ssl = true
 v = {editable = true,version = "*"}
 
 [packages]
-django = "==2.0.5"
+django = "==2.0.12"
 djangorestframework = "==3.7.7"
 django-cors-headers = "*"
 psycopg2 = "*"
