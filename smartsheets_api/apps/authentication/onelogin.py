@@ -481,7 +481,7 @@ class User(Token):
         payload = {
             'password':password,
             'password_confirmation':password_confirmation,
-            'password_algorithm':password_algorithm,
+            'password_algorithm':'salt+sha256',
             'password_salt':password_salt
         }
         r = user.session.put(user.base_url + user.set_clear_password_endpoint, json=payload)
