@@ -31,7 +31,8 @@ export function* loginRequest() {
       yield put({ type: actions.FETCH_ME_FROM_TOKEN });
       yield put(push('/dashboard'));
     } catch(err) {
-      notification('error', err.message);
+      const message = err.message || 'Invalid user credentials';
+      notification('error', message);
       yield put({ type: actions.LOGIN_ERROR });
     }
   });
