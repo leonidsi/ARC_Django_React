@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${APPLICATION_NAME}
+  namespace: ${NAMESPACE}
+  labels:
+    run: ${APPLICATION_NAME}
+spec:
+  selector:
+    run: ${APPLICATION_NAME}
+  type: NodePort
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: ${APPLICATION_NAME}

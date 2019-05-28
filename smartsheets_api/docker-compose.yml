@@ -25,7 +25,10 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    build: .
+    build:
+      context: .
+      args:
+        SECRET_KEY: "hfavk0@@#yk_f&6&($t_)7#m&iq#x9s^(t_g^kbfw1fo6un1^e"
     image: smartsheets_api:latest
     volumes:
       - .:/usr/src/app/
@@ -41,9 +44,11 @@ services:
       - ONELOGIN_CLIENT_SECRET=f851f9761941111302c1c08ef2c0c1c67b9acba3e7a80e67ff0f465d7144e08e
       - ONELOGIN_CLIENT_REGION=us
       - ONELOGIN_CLIENT_SUBDOMAIN=perceptyx-smartsheet
-      - FRONTEND_URL=http://localhost:8000
+      - ONELOGIN_EMAIL=test@test.com
+      - ONELOGIN_PASSWORD=password
       - SECRET_KEY='hfavk0@@#yk_f&6&($t_)7#m&iq#x9s^(t_g^kbfw1fo6un1^e'
       - DEBUG=False
+      - DJANGO_MODULE_STR=development
     cpu_percent: 25
     mem_reservation: 256m
 volumes:
