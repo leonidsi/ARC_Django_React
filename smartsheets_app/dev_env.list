@@ -1,0 +1,5 @@
+NODE_ENV=development
+
+API_URL = 'http://localhost:9090/api/v1'
+SERVER_URL = 'http://localhost:9090'
+HTTPS=false

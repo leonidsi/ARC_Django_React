@@ -6,18 +6,18 @@ export ENVIRONMENT=${2}
 export APP_VERSION=${3}
 
 
-if [ "$ENVIRONMENT" == "dev" ]; then
+if [ "$ENVIRONMENT" == "develop" ]; then
   export REPLICAS=1
-  export DOMAIN="smartsheets-${ENVIRONMENT}"
-  export ENVIRONMENT="stg"
-  export BRANCH="dev"
-  export NAMESPACE="smartsheets-frontend-stg"
+  export DOMAIN="smartsheets-app-dev"
+  export ENVIRONMENT="dev"
+  export BRANCH="develop"
+  export NAMESPACE="smartsheets-app-dev"
 elif [ "$ENVIRONMENT" == "master" ]; then
   export REPLICAS=2
-  export DOMAIN="smartsheets"
+  export DOMAIN="smartsheets-app"
   export ENVIRONMENT="prd"
   export BRANCH="master"
-  export NAMESPACE="smartsheets-frontend-prd"
+  export NAMESPACE="smartsheets-app-prd"
 else
   echo "Missing arguments for deploy.sh. Please review this"
   exit 1

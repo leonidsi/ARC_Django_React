@@ -1,8 +1,8 @@
 # Smartsheets FrontEnd
 
-Smartsheets FrontEnd Application for Smartsheets Backend API [ https://git.perceptyx.com/external/smartsheets_backend ]
+Smartsheets APP Application for Smartsheets API [ https://git.perceptyx.com/external/smartsheets_api ]
 
-*IMPORTANT:* YOu need Smartsheets Backend running before following this steps. Otherwise application will not work.
+*IMPORTANT:* You need Smartsheets API running before following this steps. Otherwise application will not work.
 
 ## Getting Started
 
@@ -22,9 +22,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 In order to run NodeJS frontend Application we use Docker. Also we use docker-compose to handle
 container, view logs and much more.
 
-### API documentation
-
-Please refer >[frontend.md](docs/frontend.md) file for more details.
 ### Running
 
 - In order to build and run app containers execute:
@@ -33,7 +30,7 @@ Please refer >[frontend.md](docs/frontend.md) file for more details.
 docker-compose up --build -d
 ```
 
-This will bring up _smartsheet_frontend_.
+This will bring up _smartsheet_api_.
 
 - Check the status of app container:
 
@@ -46,18 +43,17 @@ This will should something similar to the following
 ```
 Name                Command         State           Ports
 --------------------------------------------------------------------------
-smartsheets_frontend   nodemon -V -L 3000   Up      0.0.0.0:3000->3000/tcp
+smartsheets_api   nodemon -V -L 3000   Up      0.0.0.0:3000->3000/tcp
 ```
 
-Both containers are running and ready to work :)
+Container is running and ready to work :)
 
-- Login to to the app. Open your browser and hit http://localhost/
+- Login to to the app. Open your browser and hit http://localhost:3000/
 
 - In order to check the logs you can use *docker-compose logs [ container ]* where container is optional:
 
 ```
-docker-compose logs smartsheet_frontend  # check only nodejs app logs
-docker-compose logs                      # check both containers logs, note we are not passing
+docker-compose logs smartsheet_api    # check only nodejs app logs
 ```
 
 - Once you are done, just stop both containers

@@ -1,6 +1,8 @@
 FROM python:3.6-alpine
 
 ARG PIPENV_DEV
+ARG SECRET_KEY
+ENV SECRET_KEY ${SECRET_KEY}
 ENV PIPENV_DEV ${PIPENV_DEV:-1}
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -8,9 +10,11 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /usr/src/app
 COPY Pipfile Pipfile.lock ./
 
+# hadolint ignore=DL3013
 RUN pip --no-cache-dir install --upgrade pip \
   && pip --no-cache-dir install pipenv
 
+# hadolint ignore=DL3018
 RUN apk add --no-cache build-base \
   && apk add --no-cache --virtual pillow-build-dependencies \
         jpeg-dev \

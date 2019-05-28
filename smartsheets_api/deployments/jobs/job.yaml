@@ -1,0 +1,98 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ${APPLICATION_NAME}-migration
+  namespace: ${NAMESPACE}
+spec:
+  template:
+    metadata:
+      name: ${APPLICATION_NAME}-migration
+      labels:
+        name: ${APPLICATION_NAME}-migration
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: ${APPLICATION_NAME}
+          image: git.perceptyx.com:4567/external/smartsheets_api/${APPLICATION_NAME}:${BRANCH}
+          imagePullPolicy: Always
+          command: ["./migration.sh"]
+          env:
+            - name: APP_VERSION
+              value: ${APP_VERSION}
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: db_endpoint
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: db_name
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: db_port
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: db_user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: db_password
+            - name: ONELOGIN_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: onelogin_client_id
+            - name: ONELOGIN_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: onelogin_client_secret
+            - name: ONELOGIN_CLIENT_REGION
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: onelogin_client_region  
+            - name: ONELOGIN_CLIENT_SUBDOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: onelogin_client_subdomain
+            - name: ONELOGIN_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: onelogin_email
+            - name: ONELOGIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: onelogin_password
+            - name: FRONTEND_URL
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: frotend_url
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: secret_key  
+            - name: DEBUG
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: debug
+            - name: DJANGO_MODULE_STR
+              valueFrom:
+                secretKeyRef:
+                  name: ${APPLICATION_NAME}-secrets
+                  key: django_module_str    
+      imagePullSecrets:
+        - name: gitlabregistrypullsecret
