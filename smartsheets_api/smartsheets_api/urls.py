@@ -42,7 +42,7 @@ urlpatterns = [
     url(r'^apis/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
-    url(r'^admin/', admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
     url(r'api/v1/', include('apps.authentication.urls')),
     url(r'api/v1/', include('apps.client.urls')),
     url(r'api/v1/', include('apps.other_provider.urls')),

@@ -75,15 +75,6 @@ const TableWrapper = styled(Table)`
   .ant-spin-container > .ant-table { order: 2; }
   .ant-spin-container > .ant-table-pagination { order: 1; align-self: flex-end; }
 
-  // .ant-table-pagination {
-  //   display: flex;
-  //   flex-direction: row;
-  // }
-  // .ant-table-pagination > .ant-pagination-prev { order: 1; float: right; }
-  // .ant-table-pagination > .ant-pagination-item-active { order: 2; float: right; }
-  // .ant-table-pagination > .ant-pagination-next { order: 3; float: right; }
-  // .ant-table-pagination > .ant-pagination-options { order: 4; float: right; }
-
   .ant-pagination-prev,
   .ant-pagination-next {
     border: 1px solid ${palette('border', 0)};
