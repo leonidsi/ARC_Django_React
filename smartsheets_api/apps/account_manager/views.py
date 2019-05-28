@@ -86,6 +86,11 @@ class AccountManagerDetailView(RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         try:
             account_manager = self.queryset.get(pk=kwargs["pk"])
+
+            user = User.objects.get(email=account_manager.user_id)
+            user.roleId = 1
+            user.save()
+
             account_manager.delete()
             response = {"message": "Deleted Account Manager Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)

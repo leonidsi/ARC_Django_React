@@ -19,10 +19,14 @@ from .decorators import validate_request_data
 from .models import User, BlackListedToken
 from .serializers import UserSerializer
 from .onelogin import OneLogin, Token, User as OneLoginUser
+
 from apps.role.models import Role
 from apps.role.serializers import RoleSerializer
 
-import onelogin
+from apps.project_manager.models import ProjectManager
+from apps.account_manager.models import AccountManager
+from apps.consultant.models import Consultant
+from apps.relationship_manager.models import RelationshipManager
 
 def get_token(request):
     auth = get_authorization_header(request).split()
@@ -112,11 +116,8 @@ class LogoutView(APIView):
 
     def get(self, request, *args, **kwargs):
         token = get_token(request)
-        response = {"message": "Logout Successfully"}
-        return Response(response, status=status.HTTP_201_CREATED)
         decoded = jwt.decode(token, settings.SECRET_KEY, algorithm='HS256')
         user = User.objects.get(email=decoded['email'])
-
         black_list_token = BlackListedToken(user=user, token=token)
         black_list_token.save()
         response = {"message": "Logout Successfully"}
@@ -158,6 +159,20 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
             response = UserSerializer(updated_user).data
             # response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('roleId').get(id=kwargs["pk"]).roleId)).data]
             response['userRoles'] = [RoleSerializer(Role.objects.get(id = User.objects.get(id=kwargs["pk"]).roleId)).data]
+    
+            # if request.data['roleId'] == 2:
+            #     project_manager = ProjectManager.objects.get(user_id=user)
+            #     project_manager.save()
+            # if request.data['roleId'] == 3:
+            #     account_manager = AccountManager.objects.get(user_id=user)
+            #     account_manager.save()
+            # if request.data['roleId'] == 4:
+            #     consultant = Consultant.objects.get(user_id=user)
+            #     Consultant.save()
+            # if request.data['roleId'] == 8:
+            #     relationship_manager = RelationshipManager.objects.get(user_id=user)
+            #     relationship_manager.save()
+
             return Response(response)
         except User.DoesNotExist:
             response = {"message": "User with id: {} does not exist".format(kwargs["pk"])}
@@ -166,9 +181,24 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         try:
             user = self.queryset.get(pk=kwargs["pk"])
+
+            if user.roleId == 2:
+                project_manager = ProjectManager.objects.get(user_id=user)
+                project_manager.delete()
+            if request.data['roleId'] == 3:
+                account_manager = AccountManager.objects.get(user_id=user)
+                account_manager.delete()
+            if request.data['roleId'] == 4:
+                consultant = Consultant.objects.get(user_id=user)
+                Consultant.delete()
+            if request.data['roleId'] == 8:
+                relationship_manager = RelationshipManager.objects.get(user_id=user)
+                relationship_manager.delete()
+            
             user.delete()
             response = {"message": "Deleted User Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)
+
         except User.DoesNotExist:
             response = {"message": "user with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
@@ -201,16 +231,35 @@ class ListCreateUsersView(ListCreateAPIView):
 
     @validate_request_data
     def post(self, request, *args, **kwargs):
+
         keys = ['username', 'firstname', 'lastname', 'email']
         kwargs = {}
         for key in keys:
             kwargs[key]=request.data[key]
+
         token = Token(client_id=settings.ONELOGIN_CLIENT_ID, client_secret=settings.ONELOGIN_CLIENT_SECRET)
         one_login_user = OneLoginUser(token)
         one_login_create_user_response = one_login_user.create_user(**kwargs)
+
         data = kwargs
         data.update({'password': 'password', 'roleId': request.data['roleId']})
         serializer = UserSerializer(data=data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        response = serializer.data
+
+        user = User.objects.get(username=request.data['username'])
+        if request.data['roleId'] == 2:
+            project_manager = ProjectManager(user_id = user)
+            project_manager.save()
+        if request.data['roleId'] == 3:
+            account_manager = AccountManager(user_id = user)
+            account_manager.save()
+        if request.data['roleId'] == 4:
+            consultant = Consultant(user_id = user)
+            Consultant.save()
+        if request.data['roleId'] == 8:
+            relationship_manager = RelationshipManager(user_id = user)
+            relationship_manager.save()
+        
+        return Response(response, status=status.HTTP_201_CREATED)

@@ -87,7 +87,13 @@ class ProjectManagerDetailView(RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         try:
             project_manager = self.queryset.get(pk=kwargs["pk"])
+
+            user = User.objects.get(email=project_manager.user_id)
+            user.roleId = 1
+            user.save()
+
             project_manager.delete()
+            
             response = {"message": "Deleted Project Manager Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)
         except ProjectManager.DoesNotExist:
