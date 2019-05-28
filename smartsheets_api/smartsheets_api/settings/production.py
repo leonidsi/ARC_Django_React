@@ -1,12 +1,14 @@
+import os
 import psycopg2
 from decouple import config
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = [
-    os.environ.get('HOST_NAME', 'smartsheets.apps.pyx-int.com')
+    'smartsheets-api-dev.apps.pyx-int.com',
+    'smartsheets-api.apps.pyx-int.com',
 ]
 
 # Database
@@ -22,10 +24,14 @@ DATABASES = {
 }
 
 CORS_ORIGIN_WHITELIST = (
-    os.environ.get('HOST_NAME', 'smartsheets.apps.pyx-int.com')
+    'https://smartsheets-api-dev.apps.pyx-int.com',
+    'https://smartsheets-app-dev.apps.pyx-int.com',
+    'https://smartsheets-api.apps.pyx-int.com',
+    'https://smartsheets-app.apps.pyx-int.com',
 )
+
 CORS_ORIGIN_REGEX_WHITELIST = (
-    os.environ.get('HOST_NAME', 'smartsheets.apps.pyx-int.com')
+    r"^https://\w+\.pyx-int\.com$",
 )
 
 ONELOGIN_CLIENT_ID = os.environ.get('ONELOGIN_CLIENT_ID', '')

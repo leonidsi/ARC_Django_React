@@ -476,7 +476,7 @@ class User(Token):
             return r.json()
 
     def set_password_with_salt_sha256(user, id, password, password_confirmation,
-                                      password_salt, password_algorithm='salt+sha256'):
+                                      password_salt, password_algorithm):
         user.set_clear_password_endpoint = '/api/1/users/set_password_using_salt/%s' % id
         payload = {
             'password':password,
