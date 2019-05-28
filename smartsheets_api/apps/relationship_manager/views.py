@@ -88,6 +88,11 @@ class RelationshipManagerDetailView(RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         try:
             relationship_manager = self.queryset.get(pk=kwargs["pk"])
+
+            user = User.objects.get(email=relationship_manager.user_id)
+            user.roleId = 1
+            user.save()
+
             relationship_manager.delete()
             response = {"message": "Deleted Relationship Manager Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)

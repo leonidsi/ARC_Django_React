@@ -86,6 +86,11 @@ class ConsultantDetailView(RetrieveUpdateDestroyAPIView):
     def delete(self, request, *args, **kwargs):
         try:
             consultant = self.queryset.get(pk=kwargs["pk"])
+
+            user = User.objects.get(email=consultant.user_id)
+            user.roleId = 1
+            user.save()
+
             consultant.delete()
             response = {"message": "Deleted Consultant Successfully!"}
             return Response(response, status=status.HTTP_204_NO_CONTENT)

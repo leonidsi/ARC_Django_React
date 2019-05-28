@@ -27,6 +27,9 @@ export function* loginRequest() {
         token: result['token'],
         userId: result['user_id'],
       });
+      
+      const message = 'Login Successfully!'
+      notification('success', message);
 
       yield put({ type: actions.FETCH_ME_FROM_TOKEN });
       yield put(push('/dashboard'));
