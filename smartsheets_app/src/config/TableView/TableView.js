@@ -52,7 +52,7 @@ export class TableView extends Component {
     this.props.deleteCell(index);    
   };
   onChange = (pagination, filters, sorter) => {
-    const { dataList } = this.props;
+    const { dataList } = this.props;    
     if (sorter && sorter.columnKey && sorter.order) {
       if (sorter.order === 'ascend') {
         dataList.getSortAsc(sorter.columnKey);
@@ -71,7 +71,7 @@ export class TableView extends Component {
         onChange={this.onChange}
         dataSource={dataList.getAll()}
         className="isoSortingTable"
-        pagination={{ pageSizeOptions: ['10', '25', '100'], showSizeChanger: true }}
+        pagination={{ pageSizeOptions: ['10', '25', '100'], showSizeChanger: true, pageSize: 25 }}
       />
     );
   }
