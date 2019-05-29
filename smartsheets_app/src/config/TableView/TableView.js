@@ -71,7 +71,7 @@ export class TableView extends Component {
         onChange={this.onChange}
         dataSource={dataList.getAll()}
         className="isoSortingTable"
-        pagination={{ pageSizeOptions: ['10', '25', '100'], showSizeChanger: true, pageSize: 25 }}
+        pagination={{ pageSizeOptions: ['10', '25', '100', '500'], showSizeChanger: true, pageSize: 100 }}
       />
     );
   }
