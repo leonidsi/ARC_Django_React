@@ -9,6 +9,8 @@ import  { API_URL } from '../../API/env'
 export function* loginRequest() {
   yield takeEvery('LOGIN_REQUEST', function*({ payload }) {
     const { userInfo } = payload;
+    clearToken();
+    
     try {
       const url = `${API_URL}/users/sso/`;
       const oneloginInfo = {
