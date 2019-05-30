@@ -80,6 +80,8 @@ const columns = {
   5: ['project_rating', 'client_rating', 'number_tickets', 'number_support_emails', 'number_support_calls', 'dc_readonly_url', 'custom_dev_notes', 'other_notes', ''],
 }
 const tabs = ['Contracted Project Info', 'Keydates', 'Actual Project Info', 'Help Desk Info', 'Post Project Info']
+const dateFormatList = ["MM-DD-YYYY", "MM-DD-YY", "MM/DD/YYYY", "MM/DD/YY", "MM.DD.YYYY", "MM.DD.YY", "MMM DD YYYY", "MMM DD YY"];
+
 class EditProject extends React.Component {
   constructor(props) {
     super(props)
@@ -367,7 +369,7 @@ class EditProject extends React.Component {
                               this.onValueChange(dateString, 'hire_hire_cutoff')
                             }}
                             disabled={isViewMode}
-                            format="MM-DD-YYYY"
+                            format={dateFormatList}
                           />
                         </FormItem>
                       </Col>

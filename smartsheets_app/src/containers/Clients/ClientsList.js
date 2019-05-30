@@ -24,6 +24,7 @@ const inputSearchStyle = {
   width: 200,
   margin: 5
 }
+const dateFormatList = ["MM-DD-YYYY", "MM-DD-YY", "MM/DD/YYYY", "MM/DD/YY", "MM.DD.YYYY", "MM.DD.YY", "MMM DD YYYY", "MMM DD YY"];
 
 class ClientsList extends Component {
   state = {
@@ -152,12 +153,12 @@ class ClientsList extends Component {
                   <DatePicker 
                     placeholder="Date joined pyx"
                     onChange={(date, dateString) => this.searchAdvanced(columns[3], dateString)}  style={{...inputSearchStyle}}
-                    format="MM-DD-YYYY"
+                    format={dateFormatList}
                   />
                   <DatePicker 
                     placeholder="Date left pyx"
                     onChange={(date, dateString) => this.searchAdvanced(columns[4], dateString)}  style={{...inputSearchStyle}}
-                    format="MM-DD-YYYY"
+                    format={dateFormatList}
                   />
                 </Panel>
               </Collapse>

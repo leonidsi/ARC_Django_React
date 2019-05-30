@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import clone from 'clone';
 import { Link } from 'react-router-dom';
@@ -211,6 +211,18 @@ class Sidebar extends Component {
                   </span>
                 </Link>
               </Menu.Item>
+              {isSuperAdmin &&
+                <Menu.Item key="project_status">
+                  <Link to={`${url}/contracts`}>
+                    <span className="isoMenuHolder" style={submenuColor}>
+                    <i className="ion-android-contacts" />                      
+                      <span className="nav-text">
+                        Contracts
+                      </span>
+                    </span>
+                  </Link>
+                </Menu.Item>
+              }
               {isSuperAdmin &&
                 <Menu.Item key="other_providers">
                   <Link to={`${url}/other_providers`}>

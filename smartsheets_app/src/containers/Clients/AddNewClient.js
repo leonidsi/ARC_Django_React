@@ -43,6 +43,7 @@ const tailFormItemLayout = {
     }
   }
 };
+const dateFormatList = ["MM-DD-YYYY", "MM-DD-YY", "MM/DD/YYYY", "MM/DD/YY", "MM.DD.YYYY", "MM.DD.YY", "MMM DD YYYY", "MMM DD YY"];
 
 class AddNewClient extends React.Component {
   state = {
@@ -131,14 +132,14 @@ class AddNewClient extends React.Component {
             {...formItemLayout}
             label="Date Joined Pyx"
           >
-            <DatePicker onChange={(date, dateString) => this.handleInputChange('dateJoinedPyx', dateString)} format="MM-DD-YYYY"/>
+            <DatePicker onChange={(date, dateString) => this.handleInputChange('dateJoinedPyx', dateString)} format={dateFormatList}/>
           </FormItem>
           <FormItem
             style={styles.formItemMargin}
             {...formItemLayout}
             label="Date Left Pyx"
           >
-            <DatePicker onChange={(date, dateString) => this.handleInputChange('dateLeftPyx', dateString)} format="MM-DD-YYYY"/>
+            <DatePicker onChange={(date, dateString) => this.handleInputChange('dateLeftPyx', dateString)} format={dateFormatList}/>
           </FormItem>
           <FormItem
             style={styles.formItemMargin}
