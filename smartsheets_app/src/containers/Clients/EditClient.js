@@ -44,6 +44,7 @@ const tailFormItemLayout = {
     }
   }
 };
+const dateFormatList = ["MM-DD-YYYY", "MM-DD-YY", "MM/DD/YYYY", "MM/DD/YY", "MM.DD.YYYY", "MM.DD.YY", "MMM DD YYYY", "MMM DD YY"];
 
 class EditClient extends React.Component {
   state = {
@@ -147,7 +148,7 @@ class EditClient extends React.Component {
             <DatePicker
               value={singleClient.dateJoinedPyx ? moment(singleClient.dateJoinedPyx, 'YYYY-MM-DD'): null}
               onChange={(date, dateString) => this.handleInputChange('dateJoinedPyx', dateString)}
-              format="MM-DD-YYYY"
+              format={dateFormatList}
             />
           </FormItem>
           <FormItem
@@ -158,7 +159,7 @@ class EditClient extends React.Component {
             <DatePicker
               value={singleClient.dateLeftPyx ? moment(singleClient.dateLeftPyx, 'YYYY-MM-DD') : null}
               onChange={(date, dateString) => this.handleInputChange('dateLeftPyx', dateString)}
-              format="MM-DD-YYYY"
+              format={dateFormatList}
             />
           </FormItem>
           <FormItem

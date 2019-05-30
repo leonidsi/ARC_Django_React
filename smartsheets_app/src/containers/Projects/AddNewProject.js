@@ -70,6 +70,7 @@ const tailFormItemLayout = {
     }
   }
 };
+const dateFormatList = ["MM-DD-YYYY", "MM-DD-YY", "MM/DD/YYYY", "MM/DD/YY", "MM.DD.YYYY", "MM.DD.YY", "MMM DD YYYY", "MMM DD YY"];
 
 class AddNewProject extends React.Component {
   state = {
@@ -77,7 +78,7 @@ class AddNewProject extends React.Component {
       errorStatus: 1,
       visible: false,
       confirmLoading: false,
-  }
+  }  
   componentWillMount() {
     const { 
         fetchProjectMgrs,
@@ -502,7 +503,10 @@ class AddNewProject extends React.Component {
                       {...formItemLayout}
                       label="Contracted Launch Date"
                     >
-                      <DatePicker onChange={(date, dateString) => this.onValueChange(dateString, 'contracted_launch_date')} format="MM-DD-YYYY"/>
+                      <DatePicker 
+                        onChange={(date, dateString) => this.onValueChange(dateString, 'contracted_launch_date')} 
+                        format={dateFormatList}
+                      />
                     </FormItem>
                   </Col>
                   <Col span={8}>
@@ -511,8 +515,9 @@ class AddNewProject extends React.Component {
                       {...formItemLayout}
                       label="Contract Expiration Date"
                     >
-                      <DatePicker onChange={(date, dateString) => this.onValueChange(dateString, 'contract_expiration_date')}
-                      format="MM-DD-YYYY"
+                      <DatePicker 
+                        onChange={(date, dateString) => this.onValueChange(dateString, 'contract_expiration_date')}
+                        format={dateFormatList}
                       />
                     </FormItem>
                   </Col>
@@ -1366,7 +1371,10 @@ class AddNewProject extends React.Component {
                       {...formItemLayout}
                       label="New Hire Cutoff Date"
                     >
-                      <DatePicker onChange={(date, dateString) => this.onValueChange(dateString, 'hire_hire_cutoff')} format="MM-DD-YYYY"/>
+                      <DatePicker 
+                        onChange={(date, dateString) => this.onValueChange(dateString, 'hire_hire_cutoff')} 
+                        format={dateFormatList}
+                      />
                     </FormItem>
                   </Col>
                 </Row>
