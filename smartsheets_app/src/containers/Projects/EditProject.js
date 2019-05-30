@@ -73,7 +73,7 @@ const tailFormItemLayout = {
   }
 };
 
-const dateFormatList = ["MM-DD-YYYY", "MM-DD-YY", "MM/DD/YYYY", "MM/DD/YY", "MM.DD.YYYY", "MM.DD.YY", "MMM DD YYYY", "MMM DD YY"];
+const dateFormatList = ["MM-DD-YYYY", "MM/DD/YYYY", "MM.DD.YYYY", "MMM DD YYYY"];
 
 const columns = {
   1: ['client_id', 'name', 'survey_id', 'project_type_id', 'account_mgr_id', 'project_mgr_id', 'consultant_id', 'data_manager', 'revenue', 'toolkit_id', 'sso_id', 'contracted_launch_date', 'contract_expiration_date', 'final_survey_in_contract', 'contracted_invitees', 'contracted_paper_surveys', 'contracted_email_invitees', 'contracted_dc_translations', 'contracted_kiosk_invitees', 'contracted_report_users', 'contracted_paper_invitees', 'european_employees', 'contracted_virtual_trainings', 'contracted_a2a_trainings', 'contracted_onsite_trainings', 'contracted_rpt_translations', 'number_historical_uploads', 'num_exec_decks', 'num_exec_interviews', 'onsite_pres_id', 'server_id', 'new_business_id'],

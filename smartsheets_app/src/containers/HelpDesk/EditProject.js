@@ -80,7 +80,7 @@ const columns = {
   5: ['project_rating', 'client_rating', 'number_tickets', 'number_support_emails', 'number_support_calls', 'dc_readonly_url', 'custom_dev_notes', 'other_notes', ''],
 }
 const tabs = ['Contracted Project Info', 'Keydates', 'Actual Project Info', 'Help Desk Info', 'Post Project Info']
-const dateFormatList = ["MM-DD-YYYY", "MM-DD-YY", "MM/DD/YYYY", "MM/DD/YY", "MM.DD.YYYY", "MM.DD.YY", "MMM DD YYYY", "MMM DD YY"];
+const dateFormatList = ["MM-DD-YYYY", "MM/DD/YYYY", "MM.DD.YYYY", "MMM DD YYYY"];
 
 class EditProject extends React.Component {
   constructor(props) {
