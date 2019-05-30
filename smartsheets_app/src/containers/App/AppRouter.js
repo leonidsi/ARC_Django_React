@@ -214,16 +214,6 @@ class AppRouter extends React.Component {
             path={`${url}/help_desk/edit/:id`}
             component={asyncComponent(() => import('../HelpDesk/EditProject'))}
           />
-          <Route
-            exact
-            path={`${url}/contracts`}
-            component={asyncComponent(() => import('../Contracts/ContractsList'))}
-          />
-          <Route
-            exact
-            path={`${url}/contracts/edit/:id`}
-            component={asyncComponent(() => import('../Contracts/EditContracts'))}
-          />
         </Switch>
       );
     } else {
