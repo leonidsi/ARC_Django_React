@@ -32,11 +32,7 @@ const columns = [
   {
     title: "Project Name",
     key: 'name',
-    render: object => {
-      let value = _.get(object, 'name');
-      let href = `/dashboard/projects/${_.get(object, 'id')}`;
-      return LinkCell(value, href);
-    }
+    render: object => renderCell(object, 'TextCell', 'name')
   },
   {
     title: "Survey ID",
