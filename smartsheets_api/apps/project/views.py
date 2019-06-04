@@ -2,7 +2,7 @@ import jwt
 import requests
 
 from .models import Project, Template
-from .serializers import ProjectSerializer
+from .serializers import ProjectSerializer, TemplateSerializer
 
 from django.conf import settings
 from django.utils.encoding import smart_text
@@ -130,8 +130,17 @@ class ProjectDetailView(RetrieveUpdateDestroyAPIView):
             response = {"message": "Project with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
 
-class TemplateView(CreateAPIView):
+class TemplateView(ListCreateAPIView):
     permission_classes = (IsAuthenticated and IsTokenValid,)
+
+    def get(self, request, *args, **kwargs):
+        """
+        Return a list of all templates for project.
+        """
+        templates = Template.objects.all()
+        serializer = TemplateSerializer(templates, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
     def post(self, request, *args, **kwargs):
         request_project_data = request.data['project_data']
         request_project_data.update({'is_template': False})
