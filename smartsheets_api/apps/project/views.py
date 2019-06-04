@@ -134,15 +134,14 @@ class TemplateView(CreateAPIView):
     permission_classes = (IsAuthenticated and IsTokenValid,)
     def post(self, request, *args, **kwargs):
         request_project_data = request.data['project_data']
-        request_project_data.update({'is_template', True})
+        request_project_data.update({'is_template': False})
         serializer = ProjectSerializer(data=request_project_data, context={'request': request})
-        project_data = serializer.data
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        project_data = serializer.data
         project = Project.objects.get(id=project_data['id'])
         request_template_name = request.data['template_data']['template_name']
-        template = Template(project, request_template_name)
+        template = Template(request_template_name, project.id)
         template.save()
-        # serializer = TemplateSerializer(data=request_template_data, context={'request': request})
-        # serializer.is_valid(raise_exception=True)
-        # serializer.save()
+        response = {"message": "Ok"}
+        return Response(response, status=status.HTTP_200_OK)
