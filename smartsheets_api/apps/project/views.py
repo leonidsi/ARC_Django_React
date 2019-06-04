@@ -138,8 +138,11 @@ class TemplateView(ListCreateAPIView):
         Return a list of all templates for project.
         """
         templates = Template.objects.all()
-        serializer = TemplateSerializer(templates, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        responses = []
+        for template in templates:
+            response = TemplateSerializer(template).data['name']
+            responses.append(response)
+        return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         request_project_data = request.data['project_data']
