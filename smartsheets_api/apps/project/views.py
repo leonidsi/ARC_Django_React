@@ -1,7 +1,7 @@
 import jwt
 import requests
 
-from .models import Project
+from .models import Project, Template
 from .serializers import ProjectSerializer
 
 from django.conf import settings
@@ -13,7 +13,7 @@ from rest_framework import status
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, BasePermission
 from rest_framework.response import Response
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
@@ -70,15 +70,16 @@ class ProjectList(ListCreateAPIView):
         return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
+        print(request.data)
         serializer = ProjectSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        send_mail(
-            'Created new project in Perceptyx',
-            'Hello, Jim. Successfully created new project!',
-            settings.EMAIL_HOST_USER,
-            ['jduncan@perceptyx.com']
-        )
+        # send_mail(
+        #     'Created new project in Perceptyx',
+        #     'Hello, Jim. Successfully created new project!',
+        #     settings.EMAIL_HOST_USER,
+        #     ['jduncan@perceptyx.com']
+        # )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ProjectDetailView(RetrieveUpdateDestroyAPIView):
@@ -128,3 +129,20 @@ class ProjectDetailView(RetrieveUpdateDestroyAPIView):
         except Project.DoesNotExist:
             response = {"message": "Project with id: {} does not exist".format(kwargs["pk"])}
             return Response(response, status=status.HTTP_404_NOT_FOUND)
+
+class TemplateView(CreateAPIView):
+    permission_classes = (IsAuthenticated and IsTokenValid,)
+    def post(self, request, *args, **kwargs):
+        request_project_data = request.data['project_data']
+        request_project_data.update({'is_template', True})
+        serializer = ProjectSerializer(data=request_project_data, context={'request': request})
+        project_data = serializer.data
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        project = Project.objects.get(id=project_data['id'])
+        request_template_name = request.data['template_data']['template_name']
+        template = Template(project, request_template_name)
+        template.save()
+        # serializer = TemplateSerializer(data=request_template_data, context={'request': request})
+        # serializer.is_valid(raise_exception=True)
+        # serializer.save()

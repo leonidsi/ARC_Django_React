@@ -52,6 +52,7 @@ class IsTokenValid(BasePermission):
         is_allowed_user = True
         
         token = get_token(request)
+        print(token)
         decode_token = jwt.decode(token, settings.SECRET_KEY, algorithm='HS256')
         try:
             is_takedToken = User.objects.get(email=decode_token['email'])

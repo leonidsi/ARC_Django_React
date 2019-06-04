@@ -97,6 +97,7 @@ class Project(models.Model):
     msa = models.CharField(max_length=255, null=True, blank=True)
     sla = models.CharField(max_length=255, null=True, blank=True)
     project_notes = models.CharField(max_length=255, null=True, blank=True)
+    is_template = models.BooleanField(default = True)
 
     project_mgr_id = models.ForeignKey(ProjectManager, on_delete=models.CASCADE, null=True)
     account_mgr_id = models.ForeignKey(AccountManager, on_delete=models.CASCADE, null=True)
@@ -104,6 +105,13 @@ class Project(models.Model):
     consultant_id = models.ForeignKey(Consultant, on_delete=models.CASCADE, null=True)
     client_id = models.ForeignKey(Client, on_delete=models.CASCADE, null=True)
     project_type_id = models.ForeignKey(ProjectType, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.name
+
+class Template(models.Model):
+    name = models.CharField(max_length=50)
+    project = models.OneToOneField(Project, on_delete=models.CASCADE, primary_key=True)
 
     def __str__(self):
         return self.name

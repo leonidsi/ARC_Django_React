@@ -1682,21 +1682,25 @@ class AddNewProject extends React.Component {
                 onCancel={this.handleCancel}
               >
                 <Row gutter={24}>
-                  <Col span={8}/>
-                  <Col span={8}>
-                    <Select
-                      showSearch
-                      filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                      defaultValue={0} onChange={(value, label) => this.onValueChange(value, 'contact_protocol_id')}>
-                        <Option value={0}>Template 1</Option>
-                        <Option value={1}>Template 2</Option>
-                        <Option value={2}>Template 3</Option>
-                    </Select>
+                  <Col span={4}/>
+                  <Col span={16}>
+                    <FormItem
+                        style={styles.formItemMargin}
+                        {...formItemLayout}
+                        label="Project Template"
+                      >
+                      <Select
+                        showSearch
+                        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                        defaultValue={0} onChange={(value, label) => this.onValueChange(value, 'contact_protocol_id')}>
+                          <Option value={0}>Template 1</Option>
+                          <Option value={1}>Template 2</Option>
+                          <Option value={2}>Template 3</Option>
+                      </Select>
+                    </FormItem>
                   </Col>
-                  <Col span={8} />
+                  <Col span={4} />
                 </Row>
-                
-                
               </Modal>
               <Button size='default' style={styles.marginBtn}>
                 <Link to="../projects">Cancel
