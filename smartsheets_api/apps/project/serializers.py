@@ -38,4 +38,4 @@ class ProjectSerializer(serializers.ModelSerializer):
 class TemplateSerializer(serializers.ModelSerializer):
   class Meta:
     model = Template
-    fields = ('id', 'name', 'project')
+    fields = ('name', 'project')
