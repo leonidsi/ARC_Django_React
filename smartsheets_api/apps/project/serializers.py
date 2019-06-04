@@ -35,7 +35,7 @@ class ProjectSerializer(serializers.ModelSerializer):
                 'project_mgr_id', 'account_mgr_id', 'relationship_mgr_id', 'consultant_id', 'client_id',
                 'project_type_id'
               )
-# class TemplateSerializer(serializers.ModelSerializer):
-#   class Meta:
-#     model = Template
-#     fields = ('id', 'name', 'project')
+class TemplateSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Template
+    fields = ('id', 'name', 'project')
