@@ -13,7 +13,7 @@ from rest_framework import status
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, BasePermission
 from rest_framework.response import Response
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
@@ -140,7 +140,7 @@ class TemplateView(ListCreateAPIView):
         templates = Template.objects.all()
         responses = []
         for template in templates:
-            response = TemplateSerializer(template).data['name']
+            response = TemplateSerializer(template).data
             responses.append(response)
         return Response(responses, status=status.HTTP_200_OK)
 
@@ -153,7 +153,7 @@ class TemplateView(ListCreateAPIView):
         project_data = serializer.data
         project = Project.objects.get(id=project_data['id'])
         request_template_name = request.data['template_data']['template_name']
-        template = Template(request_template_name, project.id)
+        template = Template(name=request_template_name, project=project)
         template.save()
         response = {"message": "Ok"}
         return Response(response, status=status.HTTP_200_OK)
