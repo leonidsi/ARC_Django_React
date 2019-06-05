@@ -214,6 +214,11 @@ class AppRouter extends React.Component {
             path={`${url}/help_desk/edit/:id`}
             component={asyncComponent(() => import('../HelpDesk/EditProject'))}
           />
+          <Route
+            exact
+            path={`${url}/history`}
+            component={asyncComponent(() => import('../Histories/HistoryList'))}
+          />
         </Switch>
       );
     } else {

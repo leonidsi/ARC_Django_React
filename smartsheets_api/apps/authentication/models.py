@@ -11,6 +11,7 @@ from django.contrib.auth.models import (
 
 from django.utils.translation import ugettext_lazy as _
 from apps.role.models import Role
+from simple_history.models import HistoricalRecords
 
 class UserManager(BaseUserManager):
     def _create_user(self, email, password,
@@ -87,6 +88,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     # In this case we want it to be the email field.
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
+
+    history = HistoricalRecords()
     # REQUIRED_FIELDS = []
     # Tells Django that the UserManager class defined above should manage
     # objects of this type.

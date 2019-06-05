@@ -20,6 +20,21 @@ export function* fetchRequest() {
     }
   });
 }
+export function* fetchHistoryRequest() {
+  yield takeEvery('FETCH_OTHERPROVIDER_HISTORIES_REQUEST', function*({ payload }) {
+    try {
+      const url =  `${API_URL}/other_providers_histories/`;
+      const result = yield call(request, url);
+      yield put({
+        type: actions.FETCH_OTHERPROVIDER_HISTORIES_SUCCESS,
+        payload: result,
+      });
+    } catch(err) {
+      notification('error', err.message || 'Internal Server Error');
+      yield put({ type: actions.FETCH_OTHERPROVIDER_HISTORIES_ERROR });
+    }
+  });
+}
 
 export function* deleteRequest() {
   yield takeEvery('DELETE_OTHERPROVIDER_REQUEST', function*({ payload }) {
@@ -109,6 +124,7 @@ export function* updateRequest() {
 export default function* rootSaga() {
   yield all([
     fork(fetchRequest),
+    fork(fetchHistoryRequest),
     fork(deleteRequest),
     fork(insertRequest),
     fork(getRequest),
