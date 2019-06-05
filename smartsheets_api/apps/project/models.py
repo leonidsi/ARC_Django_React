@@ -111,7 +111,7 @@ class Project(models.Model):
 
 class Template(models.Model):
     name = models.CharField(max_length=50)
-    project = models.OneToOneField(Project, on_delete=models.CASCADE, primary_key=True)
+    project = models.OneToOneField(Project, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
