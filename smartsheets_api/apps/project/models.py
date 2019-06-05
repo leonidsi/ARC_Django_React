@@ -1,4 +1,6 @@
 from django.db import models
+from simple_history.models import HistoricalRecords
+
 from apps.project_manager.models import ProjectManager
 from apps.account_manager.models import AccountManager
 from apps.relationship_manager.models import RelationshipManager
@@ -106,6 +108,7 @@ class Project(models.Model):
     client_id = models.ForeignKey(Client, on_delete=models.CASCADE, null=True)
     project_type_id = models.ForeignKey(ProjectType, on_delete=models.CASCADE, null=True)
 
+    history = HistoricalRecords()
     def __str__(self):
         return self.name
 

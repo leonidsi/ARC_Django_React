@@ -10,7 +10,7 @@ from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, BasePermission
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
@@ -264,3 +264,22 @@ class ListCreateUsersView(ListCreateAPIView):
             relationship_manager.save()
         
         return Response(response, status=status.HTTP_201_CREATED)
+
+class UserHistoryView(ListAPIView):
+    permission_classes = (IsAuthenticated and IsTokenValid,)
+
+    def get(self, request, format=None):
+        """
+        Return a list of all other providers's history.
+        """
+        user_histories = User.history.all()
+        responses = []
+        response = {}
+        for user_history in user_histories:
+            response['name'] = User.objects.get(email=user_history.history_user).username
+            response['date'] = user_history.history_date
+            response['type'] = user_history.history_type
+            response['user'] = User.objects.get(email=user_history.history_user).username
+            responses.append(response)
+        print(responses)
+        return Response(responses, status=status.HTTP_200_OK)

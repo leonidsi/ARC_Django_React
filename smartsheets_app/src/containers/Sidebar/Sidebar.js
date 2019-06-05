@@ -282,6 +282,17 @@ class Sidebar extends Component {
                   </Link>
                 </Menu.Item>
               }
+              {isSuperAdmin &&
+                <Menu.Item key="history">
+                  <Link to={`${url}/history`}>
+                    <span className="isoMenuHolder" style={submenuColor}>
+                    <i className="ion-ios-help-outline" />                 <span className="nav-text">
+                        History
+                      </span>
+                    </span>
+                  </Link>
+                </Menu.Item>
+              }
             </Menu>
           </Scrollbars>
         </Sider>

@@ -4,20 +4,16 @@ import { mapProject } from "../../helpers/utility";
 
 const initState = new Map({
   projectsList: [],
+  originProjectHistories: [],
   singleProject: {},
   loading: false  
 });
 export default function projectsReducer(state = initState, action) {
   switch (action.type) {
     case actions.FETCH_PROJECTS_SUCCESS:
-      // let originProjects = action.payload
-      // originProjects.filter((item) => {
-      //   for (let key in item) {
-      //     if (item[key] === null) item[key] = ''
-      //   }
-      //   return item
-      // })
       return { projectsList: action.payload.map(p => mapProject(p)) }
+    case actions.FETCH_PROJECT_HISTORIES_SUCCESS:
+      return { projectHistoriesList: action.payload.map(p => mapProject(p)) }
     case actions.DELETE_PROJECT_SUCCESS:
       let { projectsList } = state
       projectsList = projectsList.filter((item) => item.id !== action.payload.id)

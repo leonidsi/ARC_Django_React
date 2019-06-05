@@ -13,7 +13,7 @@ from rest_framework import status
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, BasePermission
 from rest_framework.response import Response
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
@@ -157,3 +157,23 @@ class TemplateView(ListCreateAPIView):
         template.save()
         response = {"message": "Ok"}
         return Response(response, status=status.HTTP_200_OK)
+
+
+class ProjectHistoryView(ListAPIView):
+    permission_classes = (IsAuthenticated and IsTokenValid,)
+
+    def get(self, request, format=None):
+        """
+        Return a list of all other providers's history.
+        """
+        project_histories = Project.history.all()
+        responses = []
+        response = {}
+        for project_history in project_histories:
+            response['name'] = project_history.name
+            response['date'] = project_history.history_date
+            response['type'] = project_history.history_type
+            response['user'] = User.objects.get(email=project_history.history_user).username
+            responses.append(response)
+        print(responses)
+        return Response(responses, status=status.HTTP_200_OK)

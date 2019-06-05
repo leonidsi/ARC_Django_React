@@ -42,6 +42,8 @@ THIRD_PARTY_APPS = (
     'corsheaders',
     'drf_yasg',
     'gunicorn',
+    'field_history',
+    'simple_history',
 )
 
 LOCAL_APPS = (
@@ -73,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'smartsheets_api.urls'

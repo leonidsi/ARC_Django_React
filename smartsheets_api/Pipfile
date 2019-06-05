@@ -27,6 +27,8 @@ drf-writable-nested = "*"
 bandit = "*"
 gunicorn = "*"
 gevent = "*"
+django-field-history = "*"
+django-simple-history = "*"
 
 [requires]
 python_version = "3.6"
