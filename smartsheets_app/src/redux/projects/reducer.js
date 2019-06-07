@@ -5,6 +5,7 @@ import { mapProject } from "../../helpers/utility";
 const initState = new Map({
   projectsList: [],
   singleProject: {},
+  templateList: [],
   loading: false  
 });
 export default function projectsReducer(state = initState, action) {
@@ -33,6 +34,8 @@ export default function projectsReducer(state = initState, action) {
       return { projectsList: projectsListOrigin.concat([action.payload]), loading: false }    
     case actions.GET_PROJECT_SUCCESS: 
       return { singleProject: action.payload }
+    case actions.GET_TEMPLATELIST_SUCCESS:
+      return { templateList: action.payload }
     default:
       return state
   }
