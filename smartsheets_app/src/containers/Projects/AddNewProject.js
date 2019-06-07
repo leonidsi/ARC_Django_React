@@ -31,8 +31,16 @@ import otherProvidersActions from '../../redux/other_providers/actions';
 import projectTypesActions from '../../redux/project_types/actions';
 import projectStatusActions from '../../redux/project_status/actions';
 import smartSheetActions from '../../redux/smartsheet/actions';
+import Autosuggest from 'react-autosuggest';
+import './AddNewProject.css'
 
-const { insertProject } = projectsActions;
+const {
+  getProject,
+  insertProject,
+  getTemplateList,
+  insertTemplate,
+  updateProject
+} = projectsActions;
 const { fetchProjectMgrs } = projectMgrsActions;
 const { fetchAccountMgrs } = accountMgrsActions;
 const { fetchConsultants } = consultantsActions;
@@ -44,6 +52,7 @@ const { fetchOtherProviders } = otherProvidersActions;
 const { fetchProjectTypes } = projectTypesActions;
 const { fetchProjectStatus } = projectStatusActions;
 const { fetchSheets, fetchKeyDates, clearSheets } = smartSheetActions;
+const confirm = Modal.confirm;
 
 const Option = SelectOption;
 const FormItem = Form.Item;
@@ -74,38 +83,66 @@ const dateFormatList = ["MM-DD-YYYY", "MM/DD/YYYY", "MM.DD.YYYY", "MMM DD YYYY"]
 
 class AddNewProject extends React.Component {
   state = {
-      projectData: { name: '' },
-      errorStatus: 1,
-      visible: false,
-      confirmLoading: false,
-  }  
+    templateName: '',
+    templateList: [],
+    projectData: { name: '' },
+    errorStatus: 1,
+    visible: false,
+    suggestions: []
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.singleProject !== undefined && this.props.singleProject !== nextProps.singleProject){
+      let { singleProject } = nextProps;
+      singleProject['sheet_id'] = "";
+      this.setState({
+        projectData: singleProject
+      })
+    }
+    if(nextProps.templateList !== undefined && this.props.templateList !== nextProps.templateList){
+      let templateList = [];
+      // nextProps.templateList.forEach((obj) => {
+      //   const template = {
+      //     id: obj.project,
+      //     name: obj.name
+      //   }
+      //   templateList.push(template);
+      // })
+      this.setState({
+        templateList: nextProps.templateList
+      })
+    }
+  }
+
   componentWillMount() {
     const { 
-        fetchProjectMgrs,
-        fetchAccountMgrs,
-        fetchConsultants,
-        fetchClients, 
-        fetchServers,   
-        fetchHowFoundPyx,
-        fetchToolkitTiers,
-        fetchOtherProviders,         
-        fetchProjectTypes,
-        fetchProjectStatus,       
-       } = this.props;
+      fetchProjectMgrs,
+      fetchAccountMgrs,
+      fetchConsultants,
+      fetchClients, 
+      fetchServers,   
+      fetchHowFoundPyx,
+      fetchToolkitTiers,
+      fetchOtherProviders,         
+      fetchProjectTypes,
+      fetchProjectStatus,
+      getTemplateList,     
+    } = this.props;
 
-      fetchProjectMgrs()
-      fetchAccountMgrs()
-      fetchConsultants()
-      
-      fetchClients()  
-      fetchServers() 
-      fetchToolkitTiers()            
-      fetchHowFoundPyx()            
-      fetchOtherProviders()                  
-      fetchProjectTypes()       
-      fetchProjectStatus()     
-      this.onFetchSheets = debounce(1000, this.onFetchSheets)   
+    fetchProjectMgrs()
+    fetchAccountMgrs()
+    fetchConsultants()
     
+    fetchClients()  
+    fetchServers() 
+    fetchToolkitTiers()            
+    fetchHowFoundPyx()            
+    fetchOtherProviders()                  
+    fetchProjectTypes()       
+    fetchProjectStatus()
+
+    getTemplateList()
+    this.onFetchSheets = debounce(1000, this.onFetchSheets)   
   }
 
   getPMSmartSheetCode(projectManagerId) {
@@ -121,14 +158,16 @@ class AddNewProject extends React.Component {
     const { fetchSheets } = this.props; 
     fetchSheets({ postData }) 
   }
+
   onValueChange = (val, type) => {
-    const { projectData } = this.state   
-    let postData = {}
+    const { projectData } = this.state;
+    let postData = {};
+
     switch (type) {
       case 'name':
         this.setState({ errorStatus: 1 })
         break
-      case 'project_mgr_id':{
+      case 'project_mgr_id': {
         const code = this.getPMSmartSheetCode(val)
         this.props.clearSheets()
         projectData['sheet_id'] = ''
@@ -176,7 +215,8 @@ class AddNewProject extends React.Component {
     // projectData.contracted_invitees = parseInt(contracted_invitees, 10)
     // projectData.actual_invitees = parseInt(actual_invitees, 10)    
     this.setState({ projectData: Object.assign({}, projectData) })
-  }    
+  }
+
   handleSubmit = () => {
     let { name } = this.state.projectData
     const project_nameTrimmed = name.replace(/\s/g, '')
@@ -188,6 +228,7 @@ class AddNewProject extends React.Component {
         this.submitInsertRequest();
     }
   }
+
   submitInsertRequest = () => {
     const { insertProject, keydatesList } = this.props
     const { sheet_id } = this.state.projectData
@@ -198,6 +239,7 @@ class AddNewProject extends React.Component {
     this.setState({ projectData });
     insertProject({ postData: projectData });
   }
+
   helderStringToDate(data) {
     if (data === null) return ''
     if (new Date(data) instanceof Date && !isNaN(new Date(data).valueOf())) 
@@ -210,39 +252,112 @@ class AddNewProject extends React.Component {
     });
   };
 
+  onTemplateNameChange = (event, { newValue }) => {
+    this.setState({templateName: newValue});
+  }
+
   handleOk = () => {
+    const { insertTemplate, updateProject } = this.props
+    const isUpdate = this.state.templateList.filter(template =>
+      template.name === this.state.templateName
+    ).length > 0 ? true:false;
+
+    if(isUpdate) {
+      const updateTemplate = this.state.templateList.filter(template =>
+        template.name === this.state.templateName
+      );
+      let { projectData } = this.state;
+      projectData.id = updateTemplate[0].project;
+      updateProject({ postData: projectData })
+    } else {
+      const postData = {
+        project_data: this.state.projectData,
+        template_data: {
+          template_name: this.state.templateName
+        }
+      }
+      insertTemplate({ postData });
+    }
+
     this.setState({
-      confirmLoading: true,
+      visible: false
     });
-    setTimeout(() => {
-      this.setState({
-        visible: false,
-        confirmLoading: false,
-      });
-    }, 2000);
   };
 
   handleCancel = () => {
-    console.log('Clicked cancel button');
     this.setState({
-      visible: false,
+      visible: false
     });
   };
+
+  templateChange = (val) => {
+    const {getProject} = this.props;
+    confirm({
+      title: 'The existing information that was entered in for this current “New Project” will be replaced with the selected template',
+      onOk() {
+        const postData = {
+          index: val
+        };
+        getProject({ postData });
+      },
+      centered: true
+    });
+  }
+
+  getSuggestions = value => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return inputLength === 0 ? [] : this.state.templateList.filter(template =>
+      template.name.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  };
+
+  getSuggestionValue = suggestion => suggestion.name;
+
+  renderSuggestion = suggestion => (
+    <div>
+      {suggestion.name}
+    </div>
+  );
+
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: this.getSuggestions(value)
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: []
+    });
+  };
+
+  renderInputComponent = inputProps => (
+    <Input {...inputProps} innerRef={inputProps.ref} ref={null} />
+  );
+
   render() {
     const { 
-        projectMgrsList,
-        accountMgrsList, 
-        consultantsList,
-        clientsList,
-        projectTypesList,
-        serversList,
-        toolkitTiersList,
-        sheetsList,
-        keydatesList,
-        loading
-      } = this.props;
+      projectMgrsList,
+      accountMgrsList, 
+      consultantsList,
+      clientsList,
+      projectTypesList,
+      serversList,
+      toolkitTiersList,
+      sheetsList,
+      keydatesList,
+      loading,
+    } = this.props;
     let sheets = sheetsList === undefined ? []:sheetsList
     const { visible, confirmLoading } = this.state;
+    const inputProps = {
+      placeholder: 'Template Name',
+      value: this.state.templateName,
+      onChange: this.onTemplateNameChange
+    };
+
     return (
       <LayoutContentWrapper>
         <PageHeader>New Project</PageHeader>
@@ -288,7 +403,7 @@ class AddNewProject extends React.Component {
                       validateStatus={ this.state.errorStatus > 0 ? "" : "error" }
                       help={ this.state.errorStatus > 0 ? "" : "It must be string contains at least one character" }
                     >
-                      <Input 
+                      <Input
                         size="default"
                         placeholder="Input New Project"
                         value={this.state.projectData.name}
@@ -1670,6 +1785,17 @@ class AddNewProject extends React.Component {
               <Button size='default' type="primary" onClick={() => this.handleSubmit()} disabled={loading}>
                 Save  
               </Button>
+              {
+                this.state.templateList !== undefined && this.state.templateList.length > 0?
+                <Select
+                  onChange={this.templateChange}
+                  style={{ width: 120, marginLeft: '8px' }}
+                >
+                  {
+                    this.state.templateList.map((item) => <Option key={item.project} value={item.project}>{item.name}</Option>)
+                  }
+                </Select>:''
+              }
               <Button size='default' onClick={this.showModal} style={styles.marginBtn}>
                 Save as Template
               </Button>
@@ -1682,24 +1808,23 @@ class AddNewProject extends React.Component {
                 onCancel={this.handleCancel}
               >
                 <Row gutter={24}>
-                  <Col span={4}/>
                   <Col span={16}>
                     <FormItem
                         style={styles.formItemMargin}
                         {...formItemLayout}
                         label="Project Template"
                       >
-                      <Select
-                        showSearch
-                        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                        defaultValue={0} onChange={(value, label) => this.onValueChange(value, 'contact_protocol_id')}>
-                          <Option value={0}>Template 1</Option>
-                          <Option value={1}>Template 2</Option>
-                          <Option value={2}>Template 3</Option>
-                      </Select>
+                      <Autosuggest
+                        suggestions={this.state.suggestions}
+                        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                        getSuggestionValue={this.getSuggestionValue}
+                        renderSuggestion={this.renderSuggestion}
+                        inputProps={inputProps}
+                        renderInputComponent={this.renderInputComponent}
+                      />
                     </FormItem>
                   </Col>
-                  <Col span={4} />
                 </Row>
               </Modal>
               <Button size='default' style={styles.marginBtn}>
@@ -1737,7 +1862,11 @@ AddNewProject.propTypes = {
   fetchHowFoundPyx: PropTypes.func,
   fetchProjectTypes: PropTypes.func,
   fetchProjectStatus: PropTypes.func,
+  getProject: PropTypes.func,
   insertProject: PropTypes.func,
+  updateProject: PropTypes.func,
+  getTemplateList: PropTypes.func,
+  insertTemplate: PropTypes.func,
   fetchSheets: PropTypes.func,
   fetchKeyDates: PropTypes.func,
 }
@@ -1759,6 +1888,8 @@ export default connect(
         sheetsList: state.SmartSheet.sheetsList,    
         keydatesList: state.SmartSheet.keydatesList,
         currentUser: state.Auth.get('currentUser'),
+        templateList: state.Projects.templateList,
+        singleProject: state.Projects.singleProject
     }),
     { 
         fetchProjectMgrs,
@@ -1770,8 +1901,12 @@ export default connect(
         fetchOtherProviders,
         fetchHowFoundPyx,        
         fetchProjectTypes,
-        fetchProjectStatus,       
+        fetchProjectStatus,
+        getProject,     
         insertProject,
+        getTemplateList,
+        insertTemplate,
+        updateProject,
         fetchSheets,
         fetchKeyDates,
         clearSheets

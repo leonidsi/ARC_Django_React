@@ -43,6 +43,19 @@ const projectActions = {
         type: projectActions.UPDATE_PROJECT_REQUEST,
         payload
     }),
+    GET_TEMPLATELIST_REQUEST: 'GET_TEMPLATELIST_REQUEST',
+    GET_TEMPLATELIST_SUCCESS: 'GET_TEMPLATELIST_SUCCESS',
+    GET_TEMPLATELIST_ERROR: 'GET_TEMPLATELIST_ERROR',
+    getTemplateList: () => ({
+        type: projectActions.GET_TEMPLATELIST_REQUEST
+    }),
+    INSERT_TEMPLATE_REQUEST: 'INSERT_TEMPLATE_REQUEST',
+    INSERT_TEMPLATE_SUCCESS: 'INSERT_TEMPLATE_SUCCESS',
+    INSERT_TEMPLATE_ERROR: 'INSERT_TEMPLATE_ERROR',
+    insertTemplate: payload => ({
+        type: projectActions.INSERT_TEMPLATE_REQUEST,
+        payload
+    }),
 
 }
 export default projectActions;

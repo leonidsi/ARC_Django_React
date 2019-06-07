@@ -223,6 +223,49 @@ export function* updateRequest() {
   });
 }
 
+export function* getTemplateListRequest() {
+  yield takeEvery('GET_TEMPLATELIST_REQUEST', function*() {
+    try {
+      let url = `${API_URL}/templates/`
+      let params = {
+        method: 'GET'
+      }
+      const result = yield call(request, url, params);
+      yield put({
+        type: actions.GET_TEMPLATELIST_SUCCESS,
+        payload: result,
+      });
+    } catch(err) {
+      notification('error', err.message || 'Internal Server Error');
+      yield put({ type: actions.GET_TEMPLATELIST_ERROR });
+    }
+  });
+}
+
+export function* insertTemplateRequest() {
+  yield takeEvery('INSERT_TEMPLATE_REQUEST', function*({ payload }) {
+    const { postData } = payload;
+    try {
+      const url = `${API_URL}/templates/`;
+      const params = {
+        method: 'POST',
+        body: JSON.stringify(postData),
+      };
+      const result = yield call(request, url, params);
+      yield put({
+        type: actions.INSERT_TEMPLATE_SUCCESS,
+        payload: result,
+      });
+      yield put(goBack())
+      notification('success', 'Successfully added!');   
+
+    } catch(err) {
+      notification('error', err.message || 'Internal Server Error');
+      yield put({ type: actions.INSERT_TEMPLATE_ERROR });
+    }
+  });
+}
+
 export default function* rootSaga() {
   yield all([
     fork(fetchRequest),
@@ -230,6 +273,8 @@ export default function* rootSaga() {
     fork(deleteRequest),
     fork(insertRequest),   
     fork(getRequest),    
-    fork(updateRequest),        
+    fork(updateRequest),
+    fork(getTemplateListRequest),
+    fork(insertTemplateRequest),
   ]);
 }
