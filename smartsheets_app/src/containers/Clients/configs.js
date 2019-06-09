@@ -40,13 +40,13 @@ const columns = [
   // },
   {
     title: 'Date joined pyx',
-    key: 'dateJoinedPyx',
-    render: object => renderCell(object, 'DateCell', 'dateJoinedPyx')
+    key: 'date_joined_pyx',
+    render: object => renderCell(object, 'TextCell', 'date_joined_pyx')
   },
   {
     title: 'Date left pyx',
-    key: 'dateLeftPyx',
-    render: object => renderCell(object, 'DateCell', 'dateLeftPyx')
+    key: 'date_left_pyx',
+    render: object => renderCell(object, 'TextCell', 'date_left_pyx')
   },
   // {
   //   title: 'Created date',

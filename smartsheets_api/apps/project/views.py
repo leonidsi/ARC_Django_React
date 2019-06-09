@@ -109,12 +109,12 @@ class ProjectDetailView(RetrieveUpdateDestroyAPIView):
             project = self.queryset.get(pk=kwargs["pk"])
             serializer = ProjectSerializer()
             updated_project = serializer.update(project, request.data)
-            send_mail(
-                'Updated a project in Perceptyx',
-                'Hello, Jim. Successfully updated a project!',
-                settings.EMAIL_HOST_USER,
-                ['jduncan@perceptyx.com']
-            )
+            # send_mail(
+            #     'Updated a project in Perceptyx',
+            #     'Hello, Jim. Successfully updated a project!',
+            #     settings.EMAIL_HOST_USER,
+            #     ['jduncan@perceptyx.com']
+            # )
             return Response(ProjectSerializer(updated_project).data)
         except Project.DoesNotExist:
             response = {"message": "Project with id: {} does not exist".format(kwargs["pk"])}

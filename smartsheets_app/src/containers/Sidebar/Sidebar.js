@@ -286,7 +286,7 @@ class Sidebar extends Component {
                 <Menu.Item key="history">
                   <Link to={`${url}/history`}>
                     <span className="isoMenuHolder" style={submenuColor}>
-                    <i className="ion-ios-help-outline" />                 <span className="nav-text">
+                    <i className="ion-ios-clock-outline" />                 <span className="nav-text">
                         History
                       </span>
                     </span>

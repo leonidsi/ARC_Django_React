@@ -262,6 +262,13 @@ class AddNewProject extends React.Component {
       template.name === this.state.templateName
     ).length > 0 ? true:false;
 
+    const { projectData } = this.state;
+    const project_nameTrimmed = projectData.name.replace(/\s/g, '')
+    const errorStatus = project_nameTrimmed.length
+    if ( errorStatus < 1) {
+      projectData.name="Template Project";      
+    }
+    
     if(isUpdate) {
       const updateTemplate = this.state.templateList.filter(template =>
         template.name === this.state.templateName
