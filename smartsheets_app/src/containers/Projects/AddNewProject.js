@@ -32,6 +32,7 @@ import projectTypesActions from '../../redux/project_types/actions';
 import projectStatusActions from '../../redux/project_status/actions';
 import smartSheetActions from '../../redux/smartsheet/actions';
 import Autosuggest from 'react-autosuggest';
+import moment from 'moment';
 import './AddNewProject.css'
 
 const {
@@ -365,6 +366,8 @@ class AddNewProject extends React.Component {
       onChange: this.onTemplateNameChange
     };
 
+    console.log(this.state.projectData)
+
     return (
       <LayoutContentWrapper>
         <PageHeader>New Project</PageHeader>
@@ -383,7 +386,7 @@ class AddNewProject extends React.Component {
                         showSearch
                         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         labelInValue size="large"
-                        defaultValue={{ key: 0 }}
+                        value={{ key: this.state.projectData.client_id?  this.state.projectData.client_id:0 }}
                         onChange={(obj) =>{
                           this.onValueChange(obj.key, 'client_id')
                         }}
@@ -444,7 +447,7 @@ class AddNewProject extends React.Component {
                         showSearch
                         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         labelInValue size="large" 
-                        defaultValue={{ key: 0 }} 
+                        value={{ key: this.state.projectData.project_type_id?  this.state.projectData.project_type_id:0 }}
                         onChange={(obj) =>{
                           this.onValueChange(obj.key, 'project_type_id')
                         }}
@@ -475,7 +478,7 @@ class AddNewProject extends React.Component {
                         showSearch
                         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         labelInValue size="large" 
-                        defaultValue={{ key: 0 }} 
+                        value={{ key: this.state.projectData.account_mgr_id?  this.state.projectData.account_mgr_id:0 }} 
                         onChange={(obj) =>{
                           this.onValueChange(obj.key, 'account_mgr_id')
                         }}
@@ -504,7 +507,7 @@ class AddNewProject extends React.Component {
                         showSearch
                         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         labelInValue size="large" 
-                        defaultValue={{ key: 0 }} 
+                        value={{ key: this.state.projectData.project_mgr_id?  this.state.projectData.project_mgr_id:0 }} 
                         onChange={(obj) =>{
                           this.onValueChange(obj.key, 'project_mgr_id')
                         }}
@@ -535,7 +538,7 @@ class AddNewProject extends React.Component {
                         showSearch
                         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         labelInValue size="large" 
-                        defaultValue={{ key: 0 }} 
+                        value={{ key: this.state.projectData.consultant_id?  this.state.projectData.consultant_id:0 }} 
                         onChange={(obj) =>{
                           this.onValueChange(obj.key, 'consultant_id')
                         }}
@@ -625,7 +628,8 @@ class AddNewProject extends React.Component {
                       {...formItemLayout}
                       label="Contracted Launch Date"
                     >
-                      <DatePicker 
+                      <DatePicker
+                        value={this.state.projectData.contracted_launch_date ? moment(this.state.projectData.contracted_launch_date, 'MM-DD-YYYY') : null}
                         onChange={(date, dateString) => this.onValueChange(dateString, 'contracted_launch_date')} 
                         format={dateFormatList}
                       />
@@ -638,6 +642,7 @@ class AddNewProject extends React.Component {
                       label="Contract Expiration Date"
                     >
                       <DatePicker 
+                        value={this.state.projectData.contract_expiration_date ? moment(this.state.projectData.contract_expiration_date, 'MM-DD-YYYY') : null}
                         onChange={(date, dateString) => this.onValueChange(dateString, 'contract_expiration_date')}
                         format={dateFormatList}
                       />
@@ -987,7 +992,11 @@ class AddNewProject extends React.Component {
                     >
                     <Select
                     showSearch
-                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0} size="large" defaultValue="" onChange={(value) => this.onValueChange(value, 'sheet_id')}>
+                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                    size="large"
+                    // defaultValue=""
+                    value={this.state.projectData.sheet_id && this.state.projectData.sheet_id !== ''? this.state.projectData.sheet_id:''}
+                    onChange={(value) => this.onValueChange(value, 'sheet_id')}>
                       <Option value="">Please choose a sheet</Option>
                         {
                           sheets.length > 0 &&
