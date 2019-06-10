@@ -62,6 +62,7 @@ class EditClient extends React.Component {
   }
   componentWillReceiveProps(props) {
     const { singleClient } = props
+    console.log(singleClient)
     this.setState({ singleClient: Object.assign({}, singleClient) })
   }
   handleInputChange = (type, val) => {
@@ -109,7 +110,7 @@ class EditClient extends React.Component {
             >
               <Select showSearch
               filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-              size="large" value={singleClient.naics_code1_id} onChange={(value, label) => this.handleInputChange('naiciCode1', value)}>
+              size="large" value={singleClient.naics_code1_id} onChange={(value, label) => this.handleInputChange('naics_code1_id', value)}>
                   <Option value="">Please choose a code</Option>
                   {
                     naicsCodesList !== undefined &&
@@ -130,7 +131,7 @@ class EditClient extends React.Component {
             >
               <Select showSearch
               filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-              size="large" value={singleClient.naics_code2_id} onChange={(value, label) => this.handleInputChange('naiciCode2', value)}>
+              size="large" value={singleClient.naics_code2_id} onChange={(value, label) => this.handleInputChange('naics_code2_id', value)}>
                   <Option value="">Please choose a code</Option>
                   {
                     naicsCodesList !== undefined &&
@@ -146,8 +147,8 @@ class EditClient extends React.Component {
             label="Date Joined Pyx"
           >
             <DatePicker
-              value={singleClient.dateJoinedPyx ? moment(singleClient.dateJoinedPyx, 'YYYY-MM-DD'): null}
-              onChange={(date, dateString) => this.handleInputChange('dateJoinedPyx', dateString)}
+              value={singleClient.date_joined_pyx ? moment(singleClient.date_joined_pyx, 'MM-DD-YYYY'): null}
+              onChange={(date, dateString) => this.handleInputChange('date_joined_pyx', dateString)}
               format={dateFormatList}
             />
           </FormItem>
@@ -157,8 +158,8 @@ class EditClient extends React.Component {
             label="Date Left Pyx"
           >
             <DatePicker
-              value={singleClient.dateLeftPyx ? moment(singleClient.dateLeftPyx, 'YYYY-MM-DD') : null}
-              onChange={(date, dateString) => this.handleInputChange('dateLeftPyx', dateString)}
+              value={singleClient.date_left_pyx ? moment(singleClient.date_left_pyx, 'MM-DD-YYYY') : null}
+              onChange={(date, dateString) => this.handleInputChange('date_left_pyx', dateString)}
               format={dateFormatList}
             />
           </FormItem>

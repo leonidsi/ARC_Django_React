@@ -60,7 +60,7 @@ class Test_ClientDetailView(APITestCase):
 			'fortune_level': 5,
 			'enterprise': False,
 			'greatplace_mostadmired': True,
-			'date_joined_pyx': '2015-10-28 16:09:59',
+			'date_joined_pyx': '10-28-2018',
 		}
 		response = self.client.put(self.url, update_data, **headers, format="json")
 		if response.status_code == status.HTTP_404_NOT_FOUND:

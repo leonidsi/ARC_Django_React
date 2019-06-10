@@ -19,7 +19,7 @@ import { generateCSVFile } from '../../helpers/utility';
 
 const { fetchClients, deleteClient } = clientsActions;
 const Panel = Collapse.Panel;
-const columns = ['name', 'naicsCode1', 'naicsCode2', 'dateJoinedPyx', 'dateLeftPyx', 'createdDate', 'snp_500', 'fortune_level', 'enterprise', 'greatplace_mostadmired']
+const columns = ['name', 'naicsCode1', 'naicsCode2', 'date_joined_pyx', 'date_left_pyx', 'createdDate', 'snp_500', 'fortune_level', 'enterprise', 'greatplace_mostadmired']
 const inputSearchStyle = {
   width: 200,
   margin: 5
@@ -44,7 +44,7 @@ class ClientsList extends Component {
   componentWillMount() {
     const { fetchClients } = this.props;
     fetchClients();
-  }
+  }  
   deleteCell = (record) => {
     const { deleteClient } = this.props;
     const delInfo = { index: record.id }

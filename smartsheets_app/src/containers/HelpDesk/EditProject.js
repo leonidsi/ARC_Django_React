@@ -364,7 +364,7 @@ class EditProject extends React.Component {
                           label="New Hire Cutoff Date"
                         >
                           <DatePicker
-                            value={projectData.hire_hire_cutoff ? moment(projectData.hire_hire_cutoff, 'YYYY-MM-DD') : null}
+                            value={projectData.hire_hire_cutoff ? moment(projectData.hire_hire_cutoff, 'MM-DD-YYYY') : null}
                             onChange={(date, dateString) => {
                               this.onValueChange(dateString, 'hire_hire_cutoff')
                             }}

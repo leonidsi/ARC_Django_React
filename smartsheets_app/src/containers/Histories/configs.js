@@ -23,13 +23,13 @@ const columns = [
     render: object => renderCell(object, 'TextCell', 'name')
   },
   {
-    title: 'date',
+    title: 'Date',
     key: 'date',
     width: '20%',
     render: object => renderCell(object, 'TextCell', 'date')
   },
   {
-    title: 'user',
+    title: 'User',
     key: 'user',
     width: '20%',
     render: object => renderCell(object, 'TextCell', 'user')

@@ -134,8 +134,13 @@ class EditProject extends React.Component {
     fetchProjectStatus() 
   }
 
+  componentDidMount() {
+
+  }
+
   componentWillReceiveProps(props) {
     let { projectData } = props
+    console.log('>>>>', props.contracted_launch_date);
     this.setState({ projectData })
     
   }
@@ -186,7 +191,9 @@ class EditProject extends React.Component {
         const { fetchKeyDates } = this.props
         postData = { smartsheet_auth_code: smartsheetCode, sheet_id }
         fetchKeyDates({ postData })
-        break        
+        break;
+      case 'contracted_launch_date':
+        console.log('date', val);
       default:
         break
     }
@@ -261,6 +268,7 @@ class EditProject extends React.Component {
       } = this.props;
     let sheets = sheetsList === undefined ? []:sheetsList
     const { projectData, isViewMode } = this.state
+    const disableStatus = isViewMode ? 'disabled' : ''
     return (
       <LayoutContentWrapper>
         <PageHeader>{isViewMode ? 'Project Detail' : 'Edit Project'}</PageHeader>
@@ -285,7 +293,7 @@ class EditProject extends React.Component {
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'client_id')
                             }}
-                            disabled={isViewMode}
+                            disabled={disableStatus}
                           >
                               {
                                 clientsList !== undefined &&
@@ -314,7 +322,7 @@ class EditProject extends React.Component {
                             placeholder="Input New Project"
                             value={this.state.projectData.name}
                             onChange = { (e)=> {this.onValueChange(e.target.value, 'name')} }
-                            disabled={isViewMode}
+                            disabled
                           />
                         </FormItem>
                       </Col>
@@ -539,7 +547,7 @@ class EditProject extends React.Component {
                           label="Contracted Launch Date"
                         >
                           <DatePicker
-                            value={projectData.contracted_launch_date ? moment(projectData.contracted_launch_date, 'YYYY-MM-DD') : null}
+                            value={projectData.contracted_launch_date ? moment(projectData.contracted_launch_date, 'MM-DD-YYYY') : null}
                             onChange={(date, dateString) => {
                               this.onValueChange(dateString, 'contracted_launch_date')
                             }}
@@ -555,7 +563,7 @@ class EditProject extends React.Component {
                           label="Contract Expiration Date"
                         >
                           <DatePicker
-                            value={projectData.contract_expiration_date ? moment(projectData.contract_expiration_date, 'YYYY-MM-DD') : null}
+                            value={projectData.contract_expiration_date ? moment(projectData.contract_expiration_date, 'MM-DD-YYYY') : null}
                             onChange={(date, dateString) => {
                               this.onValueChange(dateString, 'contract_expiration_date')
                             }}
@@ -1537,7 +1545,7 @@ class EditProject extends React.Component {
                           label="New Hire Cutoff Date"
                         >
                           <DatePicker
-                            value={projectData.hire_hire_cutoff ? moment(projectData.hire_hire_cutoff, 'YYYY-MM-DD') : null}
+                            value={projectData.hire_hire_cutoff ? moment(projectData.hire_hire_cutoff, 'MM-DD-YYYY') : null}
                             onChange={(date, dateString) => {
                               this.onValueChange(dateString, 'hire_hire_cutoff')
                             }}

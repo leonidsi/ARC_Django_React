@@ -132,14 +132,14 @@ class AddNewClient extends React.Component {
             {...formItemLayout}
             label="Date Joined Pyx"
           >
-            <DatePicker onChange={(date, dateString) => this.handleInputChange('dateJoinedPyx', dateString)} format={dateFormatList}/>
+            <DatePicker onChange={(date, dateString) => this.handleInputChange('date_joined_pyx', dateString)} format={dateFormatList}/>
           </FormItem>
           <FormItem
             style={styles.formItemMargin}
             {...formItemLayout}
             label="Date Left Pyx"
           >
-            <DatePicker onChange={(date, dateString) => this.handleInputChange('dateLeftPyx', dateString)} format={dateFormatList}/>
+            <DatePicker onChange={(date, dateString) => this.handleInputChange('date_left_pyx', dateString)} format={dateFormatList}/>
           </FormItem>
           <FormItem
             style={styles.formItemMargin}
