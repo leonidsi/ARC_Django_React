@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import consultantsActions from '../../redux/consultants/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchConsultants, deleteConsultant } = consultantsActions;
 const columns = ['username', 'fullname']
@@ -61,7 +61,7 @@ class ConsultantsList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `Consultants-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `Consultants-${today}.xlsx`)
   }
 
   renderTable() {

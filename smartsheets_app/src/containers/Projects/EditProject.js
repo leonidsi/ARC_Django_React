@@ -32,7 +32,7 @@ import otherProvidersActions from '../../redux/other_providers/actions';
 import projectTypesActions from '../../redux/project_types/actions';
 import projectStatusActions from '../../redux/project_status/actions';
 import smartSheetActions from '../../redux/smartsheet/actions';
-import { generateCSVFile, mapProject } from '../../helpers/utility';
+import { generateXLSXFile, mapProject } from '../../helpers/utility';
 
 const { getProject, updateProject } = projectsActions;
 const { fetchProjectMgrs } = projectMgrsActions;
@@ -231,7 +231,7 @@ class EditProject extends React.Component {
     const { projectData, activeTab } = this.state;
     const { keydatesList } = this.props;
 
-    generateCSVFile([{...mapProject(projectData), ...keydatesList}], columns[activeTab], `${tabs[activeTab-1]}.csv`);
+    generateXLSXFile([{...mapProject(projectData), ...keydatesList}], columns[activeTab], `${tabs[activeTab-1]}.xlsx`);
   }
 
   handleChangeTab = activeTab => {

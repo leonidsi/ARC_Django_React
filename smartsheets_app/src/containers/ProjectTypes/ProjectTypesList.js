@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import projectTypesActions from '../../redux/project_types/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchProjectTypes, deleteProjectType } = projectTypesActions;
 const columns = ['name' ]
@@ -60,7 +60,7 @@ class ProjectTypesList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `ProjectTypes-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `ProjectTypes-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

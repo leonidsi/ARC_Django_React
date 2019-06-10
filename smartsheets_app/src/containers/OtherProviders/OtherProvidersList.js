@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import otherProvidersAction from '../../redux/other_providers/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchOtherProviders, deleteOtherProvider } = otherProvidersAction;
 const columns = ['name']
@@ -61,7 +61,7 @@ class OtherProvidersList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `OtherProviders-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `OtherProviders-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

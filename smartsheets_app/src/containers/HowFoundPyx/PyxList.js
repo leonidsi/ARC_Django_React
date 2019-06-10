@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import howFoundPyxAction from '../../redux/how_found_pyx/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchHowFoundPyx, deleteHowFoundPyx } = howFoundPyxAction;
 const columns = ['name']
@@ -59,7 +59,7 @@ class PyxList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `Pyx-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `Pyx-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

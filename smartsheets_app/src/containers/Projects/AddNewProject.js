@@ -366,8 +366,6 @@ class AddNewProject extends React.Component {
       onChange: this.onTemplateNameChange
     };
 
-    console.log(this.state.projectData)
-
     return (
       <LayoutContentWrapper>
         <PageHeader>New Project</PageHeader>

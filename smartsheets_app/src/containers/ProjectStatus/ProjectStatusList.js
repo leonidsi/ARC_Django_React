@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import projectStatusActions from '../../redux/project_status/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchProjectStatus, deleteProjectStatus } = projectStatusActions;
 const columns = ['name' ]
@@ -60,7 +60,7 @@ class ProjectStatusList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `Project-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `Project-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

@@ -72,7 +72,7 @@ export class TableView extends Component {
         dataSource={dataList.getAll()}
         className="isoSortingTable"
         pagination={{ pageSizeOptions: ['10', '25', '100', '500'], showSizeChanger: true, pageSize: 100 }}
-        scroll={{ y: 240 }}
+        // scroll={{ y: 240 }}
       />
     );
   }
