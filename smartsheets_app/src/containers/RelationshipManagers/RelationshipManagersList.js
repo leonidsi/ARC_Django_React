@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import relationshipMgrsActions from '../../redux/relationship_mgrs/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchRelationshipMgrs, deleteRelationshipMgr } = relationshipMgrsActions;
 const columns = ['username', 'fullname']
@@ -59,7 +59,7 @@ class RelationshipManagersList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `RelationshipManager-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `RelationshipManager-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

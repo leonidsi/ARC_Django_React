@@ -15,7 +15,7 @@ import { InputSearch } from '../../components/uielements/input';
 import projectActions from '../../redux/projects/actions';
 import styles from '../../config/FormElements/form-styles'
 import { Row, Col } from 'antd';
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchProjects, deleteProject } = projectActions;
 const Panel = Collapse.Panel;
@@ -95,11 +95,11 @@ class Projects extends Component {
   exportData = () => {
     const today = new Date().getTime()
     if(this.props.projectsList!=null){
-      generateCSVFile(this.props.projectsList, allColumns, `Projects-${today}.csv`)
+      generateXLSXFile(this.props.projectsList, allColumns, `Projects-${today}.xlsx`)
     }    
   }
   handleExportCell = record => {
-    generateCSVFile([record], Object.keys(record), `Project-${record.name}.csv`)
+    generateXLSXFile([record], Object.keys(record), `Project-${record.name}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

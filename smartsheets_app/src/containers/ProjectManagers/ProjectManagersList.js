@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import projectMgrsActions from '../../redux/project_mgrs/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchProjectMgrs, deleteProjectMgr } = projectMgrsActions;
 const columns = ['username', 'fullname']
@@ -60,7 +60,7 @@ class ProjectManagerLists extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `ProjectManagers-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `ProjectManagers-${today}.xlsx`)
   }
 
   renderTable() {

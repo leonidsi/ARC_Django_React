@@ -15,7 +15,7 @@ import { InputSearch } from '../../components/uielements/input';
 import clientsActions from '../../redux/clients/actions';
 import styles from '../../config/FormElements/form-styles'
 import { Row, Col } from 'antd';
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchClients, deleteClient } = clientsActions;
 const Panel = Collapse.Panel;
@@ -91,7 +91,7 @@ class ClientsList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `Clients-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `Clients-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

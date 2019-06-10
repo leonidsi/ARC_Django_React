@@ -13,7 +13,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import naicsCodesAction from '../../redux/naics_codes/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 import { Row, Col } from 'antd';
 
 const { fetchNaicsCodes, deleteNaicsCodes } = naicsCodesAction;
@@ -89,7 +89,7 @@ class NaicsCodesList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `Naics-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `Naics-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

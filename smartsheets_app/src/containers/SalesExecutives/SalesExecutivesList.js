@@ -12,7 +12,7 @@ import { TableView } from '../../config/TableView/TableView';
 import { InputSearch } from '../../components/uielements/input';
 import accountMgrsActions from '../../redux/account_mgrs/actions';
 import styles from '../../config/FormElements/form-styles'
-import { generateCSVFile } from '../../helpers/utility';
+import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchAccountMgrs, deleteAccountMgr } = accountMgrsActions;
 const columns = ['username', 'fullname']
@@ -59,7 +59,7 @@ class SalesExecutivesList extends Component {
   }
   exportData = () => {
     const today = new Date().getTime()
-    generateCSVFile(this.getFilteredList(), columns, `SalesExecutive-${today}.csv`)
+    generateXLSXFile(this.getFilteredList(), columns, `SalesExecutive-${today}.xlsx`)
   }
   renderTable() {
     const { match } = this.props

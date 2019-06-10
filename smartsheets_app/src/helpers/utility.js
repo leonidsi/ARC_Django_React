@@ -1,4 +1,5 @@
 import { Map } from 'immutable';
+import XLSX from 'xlsx'
 
 export function clearToken() {
   localStorage.removeItem('id_token');
@@ -140,26 +141,21 @@ export function getOS() {
 
 const replaceComma = str => `${str}`.replace(/,/g, ' ')
 
-export function generateCSVFile (rows, columns, fileName) {
-  let CR = getOS() === 'Win' ? '\r\n' : '\n'
-  let data = columns.join(', ') + CR
+export function generateXLSXFile (rows, columns, fileName) {
+  let xlsx_data = []
+  xlsx_data.push(columns)
 
   rows.forEach(item => {
     const values = columns.map(c => replaceComma(item[c] || ' '))
-    data += values.join(',') + CR
+    xlsx_data.push(values)
   })
-  
-  if (navigator.msSaveBlob) { // IE 10+
-    var blob = new Blob([data],{type: 'text/csvcharset=utf-8'})
-    navigator.msSaveBlob(blob, 'csvname.csv')
-  } else {
-    let csvContent = data
-    const encodedUri = encodeURIComponent(csvContent)
-    const link = document.createElement('a')
-    link.setAttribute('href', 'data:text/csvcharset=utf-8,%EF%BB%BF' + encodedUri)
-    link.setAttribute('download', fileName)
-    document.body.appendChild(link) // Required for FF
-    link.click()
-    link.remove()
-  }
+
+  var ws = XLSX.utils.aoa_to_sheet(xlsx_data);
+
+  /* add to workbook */
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Sheet");
+
+  /* generate an XLSX file */
+  XLSX.writeFile(wb, fileName);
 }
