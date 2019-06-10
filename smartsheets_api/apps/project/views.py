@@ -46,7 +46,7 @@ class ProjectList(ListCreateAPIView):
         """
         Return a list of all Projects.
         """
-        projects = Project.objects.all()
+        projects = Project.objects.filter(is_template=False)
         responses = []
         for project in projects:
             response = ProjectSerializer(project).data
@@ -70,7 +70,7 @@ class ProjectList(ListCreateAPIView):
         return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        print(request.data)
+        request.data.update({'is_template': False})
         serializer = ProjectSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -146,7 +146,6 @@ class TemplateView(ListCreateAPIView):
 
     def post(self, request, *args, **kwargs):
         request_project_data = request.data['project_data']
-        request_project_data.update({'is_template': False})
         serializer = ProjectSerializer(data=request_project_data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
