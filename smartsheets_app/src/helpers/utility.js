@@ -122,6 +122,16 @@ export function mapProject(project) {
   return project
 }
 
+export function mapClient(client) {
+  if (client.naicsCode1) {
+    client.naicsCode1Name = client.naicsCode1.name
+  }
+  if (client.naicsCode2) {
+    client.naicsCode2Name = client.naicsCode2.name
+  }
+  return client
+}
+
 export function getOS() {
   const OS_Name = navigator.appVersion
   if (OS_Name.indexOf("Win") !== -1) {
@@ -151,11 +161,8 @@ export function generateXLSXFile (rows, columns, fileName) {
   })
 
   var ws = XLSX.utils.aoa_to_sheet(xlsx_data);
-
-  /* add to workbook */
   var wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Sheet");
 
-  /* generate an XLSX file */
   XLSX.writeFile(wb, fileName);
 }

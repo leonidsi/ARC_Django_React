@@ -19,8 +19,32 @@ import { generateXLSXFile } from '../../helpers/utility';
 
 const { fetchProjects, deleteProject } = projectActions;
 const Panel = Collapse.Panel;
-const columns = ['name', 'projectManagerName', 'accountManagerName', 'relationshipManagerName',  'consultantName', 'clientName', 'projectTypeName', 'survey_id', 'revenue']
-const allColumns = ['clientName', 'name', 'survey_id', 'project_type_id', 'accountManagerName', 'relationshipManagerName', 'projectManagerName', 'consultant_id', 'data_manager', 'revenue', 'toolkit_id', 'sso_id', 'contracted_launch_date', 'contract_expiration_date', 'final_survey_in_contract', 'contracted_invitees', 'contracted_paper_surveys', 'contracted_email_invitees', 'contracted_dc_translations', 'contracted_kiosk_invitees', 'contracted_report_users', 'contracted_paper_invitees', 'european_employees', 'contracted_virtual_trainings', 'contracted_a2a_trainings', 'contracted_onsite_trainings', 'contracted_rpt_translations', 'number_historical_uploads', 'num_exec_decks', 'num_exec_interviews', 'onsite_pres_id', 'server_id', 'new_business_id', 'sheet_id', 'project_kickoff_date', 'survey_launch_date', 'exec_first_draft_date', 'exec_presentation_date', 'project_close_date', 'project_team_training_date', 'question_final_date', 'online_survey_final_date', 'List.pilot_launch_date', 'final_data_date', 'ship_paper_date', 'manager_account_release_date', 'actual_invitees', 'actual_email_invitees', 'actual_kiosk_invitees', 'actual_paper_invitees', 'actual_paper_surveys', 'actual_dc_translations', 'actual_report_users', 'actual_rpt_translations', 'actual_exec_interviews', 'actual_exec_decks', 'actual_exec_presentations', 'actual_virtual_trainings', 'actual_onsite_trainings', 'actual_a2a_trainings', 'primary_contact', 'contact_email', 'contact_protocol_id', 'require_auth', 'ok_to_miss', 'lock_survey', 'single_use_auth', 'hire_hire_cutoff', 'dc_sso_url', 'ok_to_send_auth', 'ok_to_reopen', 'kiosk', 'paper_surveys', 'european_employees', 'alt_standard_reply', 'other_dc_notes', 'report_sso_url', 'project_rating', 'client_rating', 'number_tickets', 'number_support_emails', 'number_support_calls', 'dc_readonly_url', 'custom_dev_notes', 'other_notes', '']
+const columns = ['name', 'projectManagerName', 'accountManagerName', 'relationshipManagerName',  
+                'consultantName', 'clientName', 'projectTypeName', 'survey_id', 'revenue']
+
+const allColumns = ['clientName', 'name', 'survey_id', 'projectTypeName', 'accountManagerName', 
+                    'relationshipManagerName', 'projectManagerName', 'consultant_id', 'data_manager',
+                    'revenue', 'toolkit_id', 'sso_id', 'contracted_launch_date', 
+                    'contract_expiration_date', 'final_survey_in_contract', 'contracted_invitees', 
+                    'contracted_paper_surveys', 'contracted_email_invitees', 'contracted_dc_translations', 
+                    'contracted_kiosk_invitees', 'contracted_report_users', 'contracted_paper_invitees', 
+                    'european_employees', 'contracted_virtual_trainings', 'contracted_a2a_trainings', 
+                    'contracted_onsite_trainings', 'contracted_rpt_translations', 'number_historical_uploads', 
+                    'num_exec_decks', 'num_exec_interviews', 'onsite_pres_id', 'server_id', 'new_business_id', 
+                    'sheet_id', 'project_kickoff_date', 'survey_launch_date', 'exec_first_draft_date', 
+                    'exec_presentation_date', 'project_close_date', 'project_team_training_date', 
+                    'question_final_date', 'online_survey_final_date', 'List.pilot_launch_date', 
+                    'final_data_date', 'ship_paper_date', 'manager_account_release_date', 'actual_invitees', 
+                    'actual_email_invitees', 'actual_kiosk_invitees', 'actual_paper_invitees', 
+                    'actual_paper_surveys', 'actual_dc_translations', 'actual_report_users', 
+                    'actual_rpt_translations', 'actual_exec_interviews', 'actual_exec_decks', 
+                    'actual_exec_presentations', 'actual_virtual_trainings', 'actual_onsite_trainings', 
+                    'actual_a2a_trainings', 'primary_contact', 'contact_email', 'contact_protocol_id', 
+                    'require_auth', 'ok_to_miss', 'lock_survey', 'single_use_auth', 'hire_hire_cutoff', 
+                    'dc_sso_url', 'ok_to_send_auth', 'ok_to_reopen', 'kiosk', 'paper_surveys', 
+                    'alt_standard_reply', 'other_dc_notes', 'report_sso_url', 'project_rating', 
+                    'client_rating', 'number_tickets', 'number_support_emails', 'number_support_calls', 
+                    'dc_readonly_url', 'custom_dev_notes', 'other_notes']
 
 const inputSearchStyle = {
   width: 200,
@@ -95,6 +119,7 @@ class Projects extends Component {
   exportData = () => {
     const today = new Date().getTime()
     if(this.props.projectsList!=null){
+      console.log(this.props.projectsList)
       generateXLSXFile(this.props.projectsList, allColumns, `Projects-${today}.xlsx`)
     }    
   }

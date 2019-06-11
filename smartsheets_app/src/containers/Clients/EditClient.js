@@ -62,7 +62,6 @@ class EditClient extends React.Component {
   }
   componentWillReceiveProps(props) {
     const { singleClient } = props
-    console.log(singleClient)
     this.setState({ singleClient: Object.assign({}, singleClient) })
   }
   handleInputChange = (type, val) => {

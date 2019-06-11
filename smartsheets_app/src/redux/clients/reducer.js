@@ -1,5 +1,6 @@
 import { Map } from "immutable";
 import actions from "./actions";
+import { mapClient } from "../../helpers/utility";
 
 const initState = new Map({
   clientsList: [],
@@ -9,7 +10,7 @@ const initState = new Map({
 export default function clientsReducer(state = initState, action) {
   switch (action.type) {
     case actions.FETCH_CLIENTS_SUCCESS:
-      return { clientsList: action.payload }
+      return { clientsList: action.payload.map(c => mapClient(c)) }
     case actions.DELETE_CLIENT_SUCCESS:
       let { clientsList } = state
       clientsList = clientsList.filter((item) => item.id !== action.payload.id)
