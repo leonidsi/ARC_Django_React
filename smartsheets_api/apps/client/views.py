@@ -17,7 +17,10 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework_jwt.utils import jwt_payload_handler
 from rest_framework.authentication import BasicAuthentication, get_authorization_header
 from rest_framework.exceptions import AuthenticationFailed
+
 from apps.authentication.views import IsTokenValid
+from apps.naics_code.models import NaicsCode
+from apps.naics_code.serializers import NaicsCodeSerializer
 
 class ClientList(ListCreateAPIView):
     """
@@ -32,8 +35,15 @@ class ClientList(ListCreateAPIView):
         Return a list of all Clients.
         """
         clients = Client.objects.all()
-        serializer = ClientSerializer(clients, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        responses = []
+        for client in clients:
+            response = ClientSerializer(client).data
+            if client.naics_code1_id:
+                response['naicsCode1'] = NaicsCodeSerializer(NaicsCode.objects.get(name = client.naics_code1_id)).data   
+            if client.naics_code2_id:
+                response['naicsCode2'] = NaicsCodeSerializer(NaicsCode.objects.get(name = client.naics_code2_id)).data
+            responses.append(response)
+        return Response(responses, status=status.HTTP_200_OK)        
 
     def post(self, request, *args, **kwargs):
         serializer = ClientSerializer(data=request.data, context={'request': request})
