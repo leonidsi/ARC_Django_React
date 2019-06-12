@@ -119,7 +119,6 @@ class Projects extends Component {
   exportData = () => {
     const today = new Date().getTime()
     if(this.props.projectsList!=null){
-      console.log(this.props.projectsList)
       generateXLSXFile(this.props.projectsList, allColumns, `Projects-${today}.xlsx`)
     }    
   }

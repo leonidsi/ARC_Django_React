@@ -52,7 +52,6 @@ class IsTokenValid(BasePermission):
         is_allowed_user = True
         
         token = get_token(request)
-        print(token)
         decode_token = jwt.decode(token, settings.SECRET_KEY, algorithm='HS256')
         try:
             is_takedToken = User.objects.get(email=decode_token['email'])
@@ -273,13 +272,12 @@ class UserHistoryView(ListAPIView):
         Return a list of all other providers's history.
         """
         user_histories = User.history.all()
-        responses = []
-        response = {}
+        responses = []        
         for user_history in user_histories:
+            response = {}
             response['name'] = User.objects.get(email=user_history.history_user).username
             response['date'] = user_history.history_date
             response['type'] = user_history.history_type
             response['user'] = User.objects.get(email=user_history.history_user).username
             responses.append(response)
-        print(responses)
         return Response(responses, status=status.HTTP_200_OK)

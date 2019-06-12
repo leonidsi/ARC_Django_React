@@ -166,13 +166,12 @@ class ProjectHistoryView(ListAPIView):
         Return a list of all other providers's history.
         """
         project_histories = Project.history.all()
-        responses = []
-        response = {}
+        responses = []        
         for project_history in project_histories:
+            response = {}
             response['name'] = project_history.name
             response['date'] = project_history.history_date
             response['type'] = project_history.history_type
             response['user'] = User.objects.get(email=project_history.history_user).username
             responses.append(response)
-        print(responses)
         return Response(responses, status=status.HTTP_200_OK)

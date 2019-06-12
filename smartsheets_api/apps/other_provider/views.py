@@ -39,13 +39,6 @@ class OtherProviderList(ListCreateAPIView):
         serializer = OtherProviderSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        # provider_data = serializer.data
-        # provider = OtherProvider.objects.get(id=provider_data['id'])
-        # histories = provider.get_name_history()
-        # print(48, histories)
-        # print(49, provider.history.latest())
-        # a = provider.history.latest()
-        # print(a.history_type)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class OtherProviderDetailView(RetrieveUpdateDestroyAPIView):
@@ -98,13 +91,12 @@ class OtherProviderHistoryView(ListAPIView):
         Return a list of all other providers's history.
         """
         other_provider_histories = OtherProvider.history.all()
-        responses = []
-        response = {}
+        responses = []        
         for other_provider_history in other_provider_histories:
+            response = {}
             response['name'] = other_provider_history.name
             response['date'] = other_provider_history.history_date
             response['type'] = other_provider_history.history_type
             response['user'] = User.objects.get(email=other_provider_history.history_user).username
             responses.append(response)
-        print(responses)
         return Response(responses, status=status.HTTP_200_OK)
