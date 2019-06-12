@@ -128,12 +128,12 @@ class ProjectSerializer(serializers.ModelSerializer):
     instance.project_notes = validated_data.get('project_notes', instance.project_notes)
     instance.is_template = validated_data.get('is_template', instance.is_template)
 
-    instance.project_mgr_id_id = validated_data.get('project_mgr_id', instance.project_mgr_id)
-    instance.account_mgr_id_id = validated_data.get('account_mgr_id', instance.account_mgr_id)
-    instance.relationship_mgr_id_id = validated_data.get('relationship_mgr_id', instance.relationship_mgr_id)
-    instance.consultant_id_id = validated_data.get('consultant_id', instance.consultant_id)
-    instance.client_id_id = validated_data.get('client_id', instance.client_id)
-    instance.project_type_id_id = validated_data.get('project_type_id', instance.project_type_id)
+    instance.project_mgr_id_id = validated_data.get('project_mgr_id', instance.project_mgr_id_id)
+    instance.account_mgr_id_id = validated_data.get('account_mgr_id', instance.account_mgr_id_id)
+    instance.relationship_mgr_id_id = validated_data.get('relationship_mgr_id', instance.relationship_mgr_id_id)
+    instance.consultant_id_id = validated_data.get('consultant_id', instance.consultant_id_id)
+    instance.client_id_id = validated_data.get('client_id', instance.client_id_id)
+    instance.project_type_id_id = validated_data.get('project_type_id', instance.project_type_id_id)
     instance.save()
     return instance
 

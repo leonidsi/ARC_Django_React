@@ -29,12 +29,10 @@ class Test_ClientList(APITestCase):
 	        "fortune_level": 2,
 	        "enterprise": False,
 	        # "greatplace_mostadmired": True,
-	        "date_joined_pyx": "2019-05-12T15:08:54.327Z",
-	        "date_left_pyx": "2019-05-12T15:08:54.327Z",
+	        "date_joined_pyx": "05-12-2019",
+	        "date_left_pyx": "05-15-2019",
 	        "naics_code1_id": 1,
-	        "naics_code2_id": 1,
-	        "created_at": "2019-05-12T15:08:54.327Z",
-	        "updated_at": "2019-05-12T15:08:54.327Z"
+	        "naics_code2_id": 1
 		}
 		response = self.client.post(self.url, data, **headers)
 		assert response.status_code == status.HTTP_201_CREATED
@@ -59,7 +57,7 @@ class Test_ClientDetailView(APITestCase):
 			'snp_500': True,
 			'fortune_level': 5,
 			'enterprise': False,
-			'greatplace_mostadmired': True,
+			# 'greatplace_mostadmired': True,
 			'date_joined_pyx': '10-28-2018',
 		}
 		response = self.client.put(self.url, update_data, **headers, format="json")

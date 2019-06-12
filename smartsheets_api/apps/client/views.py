@@ -82,7 +82,7 @@ class ClientDetailView(RetrieveUpdateDestroyAPIView):
 
     def put(self, request, *args, **kwargs):
         try:
-            client = self.queryset.get(pk=kwargs["pk"])
+            client = self.queryset.get(pk=kwargs["pk"])            
             serializer = ClientSerializer()
             updated_client = serializer.update(client, request.data)
             # send_mail(
