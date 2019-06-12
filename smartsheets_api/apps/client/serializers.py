@@ -27,7 +27,7 @@ class ClientSerializer(serializers.ModelSerializer):
         instance.greatplace_mostadmired = validated_data.get('greatplace_mostadmired', instance.greatplace_mostadmired)
         instance.date_joined_pyx = validated_data.get('date_joined_pyx', instance.date_joined_pyx)
         instance.date_left_pyx = validated_data.get('date_left_pyx', instance.date_left_pyx)
-        instance.naics_code1_id_id = validated_data.get('naics_code1_id', instance.naics_code1_id)
-        instance.naics_code2_id_id = validated_data.get('naics_code2_id', instance.naics_code2_id)
+        instance.naics_code1_id_id = validated_data.get('naics_code1_id', instance.naics_code1_id_id)
+        instance.naics_code2_id_id = validated_data.get('naics_code2_id', instance.naics_code2_id_id)
         instance.save()
         return instance
