@@ -42,7 +42,6 @@ THIRD_PARTY_APPS = (
     'corsheaders',
     'drf_yasg',
     'gunicorn',
-    'field_history',
     'simple_history',
 )
 

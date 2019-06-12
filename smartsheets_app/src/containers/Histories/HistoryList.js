@@ -41,9 +41,9 @@ class HistoryLists extends Component {
       nextProps.projectHistoriesList.forEach((obj) => {
         if(obj.type === "+") {
           projectAddHistoriesList.push(obj);
-        } else if(obj.type === "-") {
+        } else if(obj.type === "~") {
           projectUpdateHistoriesList.push(obj);
-        } else if (obj.type === "~") {
+        } else if (obj.type === "-") {
           projectDeleteHistoriesList.push(obj);
         }
       });
@@ -63,9 +63,9 @@ class HistoryLists extends Component {
       nextProps.otherProviderHistoriesList.forEach((obj) => {
         if(obj.type === "+") {
           otherProviderAddHistoriesList.push(obj);
-        } else if(obj.type === "-") {
+        } else if(obj.type === "~") {
           otherProviderUpdateHistoriesList.push(obj);
-        } else if (obj.type === "~") {
+        } else if (obj.type === "-") {
           otherProviderDeleteHistoriesList.push(obj);
         }
       });

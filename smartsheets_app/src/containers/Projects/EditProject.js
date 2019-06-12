@@ -140,7 +140,6 @@ class EditProject extends React.Component {
 
   componentWillReceiveProps(props) {
     let { projectData } = props
-    console.log('>>>>', props.contracted_launch_date);
     this.setState({ projectData })
     
   }
@@ -192,8 +191,6 @@ class EditProject extends React.Component {
         postData = { smartsheet_auth_code: smartsheetCode, sheet_id }
         fetchKeyDates({ postData })
         break;
-      case 'contracted_launch_date':
-        console.log('date', val);
       default:
         break
     }

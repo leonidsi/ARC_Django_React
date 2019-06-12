@@ -40,7 +40,6 @@ class RelationshipManagerList(ListCreateAPIView):
         for relationship_manager in relationship_managers:
             response = RelationshipManagerSerializer(relationship_manager).data
             response['user'] = UserSerializer(User.objects.get(email = relationship_manager.user_id)).data
-            print(response)
             responses.append(response)
         return Response(responses, status=status.HTTP_200_OK)
 
