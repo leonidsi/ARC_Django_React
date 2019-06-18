@@ -1,0 +1,17 @@
+[
+{
+    "model": "client.client",
+    "pk": 1,
+    "fields": {
+        "name": "test_client",
+        "snp_500": true,
+        "fortune_level": 1,
+        "enterprise": true,
+        "greatplace_mostadmired": true,
+        "date_joined_pyx": "2019-05-13T14:30:45.171Z",
+        "date_left_pyx": "2019-05-13T14:30:45.171Z",
+        "naics_code1_id": 1,
+        "naics_code2_id": 1
+    }
+}
+]

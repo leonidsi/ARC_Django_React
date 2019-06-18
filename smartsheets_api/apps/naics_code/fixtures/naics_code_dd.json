@@ -1,0 +1,10 @@
+[
+{
+    "model": "naics_code.naicscode",
+    "pk": 1,
+    "fields": {
+        "name": "test_naics",
+        "code": "1"
+    }
+}
+]
