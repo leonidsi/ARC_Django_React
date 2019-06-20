@@ -1,9 +1,0 @@
-[
-{
-    "model": "project_type.projecttype",
-    "pk": 1,
-    "fields": {
-        "name": "test_project_type"
-    }
-}
-]

@@ -1,0 +1,72 @@
+[
+    {
+        "pk": 1,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Canceled"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Closed"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Contracted"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Design"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Kickoff"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Launch"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "On-Hold"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Ongoing"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Pre-Launch"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "project_status.projectstatus",
+        "fields": {
+            "name": "Reporting"
+        }
+    }
+]

@@ -1,9 +1,0 @@
-[
-{
-    "model": "project_status.projectstatus",
-    "pk": 1,
-    "fields": {
-        "name": "test_project_status"
-    }
-}
-]
