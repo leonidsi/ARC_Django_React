@@ -1,9 +1,0 @@
-[
-{
-    "model": "project_manager.projectmanager",
-    "pk": 1,
-    "fields": {
-        "user_id": 2
-    }
-}
-]
