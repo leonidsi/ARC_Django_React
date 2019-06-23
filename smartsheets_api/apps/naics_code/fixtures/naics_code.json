@@ -1,10 +1,18 @@
-[
+[    
 {
     "model": "naics_code.naicscode",
     "pk": 1,
     "fields": {
         "name": "test_naics",
         "code": "1"
+    }
+},
+{
+    "model": "naics_code.naicscode",
+    "pk": 2,
+    "fields": {
+        "code": "115114",
+        "name": "Postharvest Crop Activities (except Cotton Ginning)"
     }
 }
 ]

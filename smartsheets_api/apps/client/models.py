@@ -3,7 +3,7 @@ from apps.naics_code.models import NaicsCode
 from django.conf import settings
 
 class Client(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=200)
     snp_500 = models.BooleanField(default=False)
     fortune_level = models.IntegerField(default=30, null=True, blank=True)
     enterprise = models.BooleanField(default=False)
