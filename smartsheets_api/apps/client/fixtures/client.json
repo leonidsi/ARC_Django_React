@@ -1,17 +1,5351 @@
 [
-{
-    "model": "client.client",
-    "pk": 1,
-    "fields": {
-        "name": "test_client",
-        "snp_500": true,
-        "fortune_level": 1,
-        "enterprise": true,
-        "greatplace_mostadmired": true,
-        "date_joined_pyx": "2019-05-13T14:30:45.171Z",
-        "date_left_pyx": "2019-05-13T14:30:45.171Z",
-        "naics_code1_id": 1,
-        "naics_code2_id": 1
+    {
+        "model": "client.client",
+        "pk": 1,
+        "fields": {
+            "name": "21st Century Fox America Inc",
+            "naics_code1_id": 712,
+            "naics_code2_id": 693,
+            "date_joined_pyx": "08-01-2017",
+            "snp_500": true,
+            "fortune_level": 109,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 2,
+        "fields": {
+            "name": "ABB Inc",
+            "naics_code1_id": 798,
+            "date_joined_pyx": "03-01-2015",
+            "date_left_pyx": "11-17-2015",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 3,
+        "fields": {
+            "name": "Academy Sports",
+            "naics_code1_id": 613,
+            "date_joined_pyx": "03-15-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 4,
+        "fields": {
+            "name": "Acadia Pharmaceuticals Inc",
+            "naics_code1_id": 821,
+            "date_joined_pyx": "08-01-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 5,
+        "fields": {
+            "name": "Aci Payments Systems",
+            "naics_code1_id": 698,
+            "date_joined_pyx": "01-15-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 6,
+        "fields": {
+            "name": "Agena Bioscience Inc",
+            "naics_code1_id": 820,
+            "date_joined_pyx": "06-26-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 7,
+        "fields": {
+            "name": "Agilent",
+            "naics_code1_id": 419,
+            "date_joined_pyx": "01-24-2018",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 8,
+        "fields": {
+            "name": "AHA (American Heart Association)",
+            "naics_code1_id": 693,
+            "date_joined_pyx": "05-18-2010",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 9,
+        "fields": {
+            "name": "Ahold USA Inc",
+            "naics_code1_id": 588,
+            "date_joined_pyx": "01-23-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 10,
+        "fields": {
+            "name": "Aids Service Foundation Orange County",
+            "naics_code1_id": 933,
+            "naics_code2_id": 901,
+            "date_joined_pyx": "09-15-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 11,
+        "fields": {
+            "name": "Aimia",
+            "naics_code1_id": 823,
+            "date_joined_pyx": "08-31-2012",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 12,
+        "fields": {
+            "name": "Albert Heijn",
+            "naics_code1_id": 588,
+            "date_joined_pyx": "05-24-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 13,
+        "fields": {
+            "name": "All Weather Windows",
+            "naics_code1_id": 336,
+            "date_joined_pyx": "11-07-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 14,
+        "fields": {
+            "name": "Allscripts Healthcare Solutions Inc",
+            "naics_code1_id": 698,
+            "date_joined_pyx": "03-10-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 15,
+        "fields": {
+            "name": "Allstate Insurance Company",
+            "naics_code1_id": 754,
+            "date_joined_pyx": "02-15-2013",
+            "date_left_pyx": "11-07-2016",
+            "snp_500": true,
+            "fortune_level": 79,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 16,
+        "fields": {
+            "name": "AM General Holdings LLC",
+            "naics_code1_id": 468,
+            "naics_code2_id": 468,
+            "date_joined_pyx": "09-06-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 17,
+        "fields": {
+            "name": "American Airlines Inc",
+            "naics_code1_id": 635,
+            "naics_code2_id": 686,
+            "date_joined_pyx": "09-26-2016",
+            "snp_500": true,
+            "fortune_level": 71,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 18,
+        "fields": {
+            "name": "American Tower",
+            "naics_code1_id": 716,
+            "date_joined_pyx": "05-08-2014",
+            "date_left_pyx": "06-15-2014",
+            "snp_500": true,
+            "fortune_level": 419,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 19,
+        "fields": {
+            "name": "Amgen",
+            "naics_code1_id": 597,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": true,
+            "fortune_level": 130,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 20,
+        "fields": {
+            "name": "Amn Healthcare Inc",
+            "naics_code1_id": 901,
+            "date_joined_pyx": "03-01-2012",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 21,
+        "fields": {
+            "name": "Anchor Bank",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "03-01-2010",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 22,
+        "fields": {
+            "name": "Andrews McMeel Universal",
+            "naics_code1_id": 719,
+            "naics_code2_id": 697,
+            "date_joined_pyx": "01-09-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 23,
+        "fields": {
+            "name": "Annaly Capital Management Inc",
+            "naics_code1_id": 764,
+            "date_joined_pyx": "01-06-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 24,
+        "fields": {
+            "name": "Ansaldo Inc",
+            "naics_code1_id": 406,
+            "date_joined_pyx": "07-31-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 25,
+        "fields": {
+            "name": "Aon",
+            "naics_code1_id": 754,
+            "date_joined_pyx": "01-17-2017",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": true,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 26,
+        "fields": {
+            "name": "ARCA Continental",
+            "naics_code1_id": 181,
+            "date_joined_pyx": "06-01-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 27,
+        "fields": {
+            "name": "Aspen Technology Inc",
+            "naics_code1_id": 808,
+            "naics_code2_id": 698,
+            "date_joined_pyx": "11-20-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 28,
+        "fields": {
+            "name": "Asurion Inc",
+            "naics_code1_id": 752,
+            "date_joined_pyx": "08-11-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 29,
+        "fields": {
+            "name": "American Transmission Company",
+            "naics_code1_id": 101,
+            "date_joined_pyx": "06-01-2010",
+            "date_left_pyx": "10-01-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 30,
+        "fields": {
+            "name": "Avascent Group Ltd",
+            "naics_code1_id": 812,
+            "date_joined_pyx": "04-13-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 31,
+        "fields": {
+            "name": "Bank of America Corporation",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "08-22-2016",
+            "snp_500": true,
+            "fortune_level": 24,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 32,
+        "fields": {
+            "name": "Baxalta Incorporated",
+            "naics_code1_id": 260,
+            "date_joined_pyx": "04-20-2015",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 33,
+        "fields": {
+            "name": "Becton Dickinson Re Inc",
+            "naics_code1_id": 260,
+            "date_joined_pyx": "10-21-2015",
+            "snp_500": true,
+            "fortune_level": 251,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 34,
+        "fields": {
+            "name": "Ben E Keith Company",
+            "naics_code1_id": 543,
+            "date_joined_pyx": "06-15-2008",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 35,
+        "fields": {
+            "name": "Bendigo & Adelaide Bank",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "01-23-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 36,
+        "fields": {
+            "name": "Berger Hospital",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "04-08-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 37,
+        "fields": {
+            "name": "Bic Corporation",
+            "naics_code1_id": 490,
+            "naics_code2_id": 273,
+            "date_joined_pyx": "04-13-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 38,
+        "fields": {
+            "name": "Blank Family of Business",
+            "naics_code1_id": 1022,
+            "date_joined_pyx": "04-20-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 39,
+        "fields": {
+            "name": "Blizzard Entertainment Inc",
+            "naics_code1_id": 698,
+            "naics_code2_id": 581,
+            "date_joined_pyx": "06-30-2009",
+            "date_left_pyx": "12-23-2013",
+            "snp_500": true,
+            "fortune_level": 401,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 40,
+        "fields": {
+            "name": "Blood Systems Inc",
+            "naics_code1_id": 920,
+            "date_joined_pyx": "04-10-2014",
+            "date_left_pyx": "02-18-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 41,
+        "fields": {
+            "name": "Blue Cross",
+            "naics_code1_id": 749,
+            "naics_code2_id": 749,
+            "date_joined_pyx": "09-30-2007",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 42,
+        "fields": {
+            "name": "BMC Software Inc",
+            "naics_code1_id": 582,
+            "naics_code2_id": 808,
+            "date_joined_pyx": "11-16-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 43,
+        "fields": {
+            "name": "Bobrick Washroom Equipment Inc",
+            "naics_code1_id": 479,
+            "date_joined_pyx": "02-08-2006",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 44,
+        "fields": {
+            "name": "Bol.com",
+            "naics_code1_id": 631,
+            "date_joined_pyx": "01-23-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 45,
+        "fields": {
+            "name": "Brickstreet Mutual Insur Co",
+            "naics_code1_id": 749,
+            "naics_code2_id": 750,
+            "date_joined_pyx": "06-01-2011",
+            "date_left_pyx": "04-28-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 46,
+        "fields": {
+            "name": "Bridgepoint Education Inc",
+            "naics_code1_id": 886,
+            "date_joined_pyx": "10-14-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 47,
+        "fields": {
+            "name": "Bristol-Myers Squibb Intl Corp",
+            "naics_code1_id": 260,
+            "date_joined_pyx": "03-20-2015",
+            "snp_500": true,
+            "fortune_level": 145,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 48,
+        "fields": {
+            "name": "Bungie Inc",
+            "naics_code1_id": 698,
+            "date_joined_pyx": "12-11-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 49,
+        "fields": {
+            "name": "Buzzfeed Inc",
+            "naics_code1_id": 721,
+            "date_joined_pyx": "11-20-2014",
+            "date_left_pyx": "01-25-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 50,
+        "fields": {
+            "name": "Calatlantic Group Inc",
+            "naics_code1_id": 109,
+            "naics_code2_id": 107,
+            "date_joined_pyx": "01-19-2017",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 51,
+        "fields": {
+            "name": "Cardinal Health Inc",
+            "naics_code1_id": 538,
+            "naics_code2_id": 512,
+            "date_joined_pyx": "11-01-2010",
+            "date_left_pyx": "08-02-2016",
+            "snp_500": true,
+            "fortune_level": 14,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 52,
+        "fields": {
+            "name": "CareFusion",
+            "naics_code1_id": 482,
+            "date_joined_pyx": "11-12-2013",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 53,
+        "fields": {
+            "name": "Cargill",
+            "naics_code1_id": 690,
+            "date_joined_pyx": "01-08-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 54,
+        "fields": {
+            "name": "CBI Health Group",
+            "naics_code1_id": 749,
+            "date_joined_pyx": "10-30-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 55,
+        "fields": {
+            "name": "CDI Corporation",
+            "naics_code1_id": 798,
+            "date_joined_pyx": "10-15-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 56,
+        "fields": {
+            "name": "Center of Science and Industry",
+            "naics_code1_id": 951,
+            "date_joined_pyx": "08-31-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 57,
+        "fields": {
+            "name": "Century Link",
+            "naics_code1_id": 716,
+            "date_joined_pyx": "06-11-2012",
+            "date_left_pyx": "12-03-2013",
+            "snp_500": true,
+            "fortune_level": 166,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 58,
+        "fields": {
+            "name": "Jacobs Engineering (was Ch2m Hill Inc)",
+            "naics_code1_id": 798,
+            "date_joined_pyx": "06-15-2010",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "fortune_level": 297,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 59,
+        "fields": {
+            "name": "Charter Communications Inc",
+            "naics_code1_id": 712,
+            "naics_code2_id": 716,
+            "date_joined_pyx": "12-15-2017",
+            "snp_500": true,
+            "fortune_level": 74,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 60,
+        "fields": {
+            "name": "Checkers and Rally's",
+            "naics_code1_id": 977,
+            "date_joined_pyx": "06-19-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 61,
+        "fields": {
+            "name": "Chipotle Mexican Grill",
+            "naics_code1_id": 977,
+            "naics_code2_id": 975,
+            "date_joined_pyx": "07-25-2017",
+            "snp_500": true,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 62,
+        "fields": {
+            "name": "CHOC",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "06-30-2009",
+            "date_left_pyx": "08-08-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 63,
+        "fields": {
+            "name": "Church's Chicken",
+            "naics_code1_id": 976,
+            "date_joined_pyx": "12-04-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 64,
+        "fields": {
+            "name": "Cincinnati Children's Hospital",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "12-15-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 65,
+        "fields": {
+            "name": "City of Minneapolis",
+            "naics_code1_id": 1034,
+            "date_joined_pyx": "09-19-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 66,
+        "fields": {
+            "name": "City of Whittlesea",
+            "naics_code1_id": 1034,
+            "date_joined_pyx": "10-21-2013",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 67,
+        "fields": {
+            "name": "Coach Inc",
+            "naics_code1_id": 209,
+            "naics_code2_id": 210,
+            "date_joined_pyx": "09-12-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 68,
+        "fields": {
+            "name": "Cohn & Wolfe",
+            "naics_code1_id": 824,
+            "date_joined_pyx": "08-15-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 69,
+        "fields": {
+            "name": "Colgate-Palmolive Company",
+            "naics_code1_id": 265,
+            "naics_code2_id": 495,
+            "date_joined_pyx": "05-02-2016",
+            "snp_500": true,
+            "fortune_level": 184,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 70,
+        "fields": {
+            "name": "Columbia Sportswear",
+            "naics_code1_id": 203,
+            "naics_code2_id": 204,
+            "date_joined_pyx": "04-22-2011",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 71,
+        "fields": {
+            "name": "Comcast Corporation",
+            "naics_code1_id": 712,
+            "naics_code2_id": 716,
+            "date_joined_pyx": "03-06-2013",
+            "snp_500": true,
+            "fortune_level": 33,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 72,
+        "fields": {
+            "name": "Comm Scope Inc",
+            "naics_code1_id": 818,
+            "naics_code2_id": 989,
+            "date_joined_pyx": "04-30-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 73,
+        "fields": {
+            "name": "Community Care Hmo Inc",
+            "naics_code1_id": 749,
+            "date_joined_pyx": "08-25-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 74,
+        "fields": {
+            "name": "Commvault Systems Inc",
+            "naics_code1_id": 698,
+            "naics_code2_id": 698,
+            "date_joined_pyx": "01-26-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 75,
+        "fields": {
+            "name": "Compassus",
+            "naics_code1_id": 921,
+            "date_joined_pyx": "11-27-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 76,
+        "fields": {
+            "name": "ConAgra",
+            "naics_code1_id": 180,
+            "date_joined_pyx": "10-09-2014",
+            "date_left_pyx": "11-11-2014",
+            "snp_500": true,
+            "fortune_level": 321,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 77,
+        "fields": {
+            "name": "CRM Empowering Leaders (Church Resource Ministries)",
+            "naics_code1_id": 1015,
+            "date_joined_pyx": "01-15-2008",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 78,
+        "fields": {
+            "name": "Csl Behring LLC",
+            "naics_code1_id": 262,
+            "date_joined_pyx": "10-16-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 79,
+        "fields": {
+            "name": "Cubic",
+            "naics_code1_id": 442,
+            "date_joined_pyx": "03-31-2012",
+            "date_left_pyx": "08-06-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 80,
+        "fields": {
+            "name": "Cushman & Wakefield Ill Inc",
+            "naics_code1_id": 768,
+            "date_joined_pyx": "04-24-2017",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 81,
+        "fields": {
+            "name": "Dayton Children's",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "01-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 82,
+        "fields": {
+            "name": "Dell Technologies Inc",
+            "naics_code1_id": 821,
+            "naics_code2_id": 581,
+            "date_joined_pyx": "02-01-2016",
+            "snp_500": false,
+            "fortune_level": 35,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 83,
+        "fields": {
+            "name": "Demand Media",
+            "naics_code1_id": 826,
+            "date_joined_pyx": "11-22-2010",
+            "date_left_pyx": "03-25-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 84,
+        "fields": {
+            "name": "Denihan",
+            "naics_code1_id": 965,
+            "date_joined_pyx": "05-11-2015",
+            "date_left_pyx": "09-08-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 85,
+        "fields": {
+            "name": "Dexcom Inc",
+            "naics_code1_id": 482,
+            "date_joined_pyx": "03-21-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 86,
+        "fields": {
+            "name": "Dineequity Inc",
+            "naics_code1_id": 787,
+            "naics_code2_id": 787,
+            "date_joined_pyx": "04-18-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 87,
+        "fields": {
+            "name": "Discovery Education Inc",
+            "naics_code1_id": 712,
+            "naics_code2_id": 700,
+            "date_joined_pyx": "06-25-2015",
+            "snp_500": true,
+            "fortune_level": 409,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 88,
+        "fields": {
+            "name": "Djo Global Inc",
+            "naics_code1_id": 483,
+            "date_joined_pyx": "01-18-2016",
+            "date_left_pyx": "06-23-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 89,
+        "fields": {
+            "name": "Duracell Company",
+            "naics_code1_id": 435,
+            "date_joined_pyx": "03-31-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 90,
+        "fields": {
+            "name": "Eastman Chemical Company",
+            "naics_code1_id": 252,
+            "date_joined_pyx": "05-04-2017",
+            "snp_500": true,
+            "fortune_level": 310,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 91,
+        "fields": {
+            "name": "Eaton",
+            "naics_code1_id": 517,
+            "date_joined_pyx": "01-02-2018",
+            "snp_500": true,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 92,
+        "fields": {
+            "name": "Encompass Health",
+            "naics_code1_id": 924,
+            "date_joined_pyx": "07-11-2017",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 93,
+        "fields": {
+            "name": "Element Vehicle Management",
+            "naics_code1_id": 775,
+            "date_joined_pyx": "07-11-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 94,
+        "fields": {
+            "name": "Elkay",
+            "naics_code1_id": 361,
+            "date_joined_pyx": "04-16-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 95,
+        "fields": {
+            "name": "Entertainment One",
+            "naics_code1_id": 699,
+            "date_joined_pyx": "10-02-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 96,
+        "fields": {
+            "name": "Ep Energy E&P Company  LP",
+            "naics_code1_id": 65,
+            "date_joined_pyx": "08-21-2012",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 97,
+        "fields": {
+            "name": "Epiq Systems Inc",
+            "naics_code1_id": 808,
+            "naics_code2_id": 816,
+            "date_joined_pyx": "08-14-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 98,
+        "fields": {
+            "name": "Equinix Inc",
+            "naics_code1_id": 718,
+            "naics_code2_id": 764,
+            "date_joined_pyx": "03-09-2015",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 99,
+        "fields": {
+            "name": "Estee Lauder Inc",
+            "naics_code1_id": 598,
+            "naics_code2_id": 598,
+            "date_joined_pyx": "06-08-2017",
+            "snp_500": true,
+            "fortune_level": 258,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 100,
+        "fields": {
+            "name": "Everbank Financial Corp",
+            "naics_code1_id": 725,
+            "naics_code2_id": 736,
+            "date_joined_pyx": "06-20-2014",
+            "date_left_pyx": "09-09-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 101,
+        "fields": {
+            "name": "Exos Human Capital LLC",
+            "naics_code1_id": 962,
+            "date_joined_pyx": "08-28-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 102,
+        "fields": {
+            "name": "Expedia Inc",
+            "naics_code1_id": 856,
+            "date_joined_pyx": "05-11-2015",
+            "snp_500": true,
+            "fortune_level": 295,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 103,
+        "fields": {
+            "name": "Express Inc",
+            "naics_code1_id": 605,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 104,
+        "fields": {
+            "name": "EZCORP",
+            "naics_code1_id": 625,
+            "date_joined_pyx": "03-05-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 105,
+        "fields": {
+            "name": "Farmers Insurance",
+            "naics_code1_id": 754,
+            "date_joined_pyx": "07-15-2011",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "fortune_level": 253,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 106,
+        "fields": {
+            "name": "FCB (Foote Cone and Belding)",
+            "naics_code1_id": 823,
+            "date_joined_pyx": "12-18-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 107,
+        "fields": {
+            "name": "Federal Express Corporation",
+            "naics_code1_id": 686,
+            "date_joined_pyx": "11-18-2013",
+            "snp_500": true,
+            "fortune_level": 50,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 108,
+        "fields": {
+            "name": "Fenwal",
+            "naics_code1_id": 921,
+            "date_joined_pyx": "08-15-2012",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 109,
+        "fields": {
+            "name": "First Interstate Bank",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "11-21-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 110,
+        "fields": {
+            "name": "First Solar",
+            "naics_code1_id": 409,
+            "date_joined_pyx": "02-12-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 111,
+        "fields": {
+            "name": "Fiserv Solutions LLC",
+            "naics_code1_id": 718,
+            "naics_code2_id": 236,
+            "date_joined_pyx": "04-18-2017",
+            "snp_500": true,
+            "fortune_level": 487,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 112,
+        "fields": {
+            "name": "Fleetcor Technologies Inc",
+            "naics_code1_id": 815,
+            "date_joined_pyx": "08-21-2017",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 113,
+        "fields": {
+            "name": "Flishman Hillard",
+            "naics_code1_id": 823,
+            "date_joined_pyx": "09-20-2011",
+            "date_left_pyx": "05-08-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 114,
+        "fields": {
+            "name": "Floor & Decor Outlets Amer Inc",
+            "naics_code1_id": 582,
+            "naics_code2_id": 137,
+            "date_joined_pyx": "08-03-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 115,
+        "fields": {
+            "name": "Flower Foods",
+            "naics_code1_id": 566,
+            "date_joined_pyx": "01-31-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 116,
+        "fields": {
+            "name": "Food Lion",
+            "naics_code1_id": 588,
+            "date_joined_pyx": "05-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 117,
+        "fields": {
+            "name": "Fortna Inc",
+            "naics_code1_id": 840,
+            "date_joined_pyx": "10-31-2012",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 118,
+        "fields": {
+            "name": "Fresh Thymes LLC",
+            "naics_code1_id": 588,
+            "date_joined_pyx": "09-20-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 119,
+        "fields": {
+            "name": "Gap",
+            "naics_code1_id": 607,
+            "date_joined_pyx": "05-16-2018",
+            "snp_500": true,
+            "fortune_level": 181,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 120,
+        "fields": {
+            "name": "Gei Consultants Inc",
+            "naics_code1_id": 798,
+            "date_joined_pyx": "09-09-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 121,
+        "fields": {
+            "name": "General Electric Company",
+            "naics_code1_id": 432,
+            "naics_code2_id": 383,
+            "date_joined_pyx": "08-12-2015",
+            "snp_500": true,
+            "fortune_level": 18,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 122,
+        "fields": {
+            "name": "General Mills Inc",
+            "naics_code1_id": 146,
+            "naics_code2_id": 140,
+            "date_joined_pyx": "11-15-2015",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": true,
+            "fortune_level": 182,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 123,
+        "fields": {
+            "name": "GPC (Genuine Parts Company)",
+            "naics_code1_id": 499,
+            "naics_code2_id": 574,
+            "date_joined_pyx": "03-13-2017",
+            "snp_500": true,
+            "fortune_level": 177,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 124,
+        "fields": {
+            "name": "Geometry Global LLC",
+            "naics_code1_id": 823,
+            "date_joined_pyx": "03-01-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 125,
+        "fields": {
+            "name": "Giant Eagle Inc",
+            "naics_code1_id": 588,
+            "naics_code2_id": 543,
+            "date_joined_pyx": "02-06-2016",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 126,
+        "fields": {
+            "name": "Godaddycom LLC",
+            "naics_code1_id": 809,
+            "date_joined_pyx": "09-28-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 127,
+        "fields": {
+            "name": "Greenwich Biosciences",
+            "naics_code1_id": 260,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 128,
+        "fields": {
+            "name": "Grocery Manufacturers Assn",
+            "naics_code1_id": 1023,
+            "date_joined_pyx": "06-20-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 129,
+        "fields": {
+            "name": "GTB",
+            "naics_code1_id": 823,
+            "date_joined_pyx": "12-19-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 130,
+        "fields": {
+            "name": "Guardian Industries",
+            "naics_code1_id": 585,
+            "date_joined_pyx": "01-14-2013",
+            "date_left_pyx": "04-01-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 131,
+        "fields": {
+            "name": "Gun Lake Tribal Gaming Auth",
+            "naics_code1_id": 957,
+            "date_joined_pyx": "04-15-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 132,
+        "fields": {
+            "name": "Haemonetics",
+            "naics_code1_id": 512,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 133,
+        "fields": {
+            "name": "Halozyme Inc",
+            "naics_code1_id": 820,
+            "date_joined_pyx": "02-08-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 134,
+        "fields": {
+            "name": "Hanger Inc",
+            "naics_code1_id": 915,
+            "naics_code2_id": 512,
+            "date_joined_pyx": "05-28-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 135,
+        "fields": {
+            "name": "Hawaiiusa Federal Credit Union",
+            "naics_code1_id": 726,
+            "date_joined_pyx": "04-25-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 136,
+        "fields": {
+            "name": "Health First",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "05-04-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 137,
+        "fields": {
+            "name": "HealthSouth Corporation",
+            "naics_code1_id": 924,
+            "naics_code2_id": 925,
+            "date_joined_pyx": "07-17-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 138,
+        "fields": {
+            "name": "Hershey Company",
+            "naics_code1_id": 150,
+            "naics_code2_id": 149,
+            "date_joined_pyx": "12-20-2011",
+            "snp_500": true,
+            "fortune_level": 379,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 139,
+        "fields": {
+            "name": "High Liner Foods",
+            "naics_code1_id": 166,
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 140,
+        "fields": {
+            "name": "Hitachi",
+            "naics_code1_id": 526,
+            "naics_code2_id": 129,
+            "date_joined_pyx": "03-01-2013",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 141,
+        "fields": {
+            "name": "Hub International Limited",
+            "naics_code1_id": 754,
+            "date_joined_pyx": "05-15-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 142,
+        "fields": {
+            "name": "Hudson's Bay Company",
+            "naics_code1_id": 619,
+            "date_joined_pyx": "02-01-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 143,
+        "fields": {
+            "name": "Hume City Hall",
+            "naics_code1_id": 1029,
+            "date_joined_pyx": "07-03-2015",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 144,
+        "fields": {
+            "name": "Huntington National Bank",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "02-03-2014",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 145,
+        "fields": {
+            "name": "Icw Group Holdings Inc",
+            "naics_code1_id": 750,
+            "naics_code2_id": 754,
+            "date_joined_pyx": "07-12-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 146,
+        "fields": {
+            "name": "Idexx Laboratories Inc",
+            "naics_code1_id": 420,
+            "naics_code2_id": 260,
+            "date_joined_pyx": "09-26-2017",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 147,
+        "fields": {
+            "name": "Illumina",
+            "naics_code1_id": 420,
+            "naics_code2_id": 371,
+            "date_joined_pyx": "09-19-2008",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 148,
+        "fields": {
+            "name": "Ineight Inc",
+            "naics_code1_id": 510,
+            "naics_code2_id": 70,
+            "date_joined_pyx": "06-15-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 149,
+        "fields": {
+            "name": "Intercare Cmnty Hlth Netwrk",
+            "naics_code1_id": 901,
+            "date_joined_pyx": "08-01-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 150,
+        "fields": {
+            "name": "Interpublic Group of Companies",
+            "naics_code1_id": 823,
+            "naics_code2_id": 814,
+            "date_joined_pyx": "09-18-2017",
+            "snp_500": true,
+            "fortune_level": 359,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 151,
+        "fields": {
+            "name": "Interstate Management Co LLC",
+            "naics_code1_id": 965,
+            "date_joined_pyx": "11-27-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 152,
+        "fields": {
+            "name": "Intuitive Surgical",
+            "naics_code1_id": 512,
+            "date_joined_pyx": "09-30-2012",
+            "date_left_pyx": "02-11-2014",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 153,
+        "fields": {
+            "name": "iQor",
+            "naics_code1_id": 816,
+            "date_joined_pyx": "03-19-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 154,
+        "fields": {
+            "name": "Jabil",
+            "naics_code1_id": 497,
+            "date_joined_pyx": "06-01-2018",
+            "snp_500": false,
+            "fortune_level": 159,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 155,
+        "fields": {
+            "name": "Jacobs",
+            "naics_code1_id": 798,
+            "date_joined_pyx": "10-05-2010",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": true,
+            "fortune_level": 297,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 156,
+        "fields": {
+            "name": "Jetblue Airways Corporation",
+            "naics_code1_id": 635,
+            "date_joined_pyx": "10-31-2014",
+            "date_left_pyx": "10-20-2016",
+            "snp_500": false,
+            "fortune_level": 402,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 157,
+        "fields": {
+            "name": "Johnson & Johnson",
+            "naics_code1_id": 260,
+            "naics_code2_id": 268,
+            "date_joined_pyx": "02-03-2011",
+            "snp_500": true,
+            "fortune_level": 37,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 158,
+        "fields": {
+            "name": "Johnson Financial",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "07-26-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 159,
+        "fields": {
+            "name": "Kalsec",
+            "naics_code1_id": 180,
+            "date_joined_pyx": "07-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 160,
+        "fields": {
+            "name": "Kaplan Inc",
+            "naics_code1_id": 900,
+            "date_joined_pyx": "07-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 161,
+        "fields": {
+            "name": "Kellogg",
+            "naics_code1_id": 146,
+            "date_joined_pyx": "03-06-2017",
+            "snp_500": true,
+            "fortune_level": 226,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 162,
+        "fields": {
+            "name": "Kiewit Corporation",
+            "naics_code1_id": 112,
+            "naics_code2_id": 112,
+            "date_joined_pyx": "03-01-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "fortune_level": 339,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 163,
+        "fields": {
+            "name": "Kisco",
+            "naics_code1_id": 933,
+            "date_joined_pyx": "11-13-2012",
+            "date_left_pyx": "07-31-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 164,
+        "fields": {
+            "name": "La Quinta LLC",
+            "naics_code1_id": 965,
+            "naics_code2_id": 787,
+            "date_joined_pyx": "03-31-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 165,
+        "fields": {
+            "name": "Lamb Weston Inc",
+            "naics_code1_id": 152,
+            "date_joined_pyx": "10-31-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 166,
+        "fields": {
+            "name": "LG&E and KU",
+            "naics_code1_id": 93,
+            "date_joined_pyx": "12-11-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 167,
+        "fields": {
+            "name": "Liberty Mutual Insurance Co",
+            "naics_code1_id": 750,
+            "naics_code2_id": 748,
+            "date_joined_pyx": "07-01-2014",
+            "date_left_pyx": "07-28-2015",
+            "snp_500": false,
+            "fortune_level": 68,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 168,
+        "fields": {
+            "name": "Life Technology",
+            "naics_code1_id": 262,
+            "date_joined_pyx": "04-25-2013",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 169,
+        "fields": {
+            "name": "Lifelock Inc",
+            "naics_code1_id": 863,
+            "date_joined_pyx": "07-31-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 170,
+        "fields": {
+            "name": "Lincoln Electric",
+            "naics_code1_id": 394,
+            "date_joined_pyx": "04-20-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 171,
+        "fields": {
+            "name": "Lincoln Financial",
+            "naics_code1_id": 745,
+            "date_joined_pyx": "04-30-2018",
+            "snp_500": true,
+            "fortune_level": 205,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 172,
+        "fields": {
+            "name": "Lions Gate Entertainment Inc",
+            "naics_code1_id": 699,
+            "date_joined_pyx": "03-31-2015",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 173,
+        "fields": {
+            "name": "Loews Corporation",
+            "naics_code1_id": 750,
+            "naics_code2_id": 748,
+            "date_joined_pyx": "06-05-2015",
+            "snp_500": true,
+            "fortune_level": 217,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 174,
+        "fields": {
+            "name": "LOreal USA S/D Inc",
+            "naics_code1_id": 268,
+            "date_joined_pyx": "10-20-2017",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 175,
+        "fields": {
+            "name": "Louisiana-Pacific Corporation",
+            "naics_code1_id": 217,
+            "date_joined_pyx": "10-15-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 176,
+        "fields": {
+            "name": "Lpl Financial Holdings Inc",
+            "naics_code1_id": 739,
+            "naics_code2_id": 745,
+            "date_joined_pyx": "06-15-2012",
+            "date_left_pyx": "01-25-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 177,
+        "fields": {
+            "name": "Lucky Brand Dungarees LLC",
+            "naics_code1_id": 203,
+            "naics_code2_id": 204,
+            "date_joined_pyx": "01-02-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 178,
+        "fields": {
+            "name": "Manpowergroup Inc",
+            "naics_code1_id": 842,
+            "naics_code2_id": 842,
+            "date_joined_pyx": "03-31-2015",
+            "snp_500": false,
+            "fortune_level": 143,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 179,
+        "fields": {
+            "name": "Maricopa Integrated Hlth Svcs",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "02-20-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 180,
+        "fields": {
+            "name": "Marmon Holdings Inc",
+            "naics_code1_id": 438,
+            "naics_code2_id": 317,
+            "date_joined_pyx": "11-30-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 181,
+        "fields": {
+            "name": "Marsh & McLennan Companies Inc",
+            "naics_code1_id": 754,
+            "naics_code2_id": 745,
+            "date_joined_pyx": "11-30-2010",
+            "snp_500": true,
+            "fortune_level": 212,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 182,
+        "fields": {
+            "name": "McCann",
+            "naics_code1_id": 823,
+            "date_joined_pyx": "10-16-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 183,
+        "fields": {
+            "name": "McLane",
+            "naics_code1_id": 682,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 184,
+        "fields": {
+            "name": "Mercedes-Benz Usa LLC",
+            "naics_code1_id": 498,
+            "naics_code2_id": 499,
+            "date_joined_pyx": "09-17-2012",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 185,
+        "fields": {
+            "name": "Micron Federal Systems LLC",
+            "naics_code1_id": 409,
+            "date_joined_pyx": "08-10-2011",
+            "date_left_pyx": "03-03-2015",
+            "snp_500": true,
+            "fortune_level": 150,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 186,
+        "fields": {
+            "name": "Microsoft Corporation",
+            "naics_code1_id": 698,
+            "naics_code2_id": 808,
+            "date_joined_pyx": "04-09-2012",
+            "snp_500": true,
+            "fortune_level": 30,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 187,
+        "fields": {
+            "name": "Mitchell International Inc",
+            "naics_code1_id": 808,
+            "date_joined_pyx": "11-04-2011",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 188,
+        "fields": {
+            "name": "Mitel",
+            "naics_code1_id": 716,
+            "date_joined_pyx": "01-17-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 189,
+        "fields": {
+            "name": "Mitsubishi Hitachi Power",
+            "naics_code1_id": 383,
+            "naics_code2_id": 129,
+            "date_joined_pyx": "07-31-2014",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 190,
+        "fields": {
+            "name": "Monsanto Company",
+            "naics_code1_id": 258,
+            "naics_code2_id": 23,
+            "date_joined_pyx": "09-19-2016",
+            "snp_500": false,
+            "fortune_level": 199,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 191,
+        "fields": {
+            "name": "Moodys Corporation",
+            "naics_code1_id": 852,
+            "naics_code2_id": 745,
+            "date_joined_pyx": "07-01-2013",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 192,
+        "fields": {
+            "name": "MSA (Mine Safety Appliances)",
+            "naics_code1_id": 609,
+            "date_joined_pyx": "08-31-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 193,
+        "fields": {
+            "name": "National Australia Bank Ltd",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "12-01-2016",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 194,
+        "fields": {
+            "name": "National Cable",
+            "naics_code1_id": 711,
+            "date_joined_pyx": "02-15-2015",
+            "date_left_pyx": "07-28-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 195,
+        "fields": {
+            "name": "NBC Studios Inc",
+            "naics_code1_id": 711,
+            "date_joined_pyx": "03-10-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 196,
+        "fields": {
+            "name": "Ncta Education Foundation Inc",
+            "naics_code1_id": 1023,
+            "date_joined_pyx": "02-15-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 197,
+        "fields": {
+            "name": "New Balance Inc",
+            "naics_code1_id": 208,
+            "date_joined_pyx": "03-01-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 198,
+        "fields": {
+            "name": "New Chapter",
+            "naics_code1_id": 812,
+            "date_joined_pyx": "11-22-2013",
+            "date_left_pyx": "01-13-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 199,
+        "fields": {
+            "name": "New Home Company",
+            "naics_code1_id": 107,
+            "date_joined_pyx": "12-04-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 200,
+        "fields": {
+            "name": "Newtron Group LLC",
+            "naics_code1_id": 127,
+            "date_joined_pyx": "08-31-2004",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 201,
+        "fields": {
+            "name": "Nexperia USA Inc",
+            "naics_code1_id": 409,
+            "date_joined_pyx": "03-14-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 202,
+        "fields": {
+            "name": "Nike Inc",
+            "naics_code1_id": 208,
+            "naics_code2_id": 203,
+            "date_joined_pyx": "10-02-2017",
+            "snp_500": true,
+            "fortune_level": 89,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 203,
+        "fields": {
+            "name": "Nish",
+            "naics_code1_id": 842,
+            "date_joined_pyx": "12-20-2010",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 204,
+        "fields": {
+            "name": "Nisource Inc",
+            "naics_code1_id": 103,
+            "naics_code2_id": 666,
+            "date_joined_pyx": "02-04-2016",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 205,
+        "fields": {
+            "name": "Noridian Mutual Insurance Co",
+            "naics_code1_id": 749,
+            "date_joined_pyx": "07-30-2010",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 206,
+        "fields": {
+            "name": "Nuvasive Inc",
+            "naics_code1_id": 512,
+            "date_joined_pyx": "11-12-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 207,
+        "fields": {
+            "name": "Nxp Usa Inc",
+            "naics_code1_id": 409,
+            "date_joined_pyx": "12-21-2015",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 208,
+        "fields": {
+            "name": "OC CLA",
+            "naics_code1_id": 1029,
+            "date_joined_pyx": "03-05-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 209,
+        "fields": {
+            "name": "Ogilvy & Mather Worldwide Inc",
+            "naics_code1_id": 823,
+            "naics_code2_id": 699,
+            "date_joined_pyx": "04-16-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 210,
+        "fields": {
+            "name": "Ohiohealth Corporation",
+            "naics_code1_id": 922,
+            "naics_code2_id": 922,
+            "date_joined_pyx": "03-15-2014",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 211,
+        "fields": {
+            "name": "Ondeck Asset Pool LLC",
+            "naics_code1_id": 734,
+            "date_joined_pyx": "05-05-2014",
+            "date_left_pyx": "06-20-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 212,
+        "fields": {
+            "name": "One Hope United",
+            "naics_code1_id": 1021,
+            "date_joined_pyx": "10-10-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 213,
+        "fields": {
+            "name": "One Main Financial Services",
+            "naics_code1_id": 730,
+            "naics_code2_id": 750,
+            "date_joined_pyx": "07-30-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 214,
+        "fields": {
+            "name": "Onyx",
+            "naics_code1_id": 823,
+            "date_joined_pyx": "04-15-2013",
+            "date_left_pyx": "05-06-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 215,
+        "fields": {
+            "name": "Orleans Homebuilders",
+            "naics_code1_id": 109,
+            "date_joined_pyx": "01-05-2015",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 216,
+        "fields": {
+            "name": "Paypal Inc",
+            "naics_code1_id": 713,
+            "naics_code2_id": 718,
+            "date_joined_pyx": "06-15-2016",
+            "snp_500": true,
+            "fortune_level": 222,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 217,
+        "fields": {
+            "name": "Pearson",
+            "naics_code1_id": 694,
+            "date_joined_pyx": "09-01-2011",
+            "date_left_pyx": "06-24-2014",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 218,
+        "fields": {
+            "name": "Pechanga Development Corp",
+            "naics_code1_id": 966,
+            "naics_code2_id": 943,
+            "date_joined_pyx": "07-17-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 219,
+        "fields": {
+            "name": "Penn National Gaming Inc",
+            "naics_code1_id": 966,
+            "naics_code2_id": 945,
+            "date_joined_pyx": "03-15-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 220,
+        "fields": {
+            "name": "Pga Corporation",
+            "naics_code1_id": 1027,
+            "date_joined_pyx": "12-07-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 221,
+        "fields": {
+            "name": "Pinnacle Property Management",
+            "naics_code1_id": 966,
+            "date_joined_pyx": "01-25-2011",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 222,
+        "fields": {
+            "name": "Plastics Industry Association",
+            "naics_code1_id": 1023,
+            "date_joined_pyx": "04-03-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 223,
+        "fields": {
+            "name": "POET",
+            "naics_code1_id": 633,
+            "date_joined_pyx": "01-07-2013",
+            "date_left_pyx": "12-09-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 224,
+        "fields": {
+            "name": "PolyOne",
+            "naics_code1_id": 284,
+            "date_joined_pyx": "10-26-2011",
+            "date_left_pyx": "01-13-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 225,
+        "fields": {
+            "name": "Ppl Corporation",
+            "naics_code1_id": 102,
+            "naics_code2_id": 103,
+            "date_joined_pyx": "11-30-2017",
+            "snp_500": true,
+            "fortune_level": 380,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 226,
+        "fields": {
+            "name": "Printpack Inc",
+            "naics_code1_id": 232,
+            "naics_code2_id": 276,
+            "date_joined_pyx": "09-17-2012",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 227,
+        "fields": {
+            "name": "Procter & Gamble",
+            "naics_code1_id": 265,
+            "date_joined_pyx": "06-05-2007",
+            "snp_500": true,
+            "fortune_level": 42,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 228,
+        "fields": {
+            "name": "Prosciento Inc",
+            "naics_code1_id": 820,
+            "date_joined_pyx": "09-03-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 229,
+        "fields": {
+            "name": "Provide Commerce",
+            "naics_code1_id": 510,
+            "date_joined_pyx": "01-28-2013",
+            "date_left_pyx": "06-27-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 230,
+        "fields": {
+            "name": "Prudential Financial Inc",
+            "naics_code1_id": 748,
+            "naics_code2_id": 748,
+            "date_joined_pyx": "06-01-2016",
+            "snp_500": false,
+            "fortune_level": 52,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 231,
+        "fields": {
+            "name": "PSEG",
+            "naics_code1_id": 100,
+            "date_joined_pyx": "06-26-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 232,
+        "fields": {
+            "name": "Pvh Corp",
+            "naics_code1_id": 203,
+            "naics_code2_id": 204,
+            "date_joined_pyx": "03-27-2017",
+            "snp_500": true,
+            "fortune_level": 332,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 233,
+        "fields": {
+            "name": "Q2 Solutions",
+            "naics_code1_id": 916,
+            "date_joined_pyx": "03-27-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 234,
+        "fields": {
+            "name": "Quidel",
+            "naics_code1_id": 916,
+            "date_joined_pyx": "07-09-2014",
+            "date_left_pyx": "07-15-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 235,
+        "fields": {
+            "name": "IQVIA",
+            "naics_code1_id": 821,
+            "date_joined_pyx": "05-05-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 236,
+        "fields": {
+            "name": "Rancho Family Med Group Inc",
+            "naics_code1_id": 901,
+            "date_joined_pyx": "04-30-2015",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 237,
+        "fields": {
+            "name": "Red Ventures",
+            "naics_code1_id": 816,
+            "date_joined_pyx": "06-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 238,
+        "fields": {
+            "name": "Remington Hotels",
+            "naics_code1_id": 965,
+            "date_joined_pyx": "06-11-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 239,
+        "fields": {
+            "name": "Resmed Inc",
+            "naics_code1_id": 482,
+            "date_joined_pyx": "12-15-2017",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 240,
+        "fields": {
+            "name": "Restaurant Brands Intl",
+            "naics_code1_id": 977,
+            "date_joined_pyx": "10-23-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 241,
+        "fields": {
+            "name": "Ringcentral Inc",
+            "naics_code1_id": 713,
+            "naics_code2_id": 717,
+            "date_joined_pyx": "06-01-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 242,
+        "fields": {
+            "name": "Rotary International",
+            "naics_code1_id": 1022,
+            "date_joined_pyx": "12-17-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 243,
+        "fields": {
+            "name": "Ryan LLC",
+            "naics_code1_id": 795,
+            "naics_code2_id": 793,
+            "date_joined_pyx": "11-15-2016",
+            "date_left_pyx": "10-24-2017",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 244,
+        "fields": {
+            "name": "Ryder",
+            "naics_code1_id": 649,
+            "date_joined_pyx": "05-30-2012",
+            "date_left_pyx": "10-30-2013",
+            "snp_500": false,
+            "fortune_level": 387,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 245,
+        "fields": {
+            "name": "Saif Corporation",
+            "naics_code1_id": 760,
+            "naics_code2_id": 788,
+            "date_joined_pyx": "07-06-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 246,
+        "fields": {
+            "name": "Salesforce",
+            "naics_code1_id": 718,
+            "date_joined_pyx": "12-12-2012",
+            "date_left_pyx": "08-05-2013",
+            "snp_500": true,
+            "fortune_level": 285,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 247,
+        "fields": {
+            "name": "Sally Beauty Supply LLC",
+            "naics_code1_id": 598,
+            "naics_code2_id": 538,
+            "date_joined_pyx": "09-22-2016",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 248,
+        "fields": {
+            "name": "Sei Inc",
+            "naics_code1_id": 990,
+            "date_joined_pyx": "02-13-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 249,
+        "fields": {
+            "name": "Seqirus",
+            "naics_code1_id": 262,
+            "date_joined_pyx": "02-15-2018",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 250,
+        "fields": {
+            "name": "ServiceLink",
+            "naics_code1_id": 735,
+            "date_joined_pyx": "01-08-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 251,
+        "fields": {
+            "name": "Sharp",
+            "naics_code1_id": 510,
+            "date_joined_pyx": "01-31-2006",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 252,
+        "fields": {
+            "name": "ShopHQ",
+            "naics_code1_id": 697,
+            "date_joined_pyx": "01-02-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 253,
+        "fields": {
+            "name": "SI BONE",
+            "naics_code1_id": 482,
+            "date_joined_pyx": "04-30-2013",
+            "date_left_pyx": "12-05-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 254,
+        "fields": {
+            "name": "Sitel",
+            "naics_code1_id": 848,
+            "date_joined_pyx": "03-15-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 255,
+        "fields": {
+            "name": "Skanska Inc",
+            "naics_code1_id": 112,
+            "naics_code2_id": 112,
+            "date_joined_pyx": "10-02-2014",
+            "date_left_pyx": "02-18-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 256,
+        "fields": {
+            "name": "SkyCity",
+            "naics_code1_id": 966,
+            "date_joined_pyx": "02-01-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 257,
+        "fields": {
+            "name": "Skyworks Solutions Inc",
+            "naics_code1_id": 409,
+            "date_joined_pyx": "02-01-2005",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 258,
+        "fields": {
+            "name": "Memorial Sloan Kettering Cancer Center (MSKCC)",
+            "naics_code1_id": 822,
+            "date_joined_pyx": "09-08-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 259,
+        "fields": {
+            "name": "Solar City",
+            "naics_code1_id": 96,
+            "date_joined_pyx": "01-07-2014",
+            "date_left_pyx": "03-04-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 260,
+        "fields": {
+            "name": "Sonic Automotive Inc",
+            "naics_code1_id": 569,
+            "naics_code2_id": 980,
+            "date_joined_pyx": "05-15-2016",
+            "snp_500": false,
+            "fortune_level": 298,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 261,
+        "fields": {
+            "name": "Spireon Inc",
+            "naics_code1_id": 405,
+            "date_joined_pyx": "08-13-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 262,
+        "fields": {
+            "name": "SRG",
+            "naics_code1_id": 351,
+            "date_joined_pyx": "01-14-2013",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 263,
+        "fields": {
+            "name": "Standard Chartered Bank",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "03-23-2015",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 264,
+        "fields": {
+            "name": "State of Wisc",
+            "naics_code1_id": 1034,
+            "date_joined_pyx": "05-08-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 265,
+        "fields": {
+            "name": "Stone Brewing",
+            "naics_code1_id": 184,
+            "date_joined_pyx": "10-01-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 266,
+        "fields": {
+            "name": "Superior Graphite Co",
+            "naics_code1_id": 305,
+            "date_joined_pyx": "06-23-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 267,
+        "fields": {
+            "name": "SWIB (State of Wisconsin Investment Board)",
+            "naics_code1_id": 759,
+            "date_joined_pyx": "05-08-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 268,
+        "fields": {
+            "name": "Sycuan Casino",
+            "naics_code1_id": 957,
+            "naics_code2_id": 962,
+            "date_joined_pyx": "11-06-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 269,
+        "fields": {
+            "name": "Sysco Corporation",
+            "naics_code1_id": 551,
+            "naics_code2_id": 554,
+            "date_joined_pyx": "06-30-2017",
+            "snp_500": true,
+            "fortune_level": 54,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 270,
+        "fields": {
+            "name": "Target Corporation",
+            "naics_code1_id": 621,
+            "date_joined_pyx": "12-31-2014",
+            "snp_500": true,
+            "fortune_level": 39,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 271,
+        "fields": {
+            "name": "Tenet Healthcare",
+            "naics_code1_id": 749,
+            "date_joined_pyx": "06-15-2018",
+            "snp_500": false,
+            "fortune_level": 147,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 272,
+        "fields": {
+            "name": "The Climate Corp",
+            "naics_code1_id": 62,
+            "date_joined_pyx": "03-24-2014",
+            "date_left_pyx": "05-06-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 273,
+        "fields": {
+            "name": "The Linde Group",
+            "naics_code1_id": 246,
+            "date_joined_pyx": "03-13-2017",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 274,
+        "fields": {
+            "name": "Thermo Fisher Scientific Inc",
+            "naics_code1_id": 420,
+            "naics_code2_id": 414,
+            "date_joined_pyx": "04-18-2013",
+            "date_left_pyx": "01-25-2017",
+            "snp_500": true,
+            "fortune_level": 144,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 275,
+        "fields": {
+            "name": "Tiffany & Co",
+            "naics_code1_id": 611,
+            "date_joined_pyx": "10-01-2015",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 276,
+        "fields": {
+            "name": "TopBuild",
+            "naics_code1_id": 108,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 277,
+        "fields": {
+            "name": "Topcon",
+            "naics_code1_id": 442,
+            "date_joined_pyx": "11-20-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 278,
+        "fields": {
+            "name": "Trans-matic",
+            "naics_code1_id": 330,
+            "date_joined_pyx": "12-31-2012",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 279,
+        "fields": {
+            "name": "TravelPort",
+            "naics_code1_id": 856,
+            "date_joined_pyx": "12-31-2012",
+            "date_left_pyx": "12-02-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 280,
+        "fields": {
+            "name": "Trimedx LLC",
+            "naics_code1_id": 812,
+            "date_joined_pyx": "03-10-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 281,
+        "fields": {
+            "name": "Twitter",
+            "naics_code1_id": 718,
+            "date_joined_pyx": "04-19-2013",
+            "date_left_pyx": "12-09-2014",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 282,
+        "fields": {
+            "name": "UCB Pharma",
+            "naics_code1_id": 482,
+            "date_joined_pyx": "05-07-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 283,
+        "fields": {
+            "name": "Ultragenyx Pharmaceutical Inc",
+            "naics_code1_id": 260,
+            "date_joined_pyx": "12-22-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 284,
+        "fields": {
+            "name": "Union Tank Car Company",
+            "naics_code1_id": 464,
+            "date_joined_pyx": "07-25-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 285,
+        "fields": {
+            "name": "Universal Parks & Resorts",
+            "naics_code1_id": 955,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 286,
+        "fields": {
+            "name": "US Anesthesia Partners Inc",
+            "naics_code1_id": 901,
+            "date_joined_pyx": "02-01-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 287,
+        "fields": {
+            "name": "USPI (United Surgical Partners International)",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "04-02-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 288,
+        "fields": {
+            "name": "Vail Clinic Inc",
+            "naics_code1_id": 922,
+            "date_joined_pyx": "10-05-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 289,
+        "fields": {
+            "name": "Vanguard",
+            "naics_code1_id": 745,
+            "date_joined_pyx": "04-01-2013",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 290,
+        "fields": {
+            "name": "Vanity Fair",
+            "naics_code1_id": 697,
+            "date_joined_pyx": "01-01-2013",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 291,
+        "fields": {
+            "name": "Varian",
+            "naics_code1_id": 512,
+            "date_joined_pyx": "05-21-2011",
+            "date_left_pyx": "06-24-2014",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 292,
+        "fields": {
+            "name": "Vectrus",
+            "naics_code1_id": 841,
+            "date_joined_pyx": "04-16-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 293,
+        "fields": {
+            "name": "VF Corporation",
+            "naics_code1_id": 203,
+            "naics_code2_id": 203,
+            "date_joined_pyx": "12-05-2016",
+            "snp_500": true,
+            "fortune_level": 242,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 294,
+        "fields": {
+            "name": "Victoria's Secret",
+            "naics_code1_id": 608,
+            "date_joined_pyx": "01-10-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 295,
+        "fields": {
+            "name": "Vision Group Holdings LLC",
+            "naics_code1_id": 838,
+            "date_joined_pyx": "02-08-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 296,
+        "fields": {
+            "name": "Vistaprint Usa Incorporated",
+            "naics_code1_id": 236,
+            "date_joined_pyx": "04-28-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 297,
+        "fields": {
+            "name": "Vixxo Corporation",
+            "naics_code1_id": 1014,
+            "date_joined_pyx": "09-07-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 298,
+        "fields": {
+            "name": "Vmware Inc",
+            "naics_code1_id": 808,
+            "naics_code2_id": 722,
+            "date_joined_pyx": "08-31-2011",
+            "date_left_pyx": "11-29-2016",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 299,
+        "fields": {
+            "name": "Volcano",
+            "naics_code1_id": 414,
+            "date_joined_pyx": "05-15-2014",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 300,
+        "fields": {
+            "name": "Vox Media Inc",
+            "naics_code1_id": 721,
+            "date_joined_pyx": "03-30-2015",
+            "date_left_pyx": "09-03-2015",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 301,
+        "fields": {
+            "name": "Vystar Credit Union",
+            "naics_code1_id": 726,
+            "date_joined_pyx": "03-14-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 302,
+        "fields": {
+            "name": "Wanzek Construction Inc",
+            "naics_code1_id": 112,
+            "naics_code2_id": 113,
+            "date_joined_pyx": "06-28-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 303,
+        "fields": {
+            "name": "Warp Drive Bio Inc",
+            "naics_code1_id": 820,
+            "date_joined_pyx": "10-09-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 304,
+        "fields": {
+            "name": "Welch Foods Inc A Cooperative",
+            "naics_code1_id": 154,
+            "naics_code2_id": 152,
+            "date_joined_pyx": "03-01-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 305,
+        "fields": {
+            "name": "Wendys",
+            "naics_code1_id": 976,
+            "date_joined_pyx": "03-15-2014",
+            "date_left_pyx": "08-19-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 306,
+        "fields": {
+            "name": "Western Digital",
+            "naics_code1_id": 402,
+            "date_joined_pyx": "08-31-2015",
+            "snp_500": true,
+            "fortune_level": 158,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 307,
+        "fields": {
+            "name": "WME (William Morris Endeavor)",
+            "naics_code1_id": 949,
+            "date_joined_pyx": "08-15-2014",
+            "date_left_pyx": "10-10-2014",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 308,
+        "fields": {
+            "name": "Wunderman LLC",
+            "naics_code1_id": 814,
+            "date_joined_pyx": "07-30-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 309,
+        "fields": {
+            "name": "Youngs Market Company LLC",
+            "naics_code1_id": 560,
+            "date_joined_pyx": "06-20-2016",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 310,
+        "fields": {
+            "name": "Zebra Technologies Corporation",
+            "naics_code1_id": 403,
+            "naics_code2_id": 232,
+            "date_joined_pyx": "07-31-2009",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 311,
+        "fields": {
+            "name": "Zodiac Pool Systems Inc",
+            "naics_code1_id": 374,
+            "naics_code2_id": 497,
+            "date_joined_pyx": "02-06-2017",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 312,
+        "fields": {
+            "name": "Zoetis Inc",
+            "naics_code1_id": 260,
+            "naics_code2_id": 538,
+            "date_joined_pyx": "04-23-2013",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 313,
+        "fields": {
+            "name": "Apple Inc",
+            "naics_code1_id": 581,
+            "date_joined_pyx": "07-02-2018",
+            "snp_500": true,
+            "fortune_level": 4,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 314,
+        "fields": {
+            "name": "Procor",
+            "naics_code1_id": 464,
+            "date_joined_pyx": "06-11-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 315,
+        "fields": {
+            "name": "Conduent",
+            "naics_code1_id": 836,
+            "date_joined_pyx": "06-22-2018",
+            "snp_500": false,
+            "fortune_level": 466,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 316,
+        "fields": {
+            "name": "Southern Company",
+            "naics_code1_id": 100,
+            "date_joined_pyx": "07-02-2018",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 317,
+        "fields": {
+            "name": "PetSmart",
+            "naics_code1_id": 626,
+            "date_joined_pyx": "07-06-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 318,
+        "fields": {
+            "name": "Valmont Industries",
+            "naics_code1_id": 334,
+            "date_joined_pyx": "07-09-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 319,
+        "fields": {
+            "name": "PriceSmart",
+            "naics_code1_id": 620,
+            "date_joined_pyx": "07-06-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 320,
+        "fields": {
+            "name": "Neurocrine Biosciences",
+            "naics_code1_id": 260,
+            "date_joined_pyx": "08-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 321,
+        "fields": {
+            "name": "Advocate Aurora Health",
+            "naics_code1_id": 901,
+            "date_joined_pyx": "07-06-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 322,
+        "fields": {
+            "name": "Land O' Lakes",
+            "naics_code1_id": 554,
+            "date_joined_pyx": "08-01-2018",
+            "snp_500": false,
+            "fortune_level": 216,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 323,
+        "fields": {
+            "name": "Jaguar Land Rover",
+            "naics_code1_id": 443,
+            "date_joined_pyx": "07-20-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 324,
+        "fields": {
+            "name": "Gorbel",
+            "naics_code1_id": 526,
+            "date_joined_pyx": "08-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 325,
+        "fields": {
+            "name": "AvalonBay Communities",
+            "naics_code1_id": 768,
+            "date_joined_pyx": "03-05-2018",
+            "snp_500": true,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 326,
+        "fields": {
+            "name": "Altice USA",
+            "naics_code1_id": 716,
+            "date_joined_pyx": "08-01-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 327,
+        "fields": {
+            "name": "MediRevv",
+            "naics_code1_id": 816,
+            "date_joined_pyx": "09-03-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 328,
+        "fields": {
+            "name": "IGT (International Game Technology)",
+            "naics_code1_id": 872,
+            "date_joined_pyx": "08-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 329,
+        "fields": {
+            "name": "Godiva",
+            "naics_code1_id": 150,
+            "date_joined_pyx": "08-15-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 330,
+        "fields": {
+            "name": "Cemex",
+            "naics_code1_id": 119,
+            "date_joined_pyx": "09-01-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 331,
+        "fields": {
+            "name": "MacroGenics",
+            "naics_code1_id": 822,
+            "date_joined_pyx": "09-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 332,
+        "fields": {
+            "name": "Eisai",
+            "naics_code1_id": 260,
+            "date_joined_pyx": "08-10-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 333,
+        "fields": {
+            "name": "CHS Inc.",
+            "naics_code1_id": 561,
+            "date_joined_pyx": "09-01-2018",
+            "snp_500": false,
+            "fortune_level": 96,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 334,
+        "fields": {
+            "name": "Citi Group",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "06-22-2018",
+            "snp_500": true,
+            "fortune_level": 32,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 335,
+        "fields": {
+            "name": "Insulet Corporation",
+            "naics_code1_id": 482,
+            "date_joined_pyx": "09-03-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 336,
+        "fields": {
+            "name": "Univar",
+            "naics_code1_id": 556,
+            "date_joined_pyx": "09-01-2018",
+            "snp_500": false,
+            "fortune_level": 349,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 337,
+        "fields": {
+            "name": "Verizon",
+            "naics_code1_id": 716,
+            "date_joined_pyx": "05-24-2005",
+            "snp_500": true,
+            "fortune_level": 16,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 338,
+        "fields": {
+            "name": "Motorist Insurance Group",
+            "naics_code1_id": 754,
+            "date_joined_pyx": "08-31-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 339,
+        "fields": {
+            "name": "FirstEnergy",
+            "naics_code1_id": 100,
+            "date_joined_pyx": "09-15-2018",
+            "snp_500": true,
+            "fortune_level": 219,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 340,
+        "fields": {
+            "name": "Tronc",
+            "naics_code1_id": 692,
+            "date_joined_pyx": "09-17-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 341,
+        "fields": {
+            "name": "Ambry Genetics",
+            "naics_code1_id": 803,
+            "date_joined_pyx": "12-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 342,
+        "fields": {
+            "name": "Ameriprise",
+            "naics_code1_id": 745,
+            "date_joined_pyx": "12-01-2018",
+            "snp_500": true,
+            "fortune_level": 252,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 343,
+        "fields": {
+            "name": "Barratt Developments",
+            "naics_code1_id": 108,
+            "date_joined_pyx": "11-13-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 344,
+        "fields": {
+            "name": "Caterpillar",
+            "naics_code1_id": 524,
+            "date_joined_pyx": "02-01-2019",
+            "snp_500": true,
+            "fortune_level": 65,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 345,
+        "fields": {
+            "name": "Coca-Cola Bottling Co.",
+            "naics_code1_id": 181,
+            "date_joined_pyx": "01-01-2019",
+            "snp_500": true,
+            "fortune_level": 87,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 346,
+        "fields": {
+            "name": "CVS",
+            "naics_code1_id": 597,
+            "date_joined_pyx": "11-01-2018",
+            "snp_500": true,
+            "fortune_level": 7,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 347,
+        "fields": {
+            "name": "Alphabet (Google)",
+            "naics_code1_id": 718,
+            "date_joined_pyx": "10-01-2018",
+            "snp_500": true,
+            "fortune_level": 22,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 348,
+        "fields": {
+            "name": "Hypertherm",
+            "naics_code1_id": 534,
+            "date_joined_pyx": "11-16-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 349,
+        "fields": {
+            "name": "In-n-Out",
+            "naics_code1_id": 976,
+            "date_joined_pyx": "12-01-2018",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 350,
+        "fields": {
+            "name": "Keg Restaurants",
+            "naics_code1_id": 976,
+            "date_joined_pyx": "12-14-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 351,
+        "fields": {
+            "name": "L Brands",
+            "naics_code1_id": 630,
+            "date_joined_pyx": "02-01-2019",
+            "snp_500": true,
+            "fortune_level": 231,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 352,
+        "fields": {
+            "name": "McAfee",
+            "naics_code1_id": 698,
+            "date_joined_pyx": "11-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 353,
+        "fields": {
+            "name": "Mississippi Power Company",
+            "naics_code1_id": 100,
+            "date_joined_pyx": "12-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 354,
+        "fields": {
+            "name": "Safe Fleet",
+            "naics_code1_id": 529,
+            "date_joined_pyx": "10-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 355,
+        "fields": {
+            "name": "Spin Master Ltd.",
+            "naics_code1_id": 531,
+            "date_joined_pyx": "04-30-2019",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 356,
+        "fields": {
+            "name": "Synovus",
+            "naics_code1_id": 724,
+            "date_joined_pyx": "11-17-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 357,
+        "fields": {
+            "name": "Terex",
+            "naics_code1_id": 524,
+            "date_joined_pyx": "01-15-2019",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 358,
+        "fields": {
+            "name": "Ultra Electronics",
+            "naics_code1_id": 415,
+            "date_joined_pyx": "11-01-2018",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 359,
+        "fields": {
+            "name": "Yum! Brands",
+            "naics_code1_id": 976,
+            "date_joined_pyx": "07-01-2018",
+            "snp_500": true,
+            "fortune_level": 472,
+            "enterprise": true,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 360,
+        "fields": {
+            "name": "Cengage",
+            "date_joined_pyx": "01-08-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 361,
+        "fields": {
+            "name": "Werner Co.",
+            "date_joined_pyx": "01-07-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 362,
+        "fields": {
+            "name": "HBO",
+            "date_joined_pyx": "01-14-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 363,
+        "fields": {
+            "name": "Blue Cross LA",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 364,
+        "fields": {
+            "name": "Blue Cross of AZ",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 365,
+        "fields": {
+            "name": "Blue Cross of ID",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 366,
+        "fields": {
+            "name": "Blue Cross of Kansas City",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "01-23-2019",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 367,
+        "fields": {
+            "name": "Blue Cross of MN",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 368,
+        "fields": {
+            "name": "Blue Cross of ND",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 369,
+        "fields": {
+            "name": "Blue Cross of NE",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 370,
+        "fields": {
+            "name": "Blue Cross of ND (Noridian)",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 371,
+        "fields": {
+            "name": "FedEx Freight",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 372,
+        "fields": {
+            "name": "FedEx Office",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 373,
+        "fields": {
+            "name": "FedEx Supply Chain",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 374,
+        "fields": {
+            "name": "FedEx Trade Networks",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 375,
+        "fields": {
+            "name": "HDS",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 376,
+        "fields": {
+            "name": "Hershey Entertainment",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 377,
+        "fields": {
+            "name": "IPG Corporate",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 378,
+        "fields": {
+            "name": "IPG Mediabrands",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 379,
+        "fields": {
+            "name": "Mercedes Benz Canada",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 380,
+        "fields": {
+            "name": "Mercedes Benz R&D NA",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "01-23-2019",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 381,
+        "fields": {
+            "name": "Marsh",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 382,
+        "fields": {
+            "name": "Mitsubishi Hitachi Power Systems Europe",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 383,
+        "fields": {
+            "name": "Prudential Vietnam",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 384,
+        "fields": {
+            "name": "City of Lakewood",
+            "date_joined_pyx": "02-06-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 385,
+        "fields": {
+            "name": "Minneapolis  Park & Recreation Board",
+            "date_joined_pyx": "02-06-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 386,
+        "fields": {
+            "name": "Boeing",
+            "date_joined_pyx": "11-30-2018",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 387,
+        "fields": {
+            "name": "Duke Energy",
+            "date_joined_pyx": "02-04-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 388,
+        "fields": {
+            "name": "Southeastern Ohio Regional Medical Center (SEORMC)",
+            "date_joined_pyx": "02-11-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 389,
+        "fields": {
+            "name": "Union Pacific",
+            "date_joined_pyx": "02-04-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 390,
+        "fields": {
+            "name": "B&G Foods  Inc",
+            "date_joined_pyx": "01-02-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 391,
+        "fields": {
+            "name": "TRI Pointe Group",
+            "date_joined_pyx": "01-23-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 392,
+        "fields": {
+            "name": "The Madison Square Garden Company",
+            "date_joined_pyx": "01-24-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 393,
+        "fields": {
+            "name": "Heineken",
+            "date_joined_pyx": "12-20-2018",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 394,
+        "fields": {
+            "name": "AIG (American International Group)",
+            "date_joined_pyx": "02-15-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 395,
+        "fields": {
+            "name": "Minneapolis Park and Recreation",
+            "date_joined_pyx": "01-03-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 396,
+        "fields": {
+            "name": "AIG Fortitude-RE",
+            "date_joined_pyx": "02-28-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 397,
+        "fields": {
+            "name": "Sullivan cotter",
+            "date_joined_pyx": "03-01-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 398,
+        "fields": {
+            "name": "Southern Glazer\u2019s Wine & Spirits  LLC",
+            "date_joined_pyx": "02-27-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 399,
+        "fields": {
+            "name": "Beaumont Health",
+            "date_joined_pyx": "03-01-2019",
+            "date_left_pyx": "01-01-1970",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 400,
+        "fields": {
+            "name": "American Tower Corporation",
+            "date_joined_pyx": "03-01-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 401,
+        "fields": {
+            "name": "BASF",
+            "date_joined_pyx": "02-23-2019",
+            "date_left_pyx": "01-01-1970",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 402,
+        "fields": {
+            "name": "Canon",
+            "date_joined_pyx": "02-27-2019",
+            "date_left_pyx": "01-01-1970",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 403,
+        "fields": {
+            "name": "C.H. Robinson Worldwide",
+            "date_joined_pyx": "03-05-2019",
+            "date_left_pyx": "01-01-1970",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 404,
+        "fields": {
+            "name": "UnityPoint Health",
+            "date_joined_pyx": "03-07-2019",
+            "date_left_pyx": "01-01-1970",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 405,
+        "fields": {
+            "name": "Constellation Brands",
+            "date_joined_pyx": "03-01-2019",
+            "date_left_pyx": "01-01-1970",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 406,
+        "fields": {
+            "name": "Zoll",
+            "date_joined_pyx": "03-07-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 407,
+        "fields": {
+            "name": "J.D. Irving Limited",
+            "date_joined_pyx": "02-22-2019",
+            "date_left_pyx": "01-01-1970",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 408,
+        "fields": {
+            "name": "Sargento Foods",
+            "date_joined_pyx": "03-18-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 409,
+        "fields": {
+            "name": "Canadian Solar",
+            "date_joined_pyx": "03-04-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 410,
+        "fields": {
+            "name": "Skagit Regional Health",
+            "date_joined_pyx": "03-20-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 411,
+        "fields": {
+            "name": "S&P Global",
+            "date_joined_pyx": "02-19-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 412,
+        "fields": {
+            "name": "Mastercard",
+            "date_joined_pyx": "03-18-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 413,
+        "fields": {
+            "name": "Corning",
+            "date_joined_pyx": "04-01-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 414,
+        "fields": {
+            "name": "E. & J. Gallo",
+            "naics_code1_id": 185,
+            "date_joined_pyx": "04-07-2019",
+            "date_left_pyx": "04-12-2019",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": true
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 415,
+        "fields": {
+            "name": "AbbVie",
+            "date_joined_pyx": "04-17-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 416,
+        "fields": {
+            "name": "Prisma Health",
+            "date_joined_pyx": "02-19-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 417,
+        "fields": {
+            "name": "Whole Foods Market",
+            "date_joined_pyx": "04-24-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 418,
+        "fields": {
+            "name": "Holland America Line",
+            "date_joined_pyx": "04-26-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 419,
+        "fields": {
+            "name": "American Express",
+            "date_joined_pyx": "05-03-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 420,
+        "fields": {
+            "name": "Rentokil Initial",
+            "date_joined_pyx": "05-02-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 421,
+        "fields": {
+            "name": "M&T Bank",
+            "date_joined_pyx": "05-06-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 422,
+        "fields": {
+            "name": "Independent Pet Partners (IPP)",
+            "date_joined_pyx": "05-08-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 423,
+        "fields": {
+            "name": "BioLegend",
+            "date_joined_pyx": "05-17-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 424,
+        "fields": {
+            "name": "Humana",
+            "date_joined_pyx": "05-31-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": true,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 425,
+        "fields": {
+            "name": "Caliber Collision",
+            "date_joined_pyx": "06-04-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
+    },
+    {
+        "model": "client.client",
+        "pk": 426,
+        "fields": {
+            "name": "Marcus Hotels  Inc.",
+            "date_joined_pyx": "06-05-2019",
+            "date_left_pyx": "12-31-1969",
+            "snp_500": false,
+            "enterprise": false,
+            "greatplace_mostadmired": false
+        }
     }
-}
 ]
