@@ -14,7 +14,7 @@ from apps.role.models import Role
 from simple_history.models import HistoricalRecords
 
 class UserManager(BaseUserManager):
-    def _create_user(self, email, password,
+    def _create_user(self, email,
                      is_staff, is_superuser, **extra_fields):
         """
         Creates and saves a User with the given email and password.
@@ -29,18 +29,19 @@ class UserManager(BaseUserManager):
                                 is_staff=is_staff, is_active=True,
                                 is_superuser=is_superuser, last_login=now,
                                 date_joined=now, **extra_fields)
-                user.set_password(password)
+                # user.set_password(password)
+                user.set_unusable_password()
                 user.save(using=self._db)
                 return user
         except:
             raise
 
-    def create_user(self, email, password, **extra_fields):
-        return self._create_user(email, password, False, False,
+    def create_user(self, email, **extra_fields):
+        return self._create_user(email, False, False,
                                  **extra_fields)
 
-    def create_superuser(self, email, password, **extra_fields):
-        return self._create_user(email, password, True, True,
+    def create_superuser(self, email, **extra_fields):
+        return self._create_user(email, True, True,
                                  **extra_fields)
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -69,17 +70,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
 
     # A timestamp representing when this object was created.
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now=False, auto_now_add=False, null=True)
 
     # A timestamp reprensenting when this object was last updated.
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=False, auto_now_add=False, null=True)
 
     # More fields required by Django when specifying a custom user model.
     firstname = models.CharField(max_length=255, blank=False, unique=False)
     lastname = models.CharField(max_length=255, blank=False, unique=False)
 
     smartsheetCode = models.CharField(max_length=255, blank=False, unique=False, default='', null=True)
-    date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
+    date_joined = models.DateTimeField(_('date joined'), default=timezone.now, null=True, blank=True)
 
     roleId = models.IntegerField(default=1)
     # roleId = models.ForeignKey(Role, related_name="roleId", on_delete=models.CASCADE)

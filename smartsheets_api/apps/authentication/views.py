@@ -160,19 +160,6 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
             # response['userRoles'] = [RoleSerializer(Role.objects.get(name = User.objects.select_related('roleId').get(id=kwargs["pk"]).roleId)).data]
             response['userRoles'] = [RoleSerializer(Role.objects.get(id = User.objects.get(id=kwargs["pk"]).roleId)).data]
     
-            # if request.data['roleId'] == 2:
-            #     project_manager = ProjectManager.objects.get(user_id=user)
-            #     project_manager.save()
-            # if request.data['roleId'] == 3:
-            #     account_manager = AccountManager.objects.get(user_id=user)
-            #     account_manager.save()
-            # if request.data['roleId'] == 4:
-            #     consultant = Consultant.objects.get(user_id=user)
-            #     Consultant.save()
-            # if request.data['roleId'] == 8:
-            #     relationship_manager = RelationshipManager.objects.get(user_id=user)
-            #     relationship_manager.save()
-
             return Response(response)
         except User.DoesNotExist:
             response = {"message": "User with id: {} does not exist".format(kwargs["pk"])}
@@ -182,16 +169,18 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
         try:
             user = self.queryset.get(pk=kwargs["pk"])
 
+            print(185, user.roleId, user.id)
+
             if user.roleId == 2:
                 project_manager = ProjectManager.objects.get(user_id=user)
                 project_manager.delete()
-            if request.data['roleId'] == 3:
+            if user.roleId == 3:
                 account_manager = AccountManager.objects.get(user_id=user)
                 account_manager.delete()
-            if request.data['roleId'] == 4:
+            if user.roleId == 4:
                 consultant = Consultant.objects.get(user_id=user)
                 Consultant.delete()
-            if request.data['roleId'] == 8:
+            if user.roleId == 8:
                 relationship_manager = RelationshipManager.objects.get(user_id=user)
                 relationship_manager.delete()
             
@@ -237,12 +226,12 @@ class ListCreateUsersView(ListCreateAPIView):
         for key in keys:
             kwargs[key]=request.data[key]
 
-        token = Token(client_id=settings.ONELOGIN_CLIENT_ID, client_secret=settings.ONELOGIN_CLIENT_SECRET)
-        one_login_user = OneLoginUser(token)
-        one_login_create_user_response = one_login_user.create_user(**kwargs)
+        # token = Token(client_id=settings.ONELOGIN_CLIENT_ID, client_secret=settings.ONELOGIN_CLIENT_SECRET)
+        # one_login_user = OneLoginUser(token)
+        # one_login_create_user_response = one_login_user.create_user(**kwargs)
 
         data = kwargs
-        data.update({'password': 'password', 'roleId': request.data['roleId']})
+        data.update({'roleId': request.data['roleId']})
         serializer = UserSerializer(data=data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
