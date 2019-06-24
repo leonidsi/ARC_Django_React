@@ -1,9 +1,0 @@
-[
-{
-    "model": "how_found_pyx.howfoundpyx",
-    "pk": 1,
-    "fields": {
-        "name": "test_pyx"
-    }
-}
-]

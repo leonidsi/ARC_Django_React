@@ -47,8 +47,10 @@ class ProjectList(ListCreateAPIView):
         Return a list of all Projects.
         """
         projects = Project.objects.filter(is_template=False)
+        print(50, projects[0].client_id)
+        print("======")
         responses = []
-        for project in projects:
+        for project in projects:            
             response = ProjectSerializer(project).data
             if project.client_id:
                 response['client'] = ClientSerializer(Client.objects.get(name = project.client_id)).data
@@ -67,6 +69,7 @@ class ProjectList(ListCreateAPIView):
                 response['consultant'] = ConsultantSerializer(Consultant.objects.get(user_id = project.consultant_id.user_id)).data
                 response['consultant']['user'] = UserSerializer(User.objects.get(email = project.consultant_id.user_id)).data
             responses.append(response)
+        print(72, ">>>>>>>>>>")
         return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):

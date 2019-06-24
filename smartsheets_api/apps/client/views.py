@@ -42,6 +42,7 @@ class ClientList(ListCreateAPIView):
                 response['naicsCode1'] = NaicsCodeSerializer(NaicsCode.objects.get(name = client.naics_code1_id)).data   
             if client.naics_code2_id:
                 response['naicsCode2'] = NaicsCodeSerializer(NaicsCode.objects.get(name = client.naics_code2_id)).data
+            response['test'] = 'test_client'
             responses.append(response)
         return Response(responses, status=status.HTTP_200_OK)        
 
