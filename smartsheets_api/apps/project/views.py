@@ -70,7 +70,7 @@ class ProjectList(ListCreateAPIView):
                 response['consultant']['user'] = UserSerializer(User.objects.get(email = project.consultant_id.user_id)).data
             responses.append(response)
         print(72, ">>>>>>>>>>")
-        return Response(responses, status=status.HTTP_200_OK)
+        return Response(projects, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         # request.data.update({'is_template': False})
