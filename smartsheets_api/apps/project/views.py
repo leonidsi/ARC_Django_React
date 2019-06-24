@@ -58,8 +58,8 @@ class ProjectList(ListCreateAPIView):
                 response['projectManager'] = ProjectManagerSerializer(ProjectManager.objects.get(user_id = project.project_mgr_id.user_id)).data
                 response['projectManager']['user'] = UserSerializer(User.objects.get(email = project.project_mgr_id.user_id)).data
             if project.account_mgr_id:
-                response['salesExecutive'] = AccountManagerSerializer(AccountManager.objects.get(user_id = project.account_mgr_id.user_id)).data
-                response['salesExecutive']['user'] = UserSerializer(User.objects.get(email = project.account_mgr_id.user_id)).data
+                response['accountManager'] = AccountManagerSerializer(AccountManager.objects.get(user_id = project.account_mgr_id.user_id)).data
+                response['accountManager']['user'] = UserSerializer(User.objects.get(email = project.account_mgr_id.user_id)).data
             if project.relationship_mgr_id:
                 response['relationshipManager'] = RelationshipManagerSerializer(RelationshipManager.objects.get(user_id = project.relationship_mgr_id.user_id)).data
                 response['relationshipManager']['user'] = UserSerializer(User.objects.get(email = project.relationship_mgr_id.user_id)).data
@@ -70,7 +70,7 @@ class ProjectList(ListCreateAPIView):
         return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        request.data.update({'is_template': False})
+        # request.data.update({'is_template': False})
         serializer = ProjectSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -145,6 +145,7 @@ class TemplateView(ListCreateAPIView):
         return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
+        request.data.update({'is_template': True})
         request_project_data = request.data['project_data']
         serializer = ProjectSerializer(data=request_project_data, context={'request': request})
         serializer.is_valid(raise_exception=True)

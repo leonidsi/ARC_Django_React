@@ -1,0 +1,9 @@
+[
+{
+    "model": "account_manager.accountmanager",
+    "pk": 1,
+    "fields": {
+        "user_id": 86
+    }
+}
+]
