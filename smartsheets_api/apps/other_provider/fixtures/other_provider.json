@@ -1,9 +1,0 @@
-[
-{
-    "model": "other_provider.otherprovider",
-    "pk": 1,
-    "fields": {
-        "name": "test_other_provider"
-    }
-}
-]
