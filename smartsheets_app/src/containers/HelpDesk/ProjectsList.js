@@ -43,7 +43,7 @@ const allColumns = [
                       'dc_sso_url', 'ok_to_send_auth', 'ok_to_reopen', 'kiosk', 'paper_surveys', 'european_employees', 
                       'alt_standard_reply', 'other_dc_notes', 'report_sso_url', 'project_rating', 'client_rating', 
                       'number_tickets', 'number_support_emails', 'number_support_calls', 
-                      'dc_readonly_url', 'custom_dev_notes', 'other_notes', ''
+                      'dc_readonly_url', 'custom_dev_notes', 'other_notes'
                   ]
 
 const inputSearchStyle = {

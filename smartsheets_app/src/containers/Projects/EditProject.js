@@ -107,7 +107,7 @@ const columns = {
   5: [
       'project_rating', 'client_rating', 'number_tickets', 
       'number_support_emails', 'number_support_calls', 
-      'dc_readonly_url', 'custom_dev_notes', 'other_notes', ''
+      'dc_readonly_url', 'custom_dev_notes', 'other_notes'
     ],
 }
 const tabs = ['Contracted Project Info', 'Keydates', 'Actual Project Info', 'Help Desk Info', 'Post Project Info']
@@ -186,7 +186,6 @@ class EditProject extends React.Component {
 
   onValueChange = (val, type) => {
     const { projectData } = this.state
-    console.log(162, projectData)
     let postData = {}
     
     switch (type) {
@@ -407,7 +406,7 @@ class EditProject extends React.Component {
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                             labelInValue size="large"
                             placeholder="Please choose a sales executive"
-                            value={{ key: projectData.account_mgr_id, label: `${get(projectData, 'account_mgr_id.user_id.firstname', '')} ${get(projectData, 'account_mgr_id.user_id.firstname', '')}` }}
+                            value={{ key: projectData.account_mgr_id, label: `${get(projectData, 'account_mgr_id.user_id.firstname', '')} ${get(projectData, 'account_mgr_id.user_id.lastname', '')}` }}
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'account_mgr_id')
                             }}
@@ -438,7 +437,7 @@ class EditProject extends React.Component {
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                             labelInValue size="large"
                             placeholder="Please choose a project manager"
-                            value={{ key: projectData.project_mgr_id, label: `${get(projectData, 'project_mgr_id.user_id.firstname', '')} ${get(projectData, 'project_mgr_id.user_id.firstname', '')}` }}
+                            value={{ key: projectData.project_mgr_id, label: `${get(projectData, 'project_mgr_id.user_id.firstname', '')} ${get(projectData, 'project_mgr_id.user_id.lastname', '')}` }}
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'project_mgr_id')
                             }}
