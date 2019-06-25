@@ -14,14 +14,14 @@ def django_db_setup(django_db_setup, django_db_blocker):
     with django_db_blocker.unblock():
         call_command(
         	'loaddata', 
-        	'authentication_dd.json', 
-        	'client_dd.json', 
+        	'authentication.json', 
+        	'client.json', 
         	'how_found_pyx.json',
-        	'naics_code_dd.json', 
+        	'naics_code.json', 
             'other_provider.json',
-            'project_manager_dd.json',
-            'project_status_dd.json',
-        	'project_type_dd.json', 
+            'project_manager.json',
+            'project_status.json',
+        	'project_type.json', 
         	'role.json',
             'server.json',
             'toolkit_tier.json'
