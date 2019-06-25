@@ -110,5 +110,40 @@
         "fields": {
             "user_id": 66
         }
+    },
+    {
+        "model": "account_manager.accountmanager",
+        "pk": 17,
+        "fields": {
+            "user_id": 25
+        }
+    },
+    {
+        "model": "account_manager.accountmanager",
+        "pk": 18,
+        "fields": {
+            "user_id": 36
+        }
+    },
+    {
+        "model": "account_manager.accountmanager",
+        "pk": 19,
+        "fields": {
+            "user_id": 8
+        }
+    },
+    {
+        "model": "account_manager.accountmanager",
+        "pk": 20,
+        "fields": {
+            "user_id": 37
+        }
+    },
+    {
+        "model": "account_manager.accountmanager",
+        "pk": 21,
+        "fields": {
+            "user_id": 73
+        }
     }
 ]
