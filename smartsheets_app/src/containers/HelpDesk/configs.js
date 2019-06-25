@@ -27,7 +27,7 @@ const columns = [
   {
     title: "Client",
     key: 'clientName',
-    render: object => renderCell(object, 'TextCell', 'client.name')
+    render: object => renderCell(object, 'TextCell', 'clientName')
   },
   {
     title: "Project Name",
@@ -46,7 +46,7 @@ const columns = [
   {
     title: "Project Manager",
     key: 'projectManagerName',
-    render: object => renderCell(object, 'TextCell', 'projectManager.user.firstname', 'projectManager.user.lastname')
+    render: object => renderCell(object, 'TextCell', 'projectManagerName')
   },
 ];
 const sortColumns = [

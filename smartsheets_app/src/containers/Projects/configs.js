@@ -27,7 +27,7 @@ const columns = [
   {
     title: "Client",
     key: 'clientName',
-    render: object => renderCell(object, 'TextCell', 'client.name')
+    render: object => renderCell(object, 'TextCell', 'clientName')
   },
   {
     title: "Project Name",
@@ -42,27 +42,27 @@ const columns = [
   {
     title: "Project Type",
     key: 'projectTypeName',
-    render: object => renderCell(object, 'TextCell', 'projectType.name')
+    render: object => renderCell(object, 'TextCell', 'projectTypeName')
   },
   {
     title: "Sales Executive",
     key: 'accountManagerName',
-    render: object => renderCell(object, 'TextCell', 'accountManager.user.firstname', 'accountManager.user.lastname')
+    render: object => renderCell(object, 'TextCell', 'accountManagerName')
   },
   {
     title: "Relationship Manager",
     key: 'relationshipManagerName',
-    render: object => renderCell(object, 'TextCell', 'relationshipManager.user.firstname', 'relationshipManager.user.lastname')
+    render: object => renderCell(object, 'TextCell', 'relationshipManagerName')
   },
   {
     title: "Project Manager",
     key: 'projectManagerName',
-    render: object => renderCell(object, 'TextCell', 'projectManager.user.firstname', 'projectManager.user.lastname')
+    render: object => renderCell(object, 'TextCell', 'projectManagerName')
   },
   {
     title: "Consultant",
     key: 'consultantName',
-    render: object => renderCell(object, 'TextCell', 'consultant.user.firstname', 'consultant.user.lastname')
+    render: object => renderCell(object, 'TextCell', 'consultantName')
   },
   {
     title: "Revenue",
