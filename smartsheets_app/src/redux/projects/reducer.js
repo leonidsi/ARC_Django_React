@@ -28,7 +28,7 @@ export default function projectsReducer(state = initState, action) {
     case actions.INSERT_PROJECT_SUCCESS:
       const projectsListOrigin = state.projectsList
       return { projectsList: projectsListOrigin.concat([action.payload]), loading: false }    
-    case actions.GET_PROJECT_SUCCESS: 
+    case actions.GET_PROJECT_SUCCESS:
       return { singleProject: action.payload }
     case actions.GET_TEMPLATELIST_SUCCESS:
       return { templateList: action.payload }

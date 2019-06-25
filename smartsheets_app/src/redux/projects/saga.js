@@ -150,35 +150,37 @@ export function* getRequest() {
         query: queryParams,
       }
       let project = yield call(request, url, params);
+      console.log(154+'_project', project)
       let sheets = []
       let keyDates = {}
 
-      if (project.project_mgr_id && project.project_mgr_id.user_id.smartsheetCode) {
-        url = `${API_URL}/projects/getSheets`;
-        params = {
-          method: 'POST',
-          body: JSON.stringify({ smartsheet_auth_code: project.projectManager.user.smartsheetCode}),
-        };
-        sheets = yield call(request, url, params);
+      // if (project.project_mgr_id && project.project_mgr_id.user_id.smartsheetCode) {
+      //   console.log(159)
+      //   url = `${API_URL}/projects/getSheets`;
+      //   params = {
+      //     method: 'POST',
+      //     body: JSON.stringify({ smartsheet_auth_code: project.project_mgr_id.user_id.smartsheetCode}),
+      //   };
+      //   sheets = yield call(request, url, params);
 
-        yield put({
-          type: smartsheetActions.FETCH_SHEETS_SUCCESS,
-          payload: sheets,
-        });
+      //   yield put({
+      //     type: smartsheetActions.FETCH_SHEETS_SUCCESS,
+      //     payload: sheets,
+      //   });
 
-        if (project.sheet_id) {
-          url = `${API_URL}/projects/getKeydates`
-          params = {
-            method: 'POST',
-            body: JSON.stringify({ smartsheet_auth_code: project.projectManager.user.smartsheetCode, sheet_id: project.sheet_id }),
-          };
-          keyDates = yield call(request, url, params);
-          yield put({
-            type: smartsheetActions.FETCH_KEYDATES_SUCCESS,
-            payload: keyDates,
-          });
-        }
-      }
+      //   if (project.sheet_id) {
+      //     url = `${API_URL}/projects/getKeydates`
+      //     params = {
+      //       method: 'POST',
+      //       body: JSON.stringify({ smartsheet_auth_code: project.project_mgr_id.user_id.smartsheetCode, sheet_id: project.sheet_id }),
+      //     };
+      //     keyDates = yield call(request, url, params);
+      //     yield put({
+      //       type: smartsheetActions.FETCH_KEYDATES_SUCCESS,
+      //       payload: keyDates,
+      //     });
+      //   }
+      // }
 
       yield put({
         type: actions.GET_PROJECT_SUCCESS,
