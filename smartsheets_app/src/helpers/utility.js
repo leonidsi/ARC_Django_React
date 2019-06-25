@@ -95,28 +95,28 @@ export function mapManager(am) {
 }
 
 export function mapProject(project) {
-  if (project.accountManager) {
-    project.accountManagerName = `${project.accountManager.user.firstname} ${project.accountManager.user.lastname}`
+  if (project.account_mgr_id) {
+    project.accountManagerName = `${project.account_mgr_id.user_id.firstname} ${project.account_mgr_id.user_id.lastname}`
   }
 
   if (project.relationshipManager) {
-    project.relationshipManagerName = `${project.relationshipManager.user.firstname} ${project.relationshipManager.user.lastname}`
+    project.relationshipManagerName = `${project.relationship_mgr_id.user_id.firstname} ${project.relationship_mgr_id.user_id.lastname}`
   }
 
-  if (project.projectManager) {
-    project.projectManagerName = `${project.projectManager.user.firstname} ${project.projectManager.user.lastname}`
+  if (project.project_mgr_id) {
+    project.projectManagerName = `${project.project_mgr_id.user_id.firstname} ${project.project_mgr_id.user_id.lastname}`
   }
 
-  if (project.consultant) {
-    project.consultantName = `${project.consultant.user.firstname} ${project.consultant.user.lastname}`
+  if (project.consultant_id) {
+    project.consultantName = `${project.consultant_id.user_id.firstname} ${project.consultant_id.user_id.lastname}`
   }
 
-  if (project.client) {
-    project.clientName = project.client.name
+  if (project.client_id) {
+    project.clientName = project.client_id.name
   }
 
-  if (project.projectType) {
-    project.projectTypeName = project.projectType.name
+  if (project.project_type_id) {
+    project.projectTypeName = project.project_type_id.name
   }
   
   return project

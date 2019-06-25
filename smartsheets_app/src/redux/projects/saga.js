@@ -14,24 +14,24 @@ export function* fetchRequest() {
       let result
       const filterObj = {
         include: [{
-          relation: 'projectManager',
+          relation: 'project_mgr_id',
           scope: {
-            include: 'user'
+            include: 'user_id'
           }
         }, {
-          relation: 'accountManager',
+          relation: 'account_mgr_id',
           scope: {
-            include: 'user'
+            include: 'user_id'
           }
         }, {
-          relation: 'consultant',
+          relation: 'consultant_id',
           scope: {
-            include: 'user'
+            include: 'user_id'
           }
         }, {
-          relation: 'client',
+          relation: 'client_id',
         }, {
-          relation: 'projectType',
+          relation: 'project_type_id',
         }],
       }
       const queryParams = {
@@ -122,24 +122,24 @@ export function* getRequest() {
       let url = `${API_URL}/projects/${postData.index}/`
       const filterObj = {
         include: [{
-          relation: 'projectManager',
+          relation: 'project_mgr_id',
           scope: {
-            include: 'user'
+            include: 'user_id'
           }
         }, {
-          relation: 'accountManager',
+          relation: 'account_mgr_id',
           scope: {
-            include: 'user'
+            include: 'user_id'
           }
         }, {
-          relation: 'consultant',
+          relation: 'consultant_id',
           scope: {
-            include: 'user'
+            include: 'user_id'
           }
         }, {
-          relation: 'client',
+          relation: 'client_id',
         }, {
-          relation: 'projectType',
+          relation: 'project_type_id',
         }],
       }
       const queryParams = {
@@ -153,7 +153,7 @@ export function* getRequest() {
       let sheets = []
       let keyDates = {}
 
-      if (project.projectManager && project.projectManager.user.smartsheetCode) {
+      if (project.project_mgr_id && project.project_mgr_id.user_id.smartsheetCode) {
         url = `${API_URL}/projects/getSheets`;
         params = {
           method: 'POST',

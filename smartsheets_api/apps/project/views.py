@@ -48,23 +48,24 @@ class ProjectList(ListCreateAPIView):
         """
         projects = Project.objects.filter(is_template=False)
         responses = ProjectSerializer(projects, many=True).data
-        for response in responses:
-            if response['client_id'] != None:
-                response['client'] = ClientSerializer(Client.objects.get(id = response['client_id'])).data
-            if response['project_type_id'] != None:
-                response['projectType'] = ProjectTypeSerializer(ProjectType.objects.get(id = response['project_type_id'])).data
-            if response['project_mgr_id'] != None:
-                response['projectManager'] = ProjectManagerSerializer(ProjectManager.objects.get(id = response['project_mgr_id'])).data
-                response['projectManager']['user'] = UserSerializer(User.objects.get(id = response['projectManager']['user_id'])).data
-            if response['account_mgr_id'] != None:
-                response['accountManager'] = AccountManagerSerializer(AccountManager.objects.get(id = response['account_mgr_id'])).data
-                response['accountManager']['user'] = UserSerializer(User.objects.get(id = response['accountManager']['user_id'])).data
-            if response['relationship_mgr_id'] != None:
-                response['relationshipManager'] = RelationshipManagerSerializer(RelationshipManager.objects.get(id = response['relationship_mgr_id'])).data
-                response['relationshipManager']['user'] = UserSerializer(User.objects.get(id = response['relationshipManager']['user_id'])).data
-            if response['consultant_id'] != None:
-                response['consultant'] = ConsultantSerializer(Consultant.objects.get(id = response['consultant_id'])).data
-                response['consultant']['user'] = UserSerializer(User.objects.get(id = response['consultant']['user_id'])).data
+        # print(responses)
+        # for response in responses:
+        #     if response['client_id'] != None:
+        #         response['client'] = ClientSerializer(Client.objects.get(id = response['client_id'])).data
+        #     if response['project_type_id'] != None:
+        #         response['projectType'] = ProjectTypeSerializer(ProjectType.objects.get(id = response['project_type_id'])).data
+        #     if response['project_mgr_id'] != None:
+        #         response['projectManager'] = ProjectManagerSerializer(ProjectManager.objects.get(id = response['project_mgr_id'])).data
+        #         response['projectManager']['user'] = UserSerializer(User.objects.get(id = response['projectManager']['user_id'])).data
+        #     if response['account_mgr_id'] != None:
+        #         response['accountManager'] = AccountManagerSerializer(AccountManager.objects.get(id = response['account_mgr_id'])).data
+        #         response['accountManager']['user'] = UserSerializer(User.objects.get(id = response['accountManager']['user_id'])).data
+        #     if response['relationship_mgr_id'] != None:
+        #         response['relationshipManager'] = RelationshipManagerSerializer(RelationshipManager.objects.get(id = response['relationship_mgr_id'])).data
+        #         response['relationshipManager']['user'] = UserSerializer(User.objects.get(id = response['relationshipManager']['user_id'])).data
+        #     if response['consultant_id'] != None:
+        #         response['consultant'] = ConsultantSerializer(Consultant.objects.get(id = response['consultant_id'])).data
+        #         response['consultant']['user'] = UserSerializer(User.objects.get(id = response['consultant']['user_id'])).data
         return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
