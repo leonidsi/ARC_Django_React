@@ -8,13 +8,6 @@ from apps.relationship_manager.serializers import RelationshipManagerSerializer
 from apps.project_manager.serializers import ProjectManagerSerializer
 from apps.consultant.serializers import ConsultantSerializer
 class ProjectSerializer(serializers.ModelSerializer):
-
-  client_id = ClientSerializer()
-  project_type_id = ProjectTypeSerializer()
-  account_mgr_id = AccountManagerSerializer()
-  relationship_mgr_id = RelationshipManagerSerializer()
-  project_mgr_id = ProjectManagerSerializer()
-  consultant_id = ConsultantSerializer()
   class Meta:
     model = Project
     fields = ( 'id', 'name', 'survey_id', 'revenue',

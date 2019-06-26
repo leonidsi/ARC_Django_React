@@ -44,8 +44,10 @@ class ConsultantList(ListCreateAPIView):
 
     def post(self, request, *args, **kwargs):
         serializer = ConsultantSerializer(data=request.data, context={'request': request})
+        print(48, serializer)
         serializer.is_valid(raise_exception=True)
-        serializer.save()
+        serializer.save()  
+        print("============")      
         user = User.objects.get(id=request.data['user_id'])
         user.roleId = RoleSerializer(Role.objects.get(name='Consultant')).data['id']
         user.save()

@@ -232,7 +232,6 @@ class ListCreateUsersView(ListCreateAPIView):
 
         data = kwargs
         data.update({'roleId': request.data['roleId']})
-        print(235, data)
         serializer = UserSerializer(data=data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()

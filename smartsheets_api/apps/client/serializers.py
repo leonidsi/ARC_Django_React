@@ -2,8 +2,6 @@ from rest_framework import serializers
 from apps.client.models import Client
 
 class ClientSerializer(serializers.ModelSerializer):
-    # date_joined_pyx = serializers.DateField(format="%m/%d/%Y", input_formats=['%m/%d/%Y', 'iso-8601'])
-    # date_left_pyx = serializers.DateField(format="%m/%d/%Y", input_formats=['%m/%d/%Y', 'iso-8601'])
     class Meta:
         model = Client
         fields = (

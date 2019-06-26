@@ -69,11 +69,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     # false.
     is_staff = models.BooleanField(default=False)
 
-    # A timestamp representing when this object was created.
-    created_at = models.DateTimeField(auto_now=False, auto_now_add=False, null=True)
+    # created_at = models.DateTimeField(auto_now_add=True)    
+    # updated_at = models.DateTimeField(auto_now=True)
 
-    # A timestamp reprensenting when this object was last updated.
-    updated_at = models.DateTimeField(auto_now=False, auto_now_add=False, null=True)
+    # A timestamp representing when this object was created.
+    # created_at = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
+
+    # # A timestamp reprensenting when this object was last updated.
+    # updated_at = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
 
     # More fields required by Django when specifying a custom user model.
     firstname = models.CharField(max_length=255, blank=False, unique=False)
