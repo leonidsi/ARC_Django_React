@@ -76,39 +76,11 @@ const tailFormItemLayout = {
 const dateFormatList = ["MM-DD-YYYY", "MM/DD/YYYY", "MM.DD.YYYY", "MMM DD YYYY"];
 
 const columns = {
-  1: [
-      'client_id', 'name', 'survey_id', 'project_type_id', 'account_mgr_id', 'project_mgr_id', 'consultant_id', 
-      'data_manager', 'revenue', 'toolkit_id', 'sso_id', 'contracted_launch_date', 'contract_expiration_date', 
-      'final_survey_in_contract', 'contracted_invitees', 'contracted_paper_surveys', 'contracted_email_invitees', 
-      'contracted_dc_translations', 'contracted_kiosk_invitees', 'contracted_report_users', 
-      'contracted_paper_invitees', 'european_employees', 'contracted_virtual_trainings', 'contracted_a2a_trainings', 
-      'contracted_onsite_trainings', 'contracted_rpt_translations', 'number_historical_uploads', 'num_exec_decks', 
-      'num_exec_interviews', 'onsite_pres_id', 'server_id', 'new_business_id'
-    ],
-  2: [
-      'sheet_id', 'project_kickoff_date', 'survey_launch_date', 'exec_first_draft_date', 'exec_presentation_date', 
-      'project_close_date', 'project_team_training_date', 'question_final_date', 'online_survey_final_date', 
-      'List.pilot_launch_date', 'final_data_date', 'ship_paper_date', 'manager_account_release_date'
-    ],
-  3: [
-      'actual_invitees', 'actual_email_invitees', 'actual_kiosk_invitees', 'actual_paper_invitees', 
-      'actual_paper_surveys', 'actual_dc_translations', 'actual_report_users', 'actual_rpt_translations', 
-      'actual_exec_interviews', 'actual_exec_decks', 'actual_exec_presentations', 
-      'actual_virtual_trainings', 'actual_onsite_trainings', 'actual_a2a_trainings'
-    ],
-  4: [
-      'primary_contact', 'contact_email', 'contact_protocol_id', 
-      'require_auth', 'ok_to_miss', 'lock_survey', 'single_use_auth', 
-      'hire_hire_cutoff', 'dc_sso_url', 'dc_sso', 'ok_to_send_auth', 
-      'ok_to_send_auth_sso', 'ok_to_reopen', 'kiosk', 'paper_surveys', 
-      'european_employees', 'alt_standard_reply', 'other_dc_notes', 
-      'report_sso_url', 'report_sso' 
-    ],
-  5: [
-      'project_rating', 'client_rating', 'number_tickets', 
-      'number_support_emails', 'number_support_calls', 
-      'dc_readonly_url', 'custom_dev_notes', 'other_notes'
-    ],
+  1: ['client_id', 'name', 'survey_id', 'project_type_id', 'account_mgr_id', 'project_mgr_id', 'consultant_id', 'data_manager', 'revenue', 'toolkit_id', 'sso_id', 'contracted_launch_date', 'contract_expiration_date', 'final_survey_in_contract', 'contracted_invitees', 'contracted_paper_surveys', 'contracted_email_invitees', 'contracted_dc_translations', 'contracted_kiosk_invitees', 'contracted_report_users', 'contracted_paper_invitees', 'european_employees', 'contracted_virtual_trainings', 'contracted_a2a_trainings', 'contracted_onsite_trainings', 'contracted_rpt_translations', 'number_historical_uploads', 'num_exec_decks', 'num_exec_interviews', 'onsite_pres_id', 'server_id', 'new_business_id'],
+  2: ['sheet_id', 'project_kickoff_date', 'survey_launch_date', 'exec_first_draft_date', 'exec_presentation_date', 'project_close_date', 'project_team_training_date', 'question_final_date', 'online_survey_final_date', 'List.pilot_launch_date', 'final_data_date', 'ship_paper_date', 'manager_account_release_date'],
+  3: ['actual_invitees', 'actual_email_invitees', 'actual_kiosk_invitees', 'actual_paper_invitees', 'actual_paper_surveys', 'actual_dc_translations', 'actual_report_users', 'actual_rpt_translations', 'actual_exec_interviews', 'actual_exec_decks', 'actual_exec_presentations', 'actual_virtual_trainings', 'actual_onsite_trainings', 'actual_a2a_trainings'],
+  4: ['primary_contact', 'contact_email', 'contact_protocol_id', 'require_auth', 'ok_to_miss', 'lock_survey', 'single_use_auth', 'hire_hire_cutoff', 'dc_sso_url', 'dc_sso', 'ok_to_send_auth', 'ok_to_send_auth_sso', 'ok_to_reopen', 'kiosk', 'paper_surveys', 'european_employees', 'alt_standard_reply', 'other_dc_notes', 'report_sso_url', 'report_sso' ],
+  5: ['project_rating', 'client_rating', 'number_tickets', 'number_support_emails', 'number_support_calls', 'dc_readonly_url', 'custom_dev_notes', 'other_notes', ''],
 }
 const tabs = ['Contracted Project Info', 'Keydates', 'Actual Project Info', 'Help Desk Info', 'Post Project Info']
 class EditProject extends React.Component {
@@ -169,6 +141,7 @@ class EditProject extends React.Component {
   componentWillReceiveProps(props) {
     let { projectData } = props
     this.setState({ projectData })
+    
   }
 
   populateSheets(code) {
@@ -195,8 +168,8 @@ class EditProject extends React.Component {
       case 'project_mgr_id':{
         const code = this.getPMSmartSheetCode(val)
         let originalCode = null
-        if (projectData['project_mgr_id'] && projectData['project_mgr_id']['user_id']['smartsheetCode']) {
-          originalCode = projectData['project_mgr_id']['user_id']['smartsheetCode']
+        if (projectData['projectManager'] && projectData['projectManager']['user']['smartsheetCode']) {
+          originalCode = projectData['projectManager']['user']['smartsheetCode']
         }
         if (code && code !== originalCode) {
           projectData['sheet_id'] = ''
@@ -213,7 +186,7 @@ class EditProject extends React.Component {
         break;
       case 'sheet_id':
         const sheet_id = val
-        const { project_mgr_id: { user_id: { smartsheetCode } } } = projectData
+        const { projectManager: { user: { smartsheetCode } } } = projectData
         const { fetchKeyDates } = this.props
         postData = { smartsheet_auth_code: smartsheetCode, sheet_id }
         fetchKeyDates({ postData })
@@ -312,7 +285,7 @@ class EditProject extends React.Component {
                             showSearch
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                             labelInValue size="large"
-                            value={{ key: projectData.client_id.name }}
+                            value={{ key: projectData.client_id }}
                             placeholder="Please choose a client"
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'client_id')
@@ -378,7 +351,7 @@ class EditProject extends React.Component {
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                             labelInValue size="large"
                             placeholder="Please choose a type"
-                            value={{ key: projectData.project_type_id.name }}
+                            value={{ key: projectData.project_type_id }}
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'project_type_id')
                             }}
@@ -406,7 +379,7 @@ class EditProject extends React.Component {
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                             labelInValue size="large"
                             placeholder="Please choose a sales executive"
-                            value={{ key: projectData.account_mgr_id, label: `${get(projectData, 'account_mgr_id.user_id.firstname', '')} ${get(projectData, 'account_mgr_id.user_id.lastname', '')}` }}
+                            value={{ key: projectData.account_mgr_id, label: `${get(projectData, 'accountManager.user.firstname', '')} ${get(projectData, 'accountManager.user.firstname', '')}` }}
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'account_mgr_id')
                             }}
@@ -437,7 +410,7 @@ class EditProject extends React.Component {
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                             labelInValue size="large"
                             placeholder="Please choose a project manager"
-                            value={{ key: projectData.project_mgr_id, label: `${get(projectData, 'project_mgr_id.user_id.firstname', '')} ${get(projectData, 'project_mgr_id.user_id.lastname', '')}` }}
+                            value={{ key: projectData.project_mgr_id, label: `${get(projectData, 'projectManager.user.firstname', '')} ${get(projectData, 'projectManager.user.firstname', '')}` }}
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'project_mgr_id')
                             }}
@@ -470,7 +443,7 @@ class EditProject extends React.Component {
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                             labelInValue size="large"
                             placeholder="Please choose a consultant"
-                            value={{ key: projectData.consultant_id, label: `${get(projectData, 'consultant_id.user_id.firstname', '')} ${get(projectData, 'consultant_id.user_id.firstname', '')}` }}
+                            value={{ key: projectData.consultant_id, label: `${get(projectData, 'consultant.user.firstname', '')} ${get(projectData, 'consultant.user.firstname', '')}` }}
                             onChange={(obj) =>{
                               this.onValueChange(obj.key, 'consultant_id')
                             }}

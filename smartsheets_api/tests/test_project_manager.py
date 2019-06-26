@@ -24,7 +24,7 @@ class Test_ProjectManagerList(APITestCase):
 	def test_project_managers_create(self):
 		headers=get_header()
 		data = {
-			"user_id": 2
+			"user_id": 78
 		}
 		response = self.client.post(self.url, data, **headers)
 		assert response.status_code == status.HTTP_201_CREATED
