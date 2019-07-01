@@ -55,9 +55,9 @@ class Test_ListCreateUsers(APITestCase):
 		"""
 		data = {
 			'email': 'teddst@mail.com',
-			'username': 'test_user',
-			'firstname': 'test_first',
-			'lastname': 'test_last',
+			'username': 'test_u',
+			'firstname': 'test_f',
+			'lastname': 'test_l',
 			'roleId': 1
 		}
 		headers=get_header()

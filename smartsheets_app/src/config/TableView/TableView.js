@@ -45,14 +45,14 @@ export class TableView extends Component {
       columns.push(deleteColumn);
     if (exportCell) {
       columns.push(exportColumn);
-    }
+    }    
     return columns;
   }
   onDeleteCell = index => {
     this.props.deleteCell(index);    
   };
   onChange = (pagination, filters, sorter) => {
-    const { dataList } = this.props;    
+    const { dataList } = this.props;   
     if (sorter && sorter.columnKey && sorter.order) {
       if (sorter.order === 'ascend') {
         dataList.getSortAsc(sorter.columnKey);

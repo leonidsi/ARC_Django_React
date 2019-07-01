@@ -24,8 +24,6 @@ class Test_HowFoundPyxList(APITestCase):
 	def test_how_found_pyx_create(self):
 		headers=get_header()
 		data = {
-			"created_at": "2019-05-12T15:08:54.327Z",
-			"updated_at": "2019-05-12T15:08:54.327Z",
 			"name": "test_how_found_pyx"
 		}
 		response = self.client.post(self.url, data, **headers)
@@ -46,9 +44,7 @@ class Test_HowFoundPyxDetailView(APITestCase):
 	def test_how_found_pyx_update(self):
 		headers=get_header()
 		update_data = {
-			"created_at": "2019-05-11T15:08:54.327Z",
-			"updated_at": "2019-05-12T15:08:54.327Z",
-			"name": "test_how_found_pyx"
+			"name": "test_update_how_found_pyx"
 		}
 		response = self.client.put(self.url, update_data, **headers, format="json")
 		if response.status_code == status.HTTP_404_NOT_FOUND:

@@ -74,10 +74,29 @@ const columns = [
   //   render: object => renderCell(object, 'TextCell', 'greatplace_mostadmired')
   // },
 ];
+
+function cmp(a, b) {
+  if (!a) {
+    return -1;
+  } else if (!b) {
+    return 1;
+  } else {
+    a = a.substring(6, 10) + a.substring(0, 6)
+    b = b.substring(6, 10) + b.substring(0, 6)
+    if (a<b) {
+      return 1;
+    } else if(a>b) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }  
+}
+
 const sortColumns = [
   { ...columns[0], sorter: true },
-  { ...columns[1], sorter: true },
-  { ...columns[2], sorter: true },
+  { ...columns[1], sorter: (a, b) => cmp(a.date_joined_pyx, b.date_joined_pyx) },
+  { ...columns[2], sorter: (a, b) => cmp(a.date_left_pyx, b.date_left_pyx) },
   { ...columns[3], sorter: true },
   // { ...columns[4], sorter: true },
   // { ...columns[5], sorter: true },

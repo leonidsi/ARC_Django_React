@@ -39,8 +39,6 @@ class ClientList(ListCreateAPIView):
         naics_code_data = NaicsCodeSerializer(NaicsCode.objects.all(), many=True).data
 
         res_responses = []
-        # print(42, responses[0])
-        flag = True
 
         for response in responses:
             if response['naics_code1_id'] != None:
@@ -48,7 +46,6 @@ class ClientList(ListCreateAPIView):
             if response['naics_code2_id'] != None:
                 response['naicsCode2'] = naics_code_data[response['naics_code2_id']-1]
             res_responses.append(response)
-            # if 
         return Response(responses, status=status.HTTP_200_OK)        
 
     def post(self, request, *args, **kwargs):
