@@ -26,7 +26,7 @@ export function* deleteRequest() {
     const { delInfo } = payload;
     try {
       const delData = { id: delInfo.index };
-      const url = `${API_URL}/howFoundPyxs/${delInfo.index}/`;
+      const url = `${API_URL}/how_found_pyxs/${delInfo.index}/`;
       const params = {
         method: 'DELETE',
       };
@@ -47,7 +47,7 @@ export function* insertRequest() {
   yield takeEvery('INSERT_HOWFOUNDPYX_REQUEST', function*({ payload }) {
     const { postData } = payload;
     try {
-      const url = `${API_URL}/how_found_pyx/`;
+      const url = `${API_URL}/how_found_pyxs/`;
       const params = {
         method: 'POST',
         body: JSON.stringify(postData),
@@ -70,7 +70,7 @@ export function* getRequest() {
   yield takeEvery('GET_HOWFOUNDPYX_REQUEST', function*({ payload }) {
     const { postData } = payload
     try {
-      const url = `${API_URL}/how_found_pyx/${postData.index}/`;
+      const url = `${API_URL}/how_found_pyxs/${postData.index}/`;
       const result = yield call(request, url);
       yield put({
         type: actions.GET_HOWFOUNDPYX_SUCCESS,
@@ -87,7 +87,7 @@ export function* updateRequest() {
   yield takeEvery('UPDATE_HOWFOUNDPYX_REQUEST', function*({ payload }) {
     const { postData } = payload;
     try {
-      const url = `${API_URL}/how_found_pyx/${postData.id}/`;
+      const url = `${API_URL}/how_found_pyxs/${postData.id}/`;
       const params = {
         method: 'PUT',
         body: JSON.stringify(postData),

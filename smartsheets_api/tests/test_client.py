@@ -28,7 +28,6 @@ class Test_ClientList(APITestCase):
 	        "snp_500": True,
 	        "fortune_level": 2,
 	        "enterprise": False,
-	        # "greatplace_mostadmired": True,
 	        "date_joined_pyx": "05-12-2019",
 	        "date_left_pyx": "05-15-2019",
 	        "naics_code1_id": 1,
@@ -57,7 +56,6 @@ class Test_ClientDetailView(APITestCase):
 			'snp_500': True,
 			'fortune_level': 5,
 			'enterprise': False,
-			# 'greatplace_mostadmired': True,
 			'date_joined_pyx': '10-28-2018',
 		}
 		response = self.client.put(self.url, update_data, **headers, format="json")

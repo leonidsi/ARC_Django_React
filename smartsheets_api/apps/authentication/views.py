@@ -231,9 +231,9 @@ class ListCreateUsersView(ListCreateAPIView):
         # one_login_create_user_response = one_login_user.create_user(**kwargs)
 
         data = kwargs
-        data.update({'roleId': request.data['roleId']})
+        data.update({'roleId': request.data['roleId']})    
         serializer = UserSerializer(data=data, context={'request': request})
-        serializer.is_valid(raise_exception=True)
+        serializer.is_valid(raise_exception=True)        
         serializer.save()
         response = serializer.data
 

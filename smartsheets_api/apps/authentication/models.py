@@ -69,9 +69,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     # false.
     is_staff = models.BooleanField(default=False)
 
-    # created_at = models.DateTimeField(auto_now_add=True)    
-    # updated_at = models.DateTimeField(auto_now=True)
-
     # A timestamp representing when this object was created.
     # created_at = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
 
