@@ -1,0 +1,21 @@
+version: '2.3'
+
+services:
+  ops_app:
+    container_name: ops_app
+    build: .
+    image: ops_app:latest
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - .:/usr/src/app/
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - HTTPS=false
+      - API_URL=http://localhost:8000/api/v1
+      - SERVER_URL=http://localhost:8000
+      - SECRET_KEY="hfavk0@@#yk_f&6&($t_)7#m&iq#x9s^(t_g^kbfw1fo6un1^e"
+    cpu_percent: 25
+    mem_reservation: 256m

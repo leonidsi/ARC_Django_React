@@ -1,0 +1,55 @@
+version: '2.3'
+services:
+  db:
+    container_name: ops_db 
+    image: postgres:11-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_ops:/var/lib/postgresl/data/
+    environment:
+      POSTGRES_DB: ops_db
+      POSTGRES_USER: ops_user
+      POSTGRES_PASSWORD: ops_pwd
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d ops_db -U ops_user"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+    cpu_percent: 50
+    mem_reservation: 1024m
+
+  ops_api:
+    container_name: ops_api
+    depends_on:
+      db:
+        condition: service_healthy
+    build:
+      context: .
+      args:
+        SECRET_KEY: "hfavk0@@#yk_f&6&($t_)7#m&iq#x9s^(t_g^kbfw1fo6un1^e"
+    image: ops_api:latest
+    volumes:
+      - .:/usr/src/app/
+    entrypoint: /usr/src/app/local-entrypoint.sh
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=ops_db
+      - DB_NAME=ops_db
+      - DB_USER=ops_user
+      - DB_PASSWORD=ops_pwd
+      - ONELOGIN_CLIENT_ID=b68d076cbb63f66bef5bc55baf4807fa61583317fc52bac7693336b29cf61091
+      - ONELOGIN_CLIENT_SECRET=f851f9761941111302c1c08ef2c0c1c67b9acba3e7a80e67ff0f465d7144e08e
+      - ONELOGIN_CLIENT_REGION=us
+      - ONELOGIN_CLIENT_SUBDOMAIN=perceptyx-smartsheet
+      - ONELOGIN_EMAIL=test@test.com
+      - ONELOGIN_PASSWORD=password
+      - SECRET_KEY='hfavk0@@#yk_f&6&($t_)7#m&iq#x9s^(t_g^kbfw1fo6un1^e'
+      - DEBUG=False
+      - DJANGO_MODULE_STR=development
+    cpu_percent: 25
+    mem_reservation: 256m
+volumes:
+  pgdata_ops:
