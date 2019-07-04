@@ -1,0 +1,18 @@
+[
+{
+    "model": "contract.contract",
+    "pk": 1,
+    "fields": {
+        "name": "test_contract",
+        "contract_number": 1,
+        "date_current_contract_signed": "07-03-2019",
+        "current_contract_term": "2019",
+        "total_contract_value": 1,
+        "contract_type": "test_type",
+        "extension_contract": "test_extension",
+        "annual_subscription": "test_annual",
+        "status": "test_status",
+        "client_id": 396
+    }
+}
+]
