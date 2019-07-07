@@ -17,6 +17,7 @@ class SignIn extends Component {
     this.state = {
       redirectToReferrer: this.props.isLoggedIn
     };
+    // this.keyPress = this.keyPress.bind(this);
   }
   componentWillReceiveProps(nextProps) {
     if (
@@ -34,6 +35,11 @@ class SignIn extends Component {
     };
     login({ history, userInfo });
   };
+  keyPress = (e) => {
+    if(e.key === 'Enter'){
+      this.handleLogin()
+    }
+  }
   render() {
     // const from = { pathname: '/dashboard' };
     // const { redirectToReferrer } = this.state;
@@ -65,6 +71,7 @@ class SignIn extends Component {
                   size="large"
                   type="password"
                   placeholder="Password"
+                  onKeyPress={this.keyPress}
                 />
               </div>
 

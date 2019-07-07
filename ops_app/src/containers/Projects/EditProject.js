@@ -896,53 +896,6 @@ class EditProject extends React.Component {
                           </Select>
                         </FormItem>
                       </Col>
-                      <Col span={12}>
-                        <FormItem
-                          style={styles.formItemMargin}
-                          {...formItemLayout}
-                          label="Proposal"
-                        >
-                          <Input
-                            size="default"
-                            placeholder="Proposal file url"
-                            value={this.state.projectData.proposal}
-                            onChange = { (e)=> {this.onValueChange(e.target.value, 'proposal')} }
-                            disabled={isViewMode}
-                          />
-                        </FormItem>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={12}>
-                        <FormItem
-                          style={styles.formItemMargin}
-                          {...formItemLayout}
-                          label="MSA"
-                        >
-                          <Input
-                            size="default"
-                            placeholder="MSA file url"
-                            value={this.state.projectData.msa}
-                            onChange = { (e)=> {this.onValueChange(e.target.value, 'msa')} }
-                            disabled={isViewMode}
-                          />
-                        </FormItem>
-                      </Col>
-                      <Col span={12}>
-                        <FormItem
-                          style={styles.formItemMargin}
-                          {...formItemLayout}
-                          label="SLA"
-                        >
-                          <Input
-                            size="default"
-                            placeholder="SLA file url"
-                            value={this.state.projectData.sla}
-                            onChange = { (e)=> {this.onValueChange(e.target.value, 'sla')} }
-                            disabled={isViewMode}
-                          />
-                        </FormItem>
-                      </Col>
                     </Row>
                     <Row>
                       <Col span={24}>
