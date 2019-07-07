@@ -89,7 +89,10 @@ class SSOLoginView(APIView):
                 data = request.data
                 data['firstname'] = one_login_response_user_data['firstname']
                 data['lastname'] = one_login_response_user_data['lastname']
-                data['username'] = one_login_response_user_data['username']
+                if not one_login_response_user_data['username']:
+                    data['username'] = one_login_response_user_data['email']
+                else:
+                    data['username'] = one_login_response_user_data['username']
                 data['roleId'] = 1
                 serializer = UserSerializer(data=data, context={'request': request})
                 serializer.is_valid(raise_exception=True)

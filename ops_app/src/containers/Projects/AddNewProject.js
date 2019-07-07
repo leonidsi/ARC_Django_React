@@ -936,51 +936,7 @@ class AddNewProject extends React.Component {
                           }
                       </Select>
                     </FormItem>
-                  </Col>
-                  <Col span={12}>
-                    <FormItem
-                      style={styles.formItemMargin}
-                      {...formItemLayout}
-                      label="Proposal"
-                    >
-                      <Input
-                        size="default"
-                        placeholder="Proposal file url"
-                        value={this.state.projectData.proposal}
-                        onChange = { (e)=> {this.onValueChange(e.target.value, 'proposal')} }
-                      />
-                    </FormItem>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col span={12}>
-                    <FormItem
-                      style={styles.formItemMargin}
-                      {...formItemLayout}
-                      label="MSA"
-                    >
-                      <Input
-                        size="default"
-                        placeholder="MSA file url"
-                        value={this.state.projectData.msa}
-                        onChange = { (e)=> {this.onValueChange(e.target.value, 'msa')} }
-                      />
-                    </FormItem>
-                  </Col>
-                  <Col span={12}>
-                    <FormItem
-                      style={styles.formItemMargin}
-                      {...formItemLayout}
-                      label="SLA"
-                    >
-                      <Input
-                        size="default"
-                        placeholder="SLA file url"
-                        value={this.state.projectData.sla}
-                        onChange = { (e)=> {this.onValueChange(e.target.value, 'sla')} }
-                      />
-                    </FormItem>
-                  </Col>
+                  </Col>                  
                 </Row>
                 <Row>
                   <Col span={12}>
