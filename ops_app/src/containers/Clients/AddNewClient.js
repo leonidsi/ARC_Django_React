@@ -49,6 +49,7 @@ class AddNewClient extends React.Component {
   state = {
     singleClient: {}
   }
+
   componentWillMount() {
     const { fetchNaicsCodes } = this.props
     fetchNaicsCodes()
@@ -69,6 +70,7 @@ class AddNewClient extends React.Component {
     const { singleClient } = this.state
     insertClient({ postData: singleClient })
   }
+  
   render() {
     const { naicsCodesList, loading } = this.props
     return (

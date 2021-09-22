@@ -28,16 +28,6 @@ const columns = [
     key: 'name',
     render: object => renderCell(object, 'TextCell', 'name')
   },
-  // {
-  //   title: 'Naici Code 1',
-  //   key: 'naicsCode1',
-  //   render: object => renderCell(object, 'TextCell', 'naicsCode1')
-  // },
-  // {
-  //   title: 'Naici Code 2',
-  //   key: 'naicsCode2',
-  //   render: object => renderCell(object, 'TextCell', 'naicsCode2')
-  // },
   {
     title: 'Date joined pyx',
     key: 'date_joined_pyx',
@@ -48,21 +38,6 @@ const columns = [
     key: 'date_left_pyx',
     render: object => renderCell(object, 'TextCell', 'date_left_pyx')
   },
-  // {
-  //   title: 'Created date',
-  //   key: 'createdDate',
-  //   render: object => renderCell(object, 'DateCell', 'createdDate')
-  // },
-  // {
-  //   title: 'SNP 500',
-  //   key: 'snp_500',
-  //   render: object => renderCell(object, 'TextCell', 'snp_500')
-  // },
-  // {
-  //   title: 'Fortune Level',
-  //   key: 'fortune_level',
-  //   render: object => renderCell(object, 'TextCell', 'fortune_level')
-  // },
   {
     title: 'Enterprise',
     key: 'enterprise',
@@ -98,12 +73,6 @@ const sortColumns = [
   { ...columns[1], sorter: (a, b) => cmp(a.date_joined_pyx, b.date_joined_pyx) },
   { ...columns[2], sorter: (a, b) => cmp(a.date_left_pyx, b.date_left_pyx) },
   { ...columns[3], sorter: true },
-  // { ...columns[4], sorter: true },
-  // { ...columns[5], sorter: true },
-  // { ...columns[6], sorter: true },
-  // { ...columns[7], sorter: true },
-  // { ...columns[8], sorter: true },
-  // { ...columns[9], sorter: true },
 ];
 const tableInfo = {
     title: 'Sortable Table',
