@@ -7,7 +7,6 @@ from .serializers import ConsultantSerializer
 from django.conf import settings
 from django.utils.encoding import smart_text
 from django.core import serializers
-
 from rest_framework import status
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, BasePermission
@@ -40,6 +39,7 @@ class ConsultantList(ListCreateAPIView):
             response = ConsultantSerializer(consultant).data
             response['user'] = UserSerializer(User.objects.get(email = consultant.user_id)).data
             responses.append(response)
+        
         return Response(responses, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):

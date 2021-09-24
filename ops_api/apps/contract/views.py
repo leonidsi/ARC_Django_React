@@ -56,10 +56,10 @@ class ContractList(ListCreateAPIView):
                 response['sales_rep_id'] = sales_rep_data[response['sales_rep_id']-1]
                 if isinstance(response['sales_rep_id']['user_id'], int):                    
                     response['sales_rep_id']['user_id'] = user_data[response['sales_rep_id']['user_id']-1]
-            if response['relationship_manager_id'] != None:
-                response['relationship_manager_id'] = relationship_manager_data[response['relationship_manager_id']-1]
-                if isinstance(response['relationship_manager_id']['user_id'], int):                    
-                    response['relationship_manager_id']['user_id'] = user_data[response['relationship_manager_id']['user_id']-1]
+            # if response['relationship_manager_id'] != None:
+            #     response['relationship_manager_id'] = relationship_manager_data[response['relationship_manager_id']-1]
+            #     if isinstance(response['relationship_manager_id']['user_id'], int):                    
+            #         response['relationship_manager_id']['user_id'] = user_data[response['relationship_manager_id']['user_id']-1]
             res_responses.append(response)
         
         return Response(responses, status=status.HTTP_200_OK)

@@ -8,7 +8,6 @@ from django.conf import settings
 from django.utils.encoding import smart_text
 from django.core import serializers
 from django.core.mail import send_mail
-
 from rest_framework import status
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, BasePermission
@@ -23,12 +22,14 @@ from apps.naics_code.models import NaicsCode
 from apps.naics_code.serializers import NaicsCodeSerializer
 
 class ClientList(ListCreateAPIView):
+
     """
     View to list all clients and create a client in the system.
 
     GET clients/
     POST clients/
     """
+
     permission_classes = (IsAuthenticated and IsTokenValid,)
     def get(self, request, format=None):
         """
@@ -39,7 +40,6 @@ class ClientList(ListCreateAPIView):
         naics_code_data = NaicsCodeSerializer(NaicsCode.objects.all().order_by('id'), many=True).data
 
         res_responses = []
-
         for response in responses:
             if response['naics_code1_id'] != None:
                 response['naicsCode1'] = naics_code_data[response['naics_code1_id']-1]   
@@ -53,12 +53,12 @@ class ClientList(ListCreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         
-        # send_mail(
-        #     'Created new client in Perceptyx',
-        #     'Hello, Jim. Successfully created new client!',
-        #     settings.EMAIL_HOST_USER,
-        #     ['jduncan@perceptyx.com']
-        # )
+        send_mail(
+            'Created new client in Perceptyx',
+            'Hello, Jim. Successfully created new client!',
+            settings.EMAIL_HOST_USER,
+            ['jduncan@perceptyx.com']
+        )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ClientDetailView(RetrieveUpdateDestroyAPIView):
@@ -88,12 +88,12 @@ class ClientDetailView(RetrieveUpdateDestroyAPIView):
             client = self.queryset.get(pk=kwargs["pk"])            
             serializer = ClientSerializer()
             updated_client = serializer.update(client, request.data)
-            # send_mail(
-            #     'Updated a client in Perceptyx',
-            #     'Hello, Jim. Successfully updated a client!',
-            #     settings.EMAIL_HOST_USER,
-            #     ['jduncan@perceptyx.com']
-            # )
+            send_mail(
+                'Updated a client in Perceptyx',
+                'Hello, Jim. Successfully updated a client!',
+                settings.EMAIL_HOST_USER,
+                ['jduncan@perceptyx.com']
+            )
             return Response(ClientSerializer(updated_client).data)
         except Client.DoesNotExist:
             response = {"message": "Client with id: {} does not exist".format(kwargs["pk"])}
