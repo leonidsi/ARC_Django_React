@@ -48,13 +48,13 @@ class ProjectList(ListCreateAPIView):
         """
         projects = Project.objects.filter(is_template=False).order_by('id')
         responses = ProjectSerializer(projects, many=True).data
-        client_data = ClientSerializer(Client.objects.all().order_by('id'), many=True).data
-        project_type_data = ProjectTypeSerializer(ProjectType.objects.all().order_by('id'), many=True).data
-        project_manager_data = ProjectManagerSerializer(ProjectManager.objects.all().order_by('id'), many=True).data
-        account_manager_data = AccountManagerSerializer(AccountManager.objects.all().order_by('id'), many=True).data
-        relationship_manager_data = RelationshipManagerSerializer(RelationshipManager.objects.all().order_by('id'), many=True).data
-        consultant_data = ConsultantSerializer(Consultant.objects.all().order_by('id'), many=True).data
-        user_data = UserSerializer(User.objects.all().order_by('id'), many=True).data
+        # client_data = ClientSerializer(Client.objects.all().order_by('id'), many=True).data
+        # project_type_data = ProjectTypeSerializer(ProjectType.objects.all().order_by('id'), many=True).data
+        # project_manager_data = ProjectManagerSerializer(ProjectManager.objects.all().order_by('id'), many=True).data
+        # account_manager_data = AccountManagerSerializer(AccountManager.objects.all().order_by('id'), many=True).data
+        # relationship_manager_data = RelationshipManagerSerializer(RelationshipManager.objects.all().order_by('id'), many=True).data
+        # consultant_data = ConsultantSerializer(Consultant.objects.all().order_by('id'), many=True).data
+        # user_data = UserSerializer(User.objects.all().order_by('id'), many=True).data
 
         res_responses = []
 
@@ -87,12 +87,12 @@ class ProjectList(ListCreateAPIView):
         serializer = ProjectSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        # send_mail(
-        #     'Created new project in Perceptyx',
-        #     'Hello, Jim. Successfully created new project!',
-        #     settings.EMAIL_HOST_USER,
-        #     ['jduncan@perceptyx.com']
-        # )
+        send_mail(
+            'Created new project in Perceptyx',
+            'Hello, Jim. Successfully created new project!',
+            settings.EMAIL_HOST_USER,
+            ['jduncan@perceptyx.com']
+        )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ProjectDetailView(RetrieveUpdateDestroyAPIView):
@@ -122,12 +122,12 @@ class ProjectDetailView(RetrieveUpdateDestroyAPIView):
             project = self.queryset.get(pk=kwargs["pk"])
             serializer = ProjectSerializer()
             updated_project = serializer.update(project, request.data)
-            # send_mail(
-            #     'Updated a project in Perceptyx',
-            #     'Hello, Jim. Successfully updated a project!',
-            #     settings.EMAIL_HOST_USER,
-            #     ['jduncan@perceptyx.com']
-            # )
+            send_mail(
+                'Updated a project in Perceptyx',
+                'Hello, Jim. Successfully updated a project!',
+                settings.EMAIL_HOST_USER,
+                ['jduncan@perceptyx.com']
+            )
             return Response(ProjectSerializer(updated_project).data)
         except Project.DoesNotExist:
             response = {"message": "Project with id: {} does not exist".format(kwargs["pk"])}
