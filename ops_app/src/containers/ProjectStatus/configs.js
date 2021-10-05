@@ -27,8 +27,8 @@ const sortColumns = [
   { ...columns[0], sorter: true },
 ];
 const tableInfo = {
-    title: 'Sortable Table',
-    value: 'sortView',
-    columns: clone(sortColumns)
-  };
+  title: 'Sortable Table',
+  value: 'sortView',
+  columns: clone(sortColumns)
+};
 export { columns, tableInfo };
